@@ -1,0 +1,33 @@
+[2025-04-04T18:57:28.637+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-04-04T18:57:28.678+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews_pipeline.normalize_and_clean_data manual__2025-04-04T18:56:57.108267+00:00 [queued]>
+[2025-04-04T18:57:28.700+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews_pipeline.normalize_and_clean_data manual__2025-04-04T18:56:57.108267+00:00 [queued]>
+[2025-04-04T18:57:28.719+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-04-04T18:57:28.753+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): normalize_and_clean_data> on 2025-04-04 18:56:57.108267+00:00
+[2025-04-04T18:57:28.774+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=377) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-04-04T18:57:28.780+0000] {standard_task_runner.py:72} INFO - Started process 392 to run task
+[2025-04-04T18:57:28.780+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews_pipeline', 'normalize_and_clean_data', 'manual__2025-04-04T18:56:57.108267+00:00', '--job-id', '33', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpyfjs3lzj']
+[2025-04-04T18:57:28.782+0000] {standard_task_runner.py:105} INFO - Job 33: Subtask normalize_and_clean_data
+[2025-04-04T18:57:28.871+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews_pipeline.normalize_and_clean_data manual__2025-04-04T18:56:57.108267+00:00 [running]> on host c3eecb2684dd
+[2025-04-04T18:57:29.033+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews_pipeline' AIRFLOW_CTX_TASK_ID='normalize_and_clean_data' AIRFLOW_CTX_EXECUTION_DATE='2025-04-04T18:56:57.108267+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-04-04T18:56:57.108267+00:00'
+[2025-04-04T18:57:29.037+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-04-04T18:57:29.038+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-04-04T18:57:29.039+0000] {logging_mixin.py:190} INFO - Current task name:normalize_and_clean_data state:running start_date:2025-04-04 18:57:28.679801+00:00
+[2025-04-04T18:57:29.041+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews_pipeline and current dag run status:running
+[2025-04-04T18:57:29.042+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-04-04T18:57:29.059+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-04-04T18:57:29.074+0000] {warnings.py:112} WARNING - /opt/***/dags/storeData.py:194: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql("SELECT * FROM review.raw_reviews", conn)
+
+[2025-04-04T18:57:29.290+0000] {logging_mixin.py:190} INFO - Data normalized and cleaned successfully.
+[2025-04-04T18:57:29.292+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-04-04T18:57:29.307+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-04-04T18:57:29.309+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews_pipeline, task_id=normalize_and_clean_data, run_id=manual__2025-04-04T18:56:57.108267+00:00, execution_date=20250404T185657, start_date=20250404T185728, end_date=20250404T185729
+[2025-04-04T18:57:29.354+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-04-04T18:57:29.356+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-04-04T18:57:29.357+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews_pipeline queued_at:2025-04-04 18:56:57.160682+00:00
+[2025-04-04T18:57:29.358+0000] {logging_mixin.py:190} INFO - Task hostname:c3eecb2684dd operator:PythonOperator
+[2025-04-04T18:57:29.403+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-04-04T18:57:29.462+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-04-04T18:57:29.465+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
