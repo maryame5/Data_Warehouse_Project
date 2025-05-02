@@ -1,0 +1,42 @@
+version: 2
+
+models:
+  - name: dim_bank
+    columns:
+      - name: bank_id
+        tests:
+          - not_null
+          - unique
+      - name: bank_name
+        tests:
+          - not_null
+
+  - name: dim_branch
+    columns:
+      - name: branch_id
+        tests:
+          - not_null
+          - unique
+      - name: branch_name
+        tests:
+          - not_null
+
+  - name: dim_location
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+      - name: location
+        tests:
+          - not_null
+
+  - name: dim_sentiment
+    columns:
+      - name: sentiment_id
+        tests:
+          - not_null
+          - unique
+      - name: sentiment_label
+        tests:
+          - not_null

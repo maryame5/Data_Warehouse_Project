@@ -8,6 +8,7 @@ import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from storeData import *
+from airflow.operators.bash_operator import BashOperator
 
 
 default_args = {
@@ -19,7 +20,7 @@ default_args = {
 }
 
 with DAG(
-    'google_maps_reviews_pipeline',
+    'google_maps_reviews',
     default_args=default_args,
     schedule_interval='@daily',  # Runs daily
     catchup=False,
@@ -62,6 +63,17 @@ with DAG(
     python_callable=model_data,
     dag=dag
 )
+    dbt_run_task = BashOperator(
+    task_id='run_dbt_models',
+    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt run',
+    dag=dag
+)
+    dbt_test_task = BashOperator(
+    task_id='test_dbt_models',
+    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt test',
+    dag=dag
+)
+
 
 # Définir l'ordre d'exécution
-fetch_reviews_task >> load_task >> remove_duplicates_task >> normalize_and_clean_task >> detect_language_task >> analyze_sentiment_task  >> extract_topics_task >> model_data_task
+fetch_reviews_task >> load_task >> remove_duplicates_task >> normalize_and_clean_task >> detect_language_task >> analyze_sentiment_task  >> extract_topics_task >> model_data_task  >> dbt_run_task >> dbt_test_task
