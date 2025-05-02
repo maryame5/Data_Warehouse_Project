@@ -258,3 +258,16 @@
 [2025-04-21T23:45:35.566+0000] {logging_mixin.py:190} INFO - [2025-04-21T23:45:35.565+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-04-21T23:45:35.588+0000] {logging_mixin.py:190} INFO - [2025-04-21T23:45:35.587+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews_pipeline to 2025-04-21 00:00:00+00:00, run_after=2025-04-22 00:00:00+00:00
 [2025-04-21T23:45:35.614+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 1.652 seconds
+[2025-04-21T23:46:05.877+0000] {processor.py:186} INFO - Started process (PID=1972) to work on /opt/airflow/dags/airflowdag.py
+[2025-04-21T23:46:05.878+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-04-21T23:46:05.881+0000] {logging_mixin.py:190} INFO - [2025-04-21T23:46:05.880+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-04-21T23:46:07.546+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-04-21T23:46:07.547+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-04-21T23:46:07.548+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-04-21T23:46:07.557+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-04-21T23:46:07.563+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews_pipeline' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-04-21T23:46:07.586+0000] {logging_mixin.py:190} INFO - [2025-04-21T23:46:07.586+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-04-21T23:46:07.610+0000] {logging_mixin.py:190} INFO - [2025-04-21T23:46:07.609+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews_pipeline to 2025-04-21 00:00:00+00:00, run_after=2025-04-22 00:00:00+00:00
+[2025-04-21T23:46:07.649+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 1.781 seconds

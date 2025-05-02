@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS review.fact_reviews (
     review_date TIMESTAMP
 );
     """
-    cur.execute(create_tables_sql)
+    
 
     # Peupler les tables de dimension
     populate_dim_sql = """
@@ -88,7 +88,6 @@ SELECT DISTINCT sentiment FROM review.raw_reviews
 ON CONFLICT (sentiment_label) DO NOTHING;
 
     """
-    cur.execute(populate_dim_sql)
 
     # Insérer les données dans fact_reviews
     populate_fact_sql = """
@@ -109,11 +108,19 @@ LEFT JOIN review.dim_location dl ON rr.location = dl.location
 LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label;
 
     """
-    cur.execute(populate_fact_sql)
+    try:
+        cur.execute(create_tables_sql)
+        cur.execute(populate_dim_sql)
+        cur.execute(populate_fact_sql)
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        raise e
+    finally:
+        cur.close()
+        conn.close()
 
-    conn.commit()
-    cur.close()
-    conn.close()
+    
 
 
 
