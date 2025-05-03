@@ -65,12 +65,12 @@ with DAG(
 )
     dbt_run_task = BashOperator(
     task_id='run_dbt_models',
-    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt run',
+    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt run --profiles-dir .',
     dag=dag
 )
     dbt_test_task = BashOperator(
     task_id='test_dbt_models',
-    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt test',
+    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt test --profiles-dir .',
     dag=dag
 )
 

@@ -1,0 +1,30 @@
+[2025-05-02T20:53:55.528+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-02T20:53:55.580+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.analyze_sentiment manual__2025-05-02T20:53:08.420732+00:00 [queued]>
+[2025-05-02T20:53:55.605+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.analyze_sentiment manual__2025-05-02T20:53:08.420732+00:00 [queued]>
+[2025-05-02T20:53:55.625+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-02T20:53:55.655+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): analyze_sentiment> on 2025-05-02 20:53:08.420732+00:00
+[2025-05-02T20:53:55.675+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1921) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-02T20:53:55.680+0000] {standard_task_runner.py:72} INFO - Started process 1936 to run task
+[2025-05-02T20:53:55.680+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'analyze_sentiment', 'manual__2025-05-02T20:53:08.420732+00:00', '--job-id', '166', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpooey9pz_']
+[2025-05-02T20:53:55.682+0000] {standard_task_runner.py:105} INFO - Job 166: Subtask analyze_sentiment
+[2025-05-02T20:53:55.777+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.analyze_sentiment manual__2025-05-02T20:53:08.420732+00:00 [running]> on host 6ca499d7a39a
+[2025-05-02T20:53:55.955+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='analyze_sentiment' AIRFLOW_CTX_EXECUTION_DATE='2025-05-02T20:53:08.420732+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-02T20:53:08.420732+00:00'
+[2025-05-02T20:53:55.959+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-02T20:53:55.960+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-02T20:53:55.961+0000] {logging_mixin.py:190} INFO - Current task name:analyze_sentiment state:running start_date:2025-05-02 20:53:55.582107+00:00
+[2025-05-02T20:53:55.961+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-02T20:53:55.962+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-02T20:53:55.980+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-02T20:53:55.991+0000] {logging_mixin.py:190} INFO - Sentiment analysis completed.
+[2025-05-02T20:53:55.993+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-02T20:53:56.011+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-02T20:53:56.015+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=analyze_sentiment, run_id=manual__2025-05-02T20:53:08.420732+00:00, execution_date=20250502T205308, start_date=20250502T205355, end_date=20250502T205356
+[2025-05-02T20:53:56.060+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-02T20:53:56.061+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-02T20:53:56.062+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-02 20:53:08.523646+00:00
+[2025-05-02T20:53:56.063+0000] {logging_mixin.py:190} INFO - Task hostname:6ca499d7a39a operator:PythonOperator
+[2025-05-02T20:53:56.100+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-02T20:53:56.165+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-02T20:53:56.170+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

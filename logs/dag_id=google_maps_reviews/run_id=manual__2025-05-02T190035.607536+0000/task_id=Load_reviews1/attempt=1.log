@@ -1,0 +1,32 @@
+[2025-05-02T19:01:54.209+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-02T19:01:54.255+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-02T19:00:35.607536+00:00 [queued]>
+[2025-05-02T19:01:54.276+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-02T19:00:35.607536+00:00 [queued]>
+[2025-05-02T19:01:54.286+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-02T19:01:54.317+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): Load_reviews1> on 2025-05-02 19:00:35.607536+00:00
+[2025-05-02T19:01:54.336+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=225) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-02T19:01:54.338+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'Load_reviews1', 'manual__2025-05-02T19:00:35.607536+00:00', '--job-id', '118', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmp5b6rxm7k']
+[2025-05-02T19:01:54.340+0000] {standard_task_runner.py:72} INFO - Started process 240 to run task
+[2025-05-02T19:01:54.340+0000] {standard_task_runner.py:105} INFO - Job 118: Subtask Load_reviews1
+[2025-05-02T19:01:54.429+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-02T19:00:35.607536+00:00 [running]> on host 6ca499d7a39a
+[2025-05-02T19:01:54.575+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='Load_reviews1' AIRFLOW_CTX_EXECUTION_DATE='2025-05-02T19:00:35.607536+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-02T19:00:35.607536+00:00'
+[2025-05-02T19:01:54.578+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-02T19:01:54.579+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-02T19:01:54.580+0000] {logging_mixin.py:190} INFO - Current task name:Load_reviews1 state:running start_date:2025-05-02 19:01:54.256999+00:00
+[2025-05-02T19:01:54.581+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-02T19:01:54.582+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-02T19:01:54.609+0000] {logging_mixin.py:190} INFO - Current directory: /opt/***/dags
+[2025-05-02T19:01:54.610+0000] {logging_mixin.py:190} INFO - Data path: /opt/***/dags/input/reviews.csv
+[2025-05-02T19:01:54.645+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-02T19:01:54.690+0000] {logging_mixin.py:190} INFO - Data stored in PostgreSQL.
+[2025-05-02T19:01:54.691+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-02T19:01:54.708+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-02T19:01:54.709+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=Load_reviews1, run_id=manual__2025-05-02T19:00:35.607536+00:00, execution_date=20250502T190035, start_date=20250502T190154, end_date=20250502T190154
+[2025-05-02T19:01:54.754+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-02T19:01:54.756+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-02T19:01:54.757+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-02 19:00:35.650233+00:00
+[2025-05-02T19:01:54.758+0000] {logging_mixin.py:190} INFO - Task hostname:6ca499d7a39a operator:PythonOperator
+[2025-05-02T19:01:54.799+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-02T19:01:54.859+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-02T19:01:54.862+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

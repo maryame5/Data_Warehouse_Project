@@ -1,0 +1,12 @@
+bank_reviews_dbt:  # Doit correspondre au nom du projet dans dbt_project.yml
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: postgres         # Nom du conteneur PostgreSQL
+      user: airflow
+      password: airflow
+      port: 5432
+      dbname: airflow
+      schema: review         # Schéma PostgreSQL où DBT crée les tables
+      threads: 1
