@@ -1,0 +1,101 @@
+[2025-05-03T07:26:49.097+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-03T07:26:49.145+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.extract_topics manual__2025-05-03T07:25:53.091841+00:00 [queued]>
+[2025-05-03T07:26:49.168+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.extract_topics manual__2025-05-03T07:25:53.091841+00:00 [queued]>
+[2025-05-03T07:26:49.186+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-03T07:26:49.216+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_topics> on 2025-05-03 07:25:53.091841+00:00
+[2025-05-03T07:26:49.233+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1773) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-03T07:26:49.237+0000] {standard_task_runner.py:72} INFO - Started process 1788 to run task
+[2025-05-03T07:26:49.239+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'extract_topics', 'manual__2025-05-03T07:25:53.091841+00:00', '--job-id', '240', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmp542jc41a']
+[2025-05-03T07:26:49.242+0000] {standard_task_runner.py:105} INFO - Job 240: Subtask extract_topics
+[2025-05-03T07:26:49.339+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.extract_topics manual__2025-05-03T07:25:53.091841+00:00 [running]> on host 8280c28b7f0f
+[2025-05-03T07:26:49.527+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='extract_topics' AIRFLOW_CTX_EXECUTION_DATE='2025-05-03T07:25:53.091841+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-03T07:25:53.091841+00:00'
+[2025-05-03T07:26:49.531+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-03T07:26:49.532+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-03T07:26:49.533+0000] {logging_mixin.py:190} INFO - Current task name:extract_topics state:running start_date:2025-05-03 07:26:49.147437+00:00
+[2025-05-03T07:26:49.534+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-03T07:26:49.535+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-03T07:26:49.555+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-03T07:26:49.674+0000] {dictionary.py:201} INFO - adding document #0 to Dictionary<0 unique tokens: []>
+[2025-05-03T07:26:49.692+0000] {dictionary.py:206} INFO - built Dictionary<341 unique tokens: ['bond', 'is', 'mr', 'our', 'word']...> from 402 documents (total 7377 corpus positions)
+[2025-05-03T07:26:49.695+0000] {utils.py:447} INFO - Dictionary lifecycle event {'msg': "built Dictionary<341 unique tokens: ['bond', 'is', 'mr', 'our', 'word']...> from 402 documents (total 7377 corpus positions)", 'datetime': '2025-05-03T07:26:49.695242', 'gensim': '4.3.3', 'python': '3.12.9 (main, Feb  6 2025, 22:37:05) [GCC 12.2.0]', 'platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'event': 'created'}
+[2025-05-03T07:26:49.711+0000] {ldamodel.py:577} INFO - using symmetric alpha at 0.3333333333333333
+[2025-05-03T07:26:49.713+0000] {ldamodel.py:577} INFO - using symmetric eta at 0.3333333333333333
+[2025-05-03T07:26:49.715+0000] {ldamodel.py:482} INFO - using serial LDA version on this node
+[2025-05-03T07:26:49.717+0000] {ldamodel.py:948} INFO - running online (multi-pass) LDA training, 3 topics, 10 passes over the supplied corpus of 402 documents, updating model once every 402 documents, evaluating perplexity every 402 documents, iterating 50x with a convergence threshold of 0.001000
+[2025-05-03T07:26:50.175+0000] {ldamodel.py:848} INFO - -6.429 per-word bound, 86.1 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:50.177+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 0, at document #402/402
+[2025-05-03T07:26:50.463+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.067*"to" + 0.049*"nan" + 0.045*"the" + 0.016*"agency" + 0.015*"its" + 0.015*"a" + 0.014*"and" + 0.013*"always" + 0.012*"for" + 0.012*"i"
+[2025-05-03T07:26:50.465+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.048*"the" + 0.046*"to" + 0.032*"a" + 0.022*"i" + 0.017*"and" + 0.017*"is" + 0.016*"agency" + 0.016*"you" + 0.014*"with" + 0.012*"it"
+[2025-05-03T07:26:50.467+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.051*"the" + 0.036*"and" + 0.030*"i" + 0.030*"of" + 0.027*"to" + 0.024*"a" + 0.018*"with" + 0.018*"agency" + 0.016*"you" + 0.015*"is"
+[2025-05-03T07:26:50.468+0000] {ldamodel.py:1075} INFO - topic diff=1.488463, rho=1.000000
+[2025-05-03T07:26:50.638+0000] {ldamodel.py:848} INFO - -5.265 per-word bound, 38.4 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:50.642+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 1, at document #402/402
+[2025-05-03T07:26:50.794+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.069*"to" + 0.050*"the" + 0.039*"nan" + 0.022*"and" + 0.021*"agency" + 0.018*"for" + 0.016*"its" + 0.015*"i" + 0.014*"my" + 0.013*"always"
+[2025-05-03T07:26:50.796+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.044*"the" + 0.044*"to" + 0.038*"a" + 0.021*"i" + 0.017*"you" + 0.016*"is" + 0.015*"it" + 0.014*"and" + 0.014*"they" + 0.013*"agency"
+[2025-05-03T07:26:50.797+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.038*"of" + 0.034*"and" + 0.033*"i" + 0.026*"a" + 0.022*"with" + 0.018*"to" + 0.018*"agency" + 0.017*"is" + 0.016*"you"
+[2025-05-03T07:26:50.798+0000] {ldamodel.py:1075} INFO - topic diff=0.480600, rho=0.577350
+[2025-05-03T07:26:50.947+0000] {ldamodel.py:848} INFO - -5.125 per-word bound, 34.9 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:50.948+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 2, at document #402/402
+[2025-05-03T07:26:51.039+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.067*"to" + 0.051*"the" + 0.039*"nan" + 0.025*"and" + 0.023*"agency" + 0.022*"for" + 0.016*"its" + 0.016*"i" + 0.015*"my" + 0.013*"always"
+[2025-05-03T07:26:51.041+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.047*"to" + 0.043*"the" + 0.039*"a" + 0.020*"i" + 0.017*"you" + 0.016*"they" + 0.016*"is" + 0.015*"it" + 0.013*"and" + 0.012*"in"
+[2025-05-03T07:26:51.042+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.041*"of" + 0.035*"i" + 0.034*"and" + 0.027*"a" + 0.024*"with" + 0.018*"agency" + 0.017*"is" + 0.016*"professional" + 0.015*"you"
+[2025-05-03T07:26:51.043+0000] {ldamodel.py:1075} INFO - topic diff=0.322781, rho=0.500000
+[2025-05-03T07:26:51.166+0000] {ldamodel.py:848} INFO - -5.064 per-word bound, 33.5 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:51.168+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 3, at document #402/402
+[2025-05-03T07:26:51.241+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.052*"the" + 0.039*"nan" + 0.027*"and" + 0.024*"agency" + 0.023*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.013*"always"
+[2025-05-03T07:26:51.244+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.048*"to" + 0.042*"the" + 0.040*"a" + 0.019*"i" + 0.018*"you" + 0.017*"they" + 0.016*"is" + 0.016*"it" + 0.012*"and" + 0.012*"in"
+[2025-05-03T07:26:51.246+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.043*"of" + 0.036*"i" + 0.034*"and" + 0.027*"a" + 0.024*"with" + 0.018*"professional" + 0.018*"is" + 0.017*"agency" + 0.015*"you"
+[2025-05-03T07:26:51.247+0000] {ldamodel.py:1075} INFO - topic diff=0.235459, rho=0.447214
+[2025-05-03T07:26:51.367+0000] {ldamodel.py:848} INFO - -5.040 per-word bound, 32.9 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:51.369+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 4, at document #402/402
+[2025-05-03T07:26:51.441+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.028*"and" + 0.024*"agency" + 0.024*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.013*"always"
+[2025-05-03T07:26:51.443+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.049*"to" + 0.042*"the" + 0.040*"a" + 0.019*"i" + 0.018*"you" + 0.017*"they" + 0.016*"it" + 0.016*"is" + 0.012*"and" + 0.011*"in"
+[2025-05-03T07:26:51.445+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.044*"of" + 0.036*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.019*"professional" + 0.018*"is" + 0.017*"agency" + 0.016*"in"
+[2025-05-03T07:26:51.447+0000] {ldamodel.py:1075} INFO - topic diff=0.178802, rho=0.408248
+[2025-05-03T07:26:51.569+0000] {ldamodel.py:848} INFO - -5.028 per-word bound, 32.6 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:51.571+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 5, at document #402/402
+[2025-05-03T07:26:51.652+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.028*"and" + 0.024*"agency" + 0.024*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"always"
+[2025-05-03T07:26:51.654+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.049*"to" + 0.042*"the" + 0.040*"a" + 0.019*"i" + 0.018*"you" + 0.017*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.011*"answer"
+[2025-05-03T07:26:51.655+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.044*"of" + 0.036*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.020*"professional" + 0.018*"is" + 0.017*"agency" + 0.016*"in"
+[2025-05-03T07:26:51.656+0000] {ldamodel.py:1075} INFO - topic diff=0.136305, rho=0.377964
+[2025-05-03T07:26:51.781+0000] {ldamodel.py:848} INFO - -5.022 per-word bound, 32.5 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:51.782+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 6, at document #402/402
+[2025-05-03T07:26:51.867+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.028*"and" + 0.025*"agency" + 0.024*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"always"
+[2025-05-03T07:26:51.868+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.049*"to" + 0.042*"the" + 0.040*"a" + 0.019*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"
+[2025-05-03T07:26:51.870+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.044*"of" + 0.036*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.016*"in"
+[2025-05-03T07:26:51.871+0000] {ldamodel.py:1075} INFO - topic diff=0.103113, rho=0.353553
+[2025-05-03T07:26:52.040+0000] {ldamodel.py:848} INFO - -5.019 per-word bound, 32.4 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:52.042+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 7, at document #402/402
+[2025-05-03T07:26:52.133+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.028*"and" + 0.025*"agency" + 0.024*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"always"
+[2025-05-03T07:26:52.134+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.049*"to" + 0.042*"the" + 0.041*"a" + 0.018*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"
+[2025-05-03T07:26:52.136+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.044*"of" + 0.037*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.016*"in"
+[2025-05-03T07:26:52.137+0000] {ldamodel.py:1075} INFO - topic diff=0.077249, rho=0.333333
+[2025-05-03T07:26:52.297+0000] {ldamodel.py:848} INFO - -5.017 per-word bound, 32.4 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:52.299+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 8, at document #402/402
+[2025-05-03T07:26:52.415+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.029*"and" + 0.025*"agency" + 0.024*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"always"
+[2025-05-03T07:26:52.417+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.050*"to" + 0.042*"the" + 0.041*"a" + 0.018*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"
+[2025-05-03T07:26:52.418+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.045*"of" + 0.037*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.016*"in"
+[2025-05-03T07:26:52.420+0000] {ldamodel.py:1075} INFO - topic diff=0.057449, rho=0.316228
+[2025-05-03T07:26:52.605+0000] {ldamodel.py:848} INFO - -5.016 per-word bound, 32.4 perplexity estimate based on a held-out corpus of 402 documents with 7377 words
+[2025-05-03T07:26:52.606+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 9, at document #402/402
+[2025-05-03T07:26:52.699+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.029*"and" + 0.025*"agency" + 0.025*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"team"
+[2025-05-03T07:26:52.701+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.050*"to" + 0.042*"the" + 0.041*"a" + 0.018*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"
+[2025-05-03T07:26:52.703+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.045*"of" + 0.037*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.017*"in"
+[2025-05-03T07:26:52.704+0000] {ldamodel.py:1075} INFO - topic diff=0.042584, rho=0.301511
+[2025-05-03T07:26:52.706+0000] {utils.py:447} INFO - LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=341, num_topics=3, decay=0.5, chunksize=2000> in 2.99s', 'datetime': '2025-05-03T07:26:52.706059', 'gensim': '4.3.3', 'python': '3.12.9 (main, Feb  6 2025, 22:37:05) [GCC 12.2.0]', 'platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'event': 'created'}
+[2025-05-03T07:26:52.707+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.029*"and" + 0.025*"agency" + 0.025*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"team"
+[2025-05-03T07:26:52.709+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.050*"to" + 0.042*"the" + 0.041*"a" + 0.018*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"
+[2025-05-03T07:26:52.712+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.052*"the" + 0.045*"of" + 0.037*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.017*"in"
+[2025-05-03T07:26:52.714+0000] {logging_mixin.py:190} INFO - Extracted topics: [(0, '0.066*"to" + 0.053*"the" + 0.039*"nan" + 0.029*"and" + 0.025*"agency" + 0.025*"for" + 0.016*"its" + 0.016*"i" + 0.016*"my" + 0.012*"team"'), (1, '0.050*"to" + 0.042*"the" + 0.041*"a" + 0.018*"i" + 0.018*"you" + 0.018*"they" + 0.016*"it" + 0.015*"is" + 0.012*"if" + 0.012*"answer"'), (2, '0.052*"the" + 0.045*"of" + 0.037*"i" + 0.034*"and" + 0.027*"a" + 0.025*"with" + 0.021*"professional" + 0.018*"is" + 0.017*"agency" + 0.017*"in"')]
+[2025-05-03T07:26:52.717+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-03T07:26:52.744+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-03T07:26:52.747+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=extract_topics, run_id=manual__2025-05-03T07:25:53.091841+00:00, execution_date=20250503T072553, start_date=20250503T072649, end_date=20250503T072652
+[2025-05-03T07:26:52.818+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-03T07:26:52.820+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-03T07:26:52.821+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-03 07:25:53.142198+00:00
+[2025-05-03T07:26:52.822+0000] {logging_mixin.py:190} INFO - Task hostname:8280c28b7f0f operator:PythonOperator
+[2025-05-03T07:26:52.840+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-03T07:26:52.899+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-03T07:26:52.904+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -32,5 +32,4 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   bank_reviews_dbt:
     # Config indicated by + and applies to all files under models/example/
-    example:
       +materialized: table

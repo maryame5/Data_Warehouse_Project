@@ -126,6 +126,7 @@ services:
     command: webserver
     ports:
       - "8080:8080"
+      - "8081:8081"  # Ajoute celui-là pour dbt docs
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://localhost:8080/health"]
       interval: 30s

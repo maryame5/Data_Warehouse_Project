@@ -73,7 +73,24 @@ with DAG(
     bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt test --profiles-dir .',
     dag=dag
 )
+    dbt_docs_task = BashOperator(
+    task_id='generate_dbt_docs',
+    bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt docs generate',
+    dag=dag
+)
+    export_data_to_csv = PythonOperator(
+        task_id='export_to_csv',
+        python_callable=export_data
+
+       
+    )
+
+    #dbt_docs_serve_task = BashOperator(
+    #task_id='serve_dbt_docs',
+    #bash_command='cd /opt/airflow/dbt_project/bank_reviews_dbt && dbt docs serve --port 8081 --host 0.0.0.0',
+    #dag=dag)
+    #>> dbt_docs_serve_task
 
 
 # Définir l'ordre d'exécution
-fetch_reviews_task >> load_task >> remove_duplicates_task >> normalize_and_clean_task >> detect_language_task >> analyze_sentiment_task  >> extract_topics_task >> model_data_task  >> dbt_run_task >> dbt_test_task
+fetch_reviews_task >> load_task >> remove_duplicates_task >> normalize_and_clean_task >> detect_language_task >> analyze_sentiment_task  >> extract_topics_task >> model_data_task  >> dbt_run_task >> dbt_test_task >> dbt_docs_task >> export_data_to_csv
