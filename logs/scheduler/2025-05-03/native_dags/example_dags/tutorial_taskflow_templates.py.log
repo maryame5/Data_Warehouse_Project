@@ -5423,3 +5423,31 @@
 [2025-05-03T22:14:54.674+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:14:54.674+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-05-03T22:14:54.726+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:14:54.726+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_templates to 2025-05-02 00:00:00+00:00, run_after=2025-05-03 00:00:00+00:00
 [2025-05-03T22:14:54.761+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py took 0.198 seconds
+[2025-05-03T22:15:25.175+0000] {processor.py:186} INFO - Started process (PID=64444) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:25.177+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py for tasks to queue
+[2025-05-03T22:15:25.179+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:25.179+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:25.210+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_templates' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:25.264+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:25.263+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T22:15:25.320+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:25.319+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_templates to 2025-05-02 00:00:00+00:00, run_after=2025-05-03 00:00:00+00:00
+[2025-05-03T22:15:25.380+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py took 0.218 seconds
+[2025-05-03T22:15:56.187+0000] {processor.py:186} INFO - Started process (PID=64535) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:56.190+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py for tasks to queue
+[2025-05-03T22:15:56.193+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:56.192+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:56.216+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_templates' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:15:56.261+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:56.261+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T22:15:56.307+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:15:56.307+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_templates to 2025-05-02 00:00:00+00:00, run_after=2025-05-03 00:00:00+00:00
+[2025-05-03T22:15:56.360+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py took 0.185 seconds
+[2025-05-03T22:16:28.797+0000] {processor.py:186} INFO - Started process (PID=64627) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:16:28.800+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py for tasks to queue
+[2025-05-03T22:16:28.804+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:16:28.803+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:16:28.834+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_templates' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:16:28.883+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:16:28.882+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T22:16:28.944+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:16:28.943+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_templates to 2025-05-02 00:00:00+00:00, run_after=2025-05-03 00:00:00+00:00
+[2025-05-03T22:16:28.991+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py took 0.206 seconds
+[2025-05-03T22:17:01.147+0000] {processor.py:186} INFO - Started process (PID=64718) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:17:01.150+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py for tasks to queue
+[2025-05-03T22:17:01.153+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:17:01.152+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:17:01.181+0000] {processor.py:925} INFO - DAG(s) 'tutorial_taskflow_templates' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py
+[2025-05-03T22:17:01.227+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:17:01.227+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-03T22:17:01.282+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:17:01.281+0000] {dag.py:4180} INFO - Setting next_dagrun for tutorial_taskflow_templates to 2025-05-02 00:00:00+00:00, run_after=2025-05-03 00:00:00+00:00
+[2025-05-03T22:17:01.342+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/tutorial_taskflow_templates.py took 0.207 seconds
