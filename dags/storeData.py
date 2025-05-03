@@ -44,7 +44,21 @@ def export_data():
     conn = pg_hook.get_conn()
     cur = conn.cursor()
     query="""
-SELECT distinct *
+SELECT distinct  rr.id,
+rr.place_id,
+ rr.bank_name, 
+ rr.branch_name,
+   rr.location, 
+   rr.language, 
+   rr.sentiment, 
+   rr.topic, 
+   rr.review_text, 
+   rr.rating, 
+   rr.review_date,
+    db.bank_id,
+    br.branch_id,
+      dl.location_id, 
+      ds.sentiment_id
 
 FROM review.raw_reviews rr
 LEFT JOIN review.dim_bank db ON rr.bank_name = db.bank_name
@@ -194,24 +208,28 @@ def extract_topics():
     corpus = [dictionary.doc2bow(text) for text in tokenized_reviews]
     lda_model = models.LdaModel(corpus, num_topics=3, id2word=dictionary, passes=10)
 
-    # 3. Déterminer le topic principal de chaque review
-    dominant_topics = []
+    # 3. Associer le texte du topic dominant
+    dominant_topic_labels = []
     for bow in corpus:
         topic_distribution = lda_model.get_document_topics(bow)
-        dominant_topic = max(topic_distribution, key=lambda x: x[1])[0]  # topic avec prob max
-        dominant_topics.append(dominant_topic)
+        dominant_topic_id = max(topic_distribution, key=lambda x: x[1])[0]
+        # Extraire le libellé du topic dominant (mots-clés)
+        topic_terms = lda_model.show_topic(dominant_topic_id, topn=3)
+        topic_label = ", ".join([word for word, _ in topic_terms])
+        dominant_topic_labels.append(topic_label)
 
     # 4. Mise à jour de la base
-    for review_id, topic in zip(ids, dominant_topics):
+    for review_id, topic_text in zip(ids, dominant_topic_labels):
         cur.execute("""
             UPDATE review.raw_reviews
             SET topic = %s
             WHERE id = %s;
-        """, (topic, review_id))
+        """, (topic_text, review_id))
 
     conn.commit()
     cur.close()
     conn.close()
+
 
 
 #extract sentiment from reviews
