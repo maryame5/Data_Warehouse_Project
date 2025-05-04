@@ -165,7 +165,7 @@ FROM review.raw_reviews rr
 LEFT JOIN review.dim_bank db ON rr.bank_name = db.bank_name
 LEFT JOIN review.dim_branch br ON rr.branch_name = br.branch_name
 LEFT JOIN review.dim_location dl ON rr.location = dl.location
-LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label ;
+LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label;
 
     """
     try:
@@ -390,6 +390,10 @@ def Load_reviews1():
         INSERT INTO review.raw_reviews 
             (place_id, bank_name, branch_name, location, review_text, rating, review_date)
         VALUES %s
+
+        ON CONFLICT (place_id, review_text, review_date ) DO NOTHING;
+
+
     """
     execute_values(cur, insert_sql, values)
 

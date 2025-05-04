@@ -8307,3 +8307,17 @@ Please take a look at these docs to improve your DAG import time:
 [2025-05-03T22:17:01.502+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
 [2025-05-03T22:17:01.504+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/storeData.py
 [2025-05-03T22:17:01.530+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/storeData.py took 3.105 seconds
+[2025-05-03T22:17:31.740+0000] {processor.py:186} INFO - Started process (PID=64796) to work on /opt/airflow/dags/storeData.py
+[2025-05-03T22:17:31.743+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/storeData.py for tasks to queue
+[2025-05-03T22:17:31.747+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:17:31.746+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/storeData.py
+[2025-05-03T22:17:34.613+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-03T22:17:34.626+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-03T22:17:34.630+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-03T22:17:34.644+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-03T22:17:34.646+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/storeData.py
+[2025-05-03T22:17:34.669+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/storeData.py took 2.944 seconds
+[2025-05-03T22:18:04.932+0000] {processor.py:186} INFO - Started process (PID=64897) to work on /opt/airflow/dags/storeData.py
+[2025-05-03T22:18:04.934+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/storeData.py for tasks to queue
+[2025-05-03T22:18:04.936+0000] {logging_mixin.py:190} INFO - [2025-05-03T22:18:04.936+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/storeData.py
