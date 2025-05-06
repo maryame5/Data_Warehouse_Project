@@ -3,6 +3,7 @@ import glob
 import os
 from datetime import datetime, timedelta
 import string
+import time
 import nltk
 from nltk.corpus import stopwords 
 from langdetect import detect
@@ -37,6 +38,13 @@ nltk.download('punkt_tab')
 # TRUNCATE TABLE review.dim_sentiment RESTART IDENTITY CASCADE;
 # TRUNCATE TABLE review.fact_reviews RESTART IDENTITY CASCADE;
 # TRUNCATE TABLE review.raw_reviews RESTART IDENTITY CASCADE;
+#drop table review.dim_bank cascade;
+#drop table review.dim_branch cascade;
+#drop table review.dim_location cascade;
+#drop table review.dim_sentiment cascade;
+#drop table review.fact_reviews cascade;
+#drop table review.raw_reviews cascade;
+
 
 #export database to csv
 def export_data():
@@ -44,27 +52,12 @@ def export_data():
     conn = pg_hook.get_conn()
     cur = conn.cursor()
     query="""
-SELECT distinct  rr.id,
-rr.place_id,
- rr.bank_name, 
- rr.branch_name,
-   rr.location, 
-   rr.language, 
-   rr.sentiment, 
-   rr.topic, 
-   rr.review_text, 
-   rr.rating, 
-   rr.review_date,
-    db.bank_id,
-    br.branch_id,
-      dl.location_id, 
-      ds.sentiment_id
+SELECT distinct  *
 
-FROM review.raw_reviews rr
-LEFT JOIN review.dim_bank db ON rr.bank_name = db.bank_name
-LEFT JOIN review.dim_branch br ON rr.branch_name = br.branch_name
-LEFT JOIN review.dim_location dl ON rr.location = dl.location
-LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label ;
+  
+
+FROM review.raw_reviews 
+;
 """
     cur.execute(query)
     conn.commit()
@@ -96,22 +89,26 @@ def model_data():
     create_tables_sql = """
     CREATE TABLE IF NOT EXISTS review.dim_bank (
     bank_id SERIAL PRIMARY KEY,
-    bank_name TEXT UNIQUE
+    bank_name TEXT UNIQUE,
+    CONSTRAINT unique_bank_name UNIQUE (bank_name)
 );
 
 CREATE TABLE IF NOT EXISTS review.dim_branch (
     branch_id SERIAL PRIMARY KEY,
-    branch_name TEXT UNIQUE
+    branch_name TEXT UNIQUE,
+    CONSTRAINT unique_branch_name UNIQUE (branch_name)
 );
 
 CREATE TABLE IF NOT EXISTS review.dim_location (
     location_id SERIAL PRIMARY KEY,
-    location TEXT UNIQUE
+    location TEXT UNIQUE,
+    CONSTRAINT unique_location UNIQUE (location)
 );
 
 CREATE TABLE IF NOT EXISTS review.dim_sentiment (
     sentiment_id SERIAL PRIMARY KEY,
-    sentiment_label TEXT UNIQUE
+    sentiment_label TEXT UNIQUE,
+    CONSTRAINT unique_sentiment_label UNIQUE (sentiment_label)
 );
 
 CREATE TABLE IF NOT EXISTS review.fact_reviews (
@@ -132,19 +129,23 @@ CREATE TABLE IF NOT EXISTS review.fact_reviews (
     populate_dim_sql = """
     INSERT INTO review.dim_bank (bank_name) 
 SELECT DISTINCT bank_name FROM review.raw_reviews
-ON CONFLICT (bank_name) DO NOTHING;
+ON CONFLICT (bank_name) DO NOTHING
+;
 
 INSERT INTO review.dim_branch (branch_name) 
 SELECT DISTINCT branch_name FROM review.raw_reviews
-ON CONFLICT (branch_name) DO NOTHING;
+ON CONFLICT (branch_name) DO NOTHING
+;
 
 INSERT INTO review.dim_location (location) 
 SELECT DISTINCT location FROM review.raw_reviews
-ON CONFLICT (location) DO NOTHING;
+ON CONFLICT (location) DO NOTHING
+;
 
 INSERT INTO review.dim_sentiment (sentiment_label) 
 SELECT DISTINCT sentiment FROM review.raw_reviews
-ON CONFLICT (sentiment_label) DO NOTHING;
+ON CONFLICT (sentiment_label) DO NOTHING
+;
 
 
     """
@@ -180,16 +181,7 @@ LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label;
         cur.close()
         conn.close()
 
-    
-
-
-
-
-
-
 #extract topics from reviews using LDA
-
-
 def extract_topics():
     pg_hook = PostgresHook(postgres_conn_id="postgres_defaut")
     conn = pg_hook.get_conn()
@@ -389,9 +381,7 @@ def Load_reviews1():
     insert_sql = """
         INSERT INTO review.raw_reviews 
             (place_id, bank_name, branch_name, location, review_text, rating, review_date)
-        VALUES %s
-
-        ON CONFLICT (place_id, review_text, review_date ) DO NOTHING;
+        VALUES %s;
 
 
     """
@@ -410,26 +400,84 @@ def Load_reviews1():
 
 # Replace with your Google Maps API key (consider using environment variables for security)
 API_KEY = "AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA"
+gmaps = googlemaps.Client(key=API_KEY)
+def generate_grid(lat_min, lat_max, lng_min, lng_max, step=0.2):
+    lat_points = [round(lat_min + i * step, 6) for i in range(int((lat_max - lat_min) / step) + 1)]
+    lng_points = [round(lng_min + i * step, 6) for i in range(int((lng_max - lng_min) / step) + 1)]
+    return [(lat, lng) for lat in lat_points for lng in lng_points]
+
 
 def fetch_google_reviews():
+    seen_places = set()
+    all_reviews = []
+
+    # Bounding box approximative du Maroc
+    lat_min, lat_max = 27.5, 35.9
+    lng_min, lng_max = -13.0, -1.0
+    grid_points = generate_grid(lat_min, lat_max, lng_min, lng_max, step=0.2)
+
+    for i, (lat, lng) in enumerate(grid_points):
+        print(f"Searching at point {i+1}/{len(grid_points)}: ({lat}, {lng})")
+        next_page_token = None
+
+        for _ in range(3):  # Max 3 pages de résultats
+            try:
+                places_result = gmaps.places(
+                    location=(lat, lng),
+                    radius=10000,
+                    type="bank",
+                    page_token=next_page_token
+                )
+
+                for place in places_result.get("results", []):
+                    place_id = place["place_id"]
+                    if place_id in seen_places:
+                        continue
+
+                    seen_places.add(place_id)
+                    details = gmaps.place(
+                        place_id=place_id,
+                        fields=["name", "formatted_address", "review"]
+                    ).get("result", {})
+
+                    for review in details.get("reviews", []):
+                        all_reviews.append({
+                            'place_id': place_id,
+                            'bank_name': details.get('name', ''),
+                            'branch_name': details.get('name', ''),
+                            'location': details.get('formatted_address', ''),
+                            'review_text': review.get('text', ''),
+                            'rating': review.get('rating', 0),
+                            'review_date': datetime.utcfromtimestamp(review.get('time', datetime.now().timestamp()))
+                        })
+
+                next_page_token = places_result.get("next_page_token")
+                if not next_page_token:
+                    break
+                time.sleep(2)
+            except Exception as e:
+                print(f"Error at point ({lat}, {lng}): {e}")
+                break
+
+        time.sleep(1.5)  # pour respecter les limites de l’API
+
+    df = pd.DataFrame(all_reviews)
+    df.to_csv("/opt/airflow/dags/input/reviews.csv", index=False)
+    print(f"{len(df)} reviews collected from {len(seen_places)} bank branches.")
+    """
     #Fetch reviews from Google Maps and store them in a CSV file.
-    gmaps = googlemaps.Client(key=API_KEY)
-    query = "bank agencies in Morocco"
-    location = (31.7917, -7.0926)  # Coordinates for Morocco
-    radius = 500000  # Search radius in meters
-
+    
+    query = "bank"
+    #location = (31.7917, -7.0926)  # Coordinates for Morocco
+    #radius = 500000  # Search radius in meters
     # Perform the search
-    places_result = gmaps.places(query=query, location=location, radius=radius)
-
+    places_result = gmaps.places( region = "MA" , type="bank")
     # Extract place IDs
     place_ids = [place['place_id'] for place in places_result.get('results', [])]
-
     all_reviews = []
-    
     for place_id in place_ids:
         place_details = gmaps.place(place_id=place_id, fields=['name', 'formatted_address', 'review'])
         reviews = place_details.get('result', {}).get('reviews', [])
-
         for review in reviews:
             all_reviews.append({
                 'place_id': place_id,
@@ -440,14 +488,11 @@ def fetch_google_reviews():
                 'rating': review.get('rating', 0),
                 'review_date': datetime.utcfromtimestamp(review.get('time', datetime.now().timestamp()))
             })
-
     # Convert to DataFrame
     df = pd.DataFrame(all_reviews)
-
     # Define the path to save the CSV file
     csv_path = "/opt/airflow/dags/input/reviews.csv"
-
     # Append new data to existing CSV or create a new file if it doesn't exist
     df.to_csv(csv_path, index=False)
-    
-    print(f"Data successfully saved to {csv_path}")
+
+    print(f"Data successfully saved to {csv_path}")"""

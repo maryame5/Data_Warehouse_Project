@@ -1,0 +1,903 @@
+[2025-05-05T22:03:26.897+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-05T22:03:26.930+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-04T00:00:00+00:00 [queued]>
+[2025-05-05T22:03:26.951+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-04T00:00:00+00:00 [queued]>
+[2025-05-05T22:03:26.962+0000] {taskinstance.py:2867} INFO - Starting attempt 5 of 6
+[2025-05-05T22:03:26.994+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_google_reviews> on 2025-05-04 00:00:00+00:00
+[2025-05-05T22:03:27.014+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=1913) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-05T22:03:27.018+0000] {standard_task_runner.py:72} INFO - Started process 1928 to run task
+[2025-05-05T22:03:27.021+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'fetch_google_reviews', 'scheduled__2025-05-04T00:00:00+00:00', '--job-id', '529', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpowasboll']
+[2025-05-05T22:03:27.023+0000] {standard_task_runner.py:105} INFO - Job 529: Subtask fetch_google_reviews
+[2025-05-05T22:03:27.116+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-04T00:00:00+00:00 [running]> on host 8280c28b7f0f
+[2025-05-05T22:03:27.319+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='fetch_google_reviews' AIRFLOW_CTX_EXECUTION_DATE='2025-05-04T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='5' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-04T00:00:00+00:00'
+[2025-05-05T22:03:27.323+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-05T22:03:27.325+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-05T22:03:27.326+0000] {logging_mixin.py:190} INFO - Current task name:fetch_google_reviews state:running start_date:2025-05-05 22:03:26.931442+00:00
+[2025-05-05T22:03:27.327+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-05T22:03:27.328+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-05T22:03:27.331+0000] {logging_mixin.py:190} INFO - Searching at point 1/2562: (27.5, -13.0)
+[2025-05-05T22:03:35.515+0000] {logging_mixin.py:190} INFO - Searching at point 2/2562: (27.5, -12.8)
+[2025-05-05T22:03:37.336+0000] {logging_mixin.py:190} INFO - Searching at point 3/2562: (27.5, -12.6)
+[2025-05-05T22:03:39.177+0000] {logging_mixin.py:190} INFO - Searching at point 4/2562: (27.5, -12.4)
+[2025-05-05T22:03:41.025+0000] {logging_mixin.py:190} INFO - Searching at point 5/2562: (27.5, -12.2)
+[2025-05-05T22:03:42.865+0000] {logging_mixin.py:190} INFO - Searching at point 6/2562: (27.5, -12.0)
+[2025-05-05T22:03:44.713+0000] {logging_mixin.py:190} INFO - Searching at point 7/2562: (27.5, -11.8)
+[2025-05-05T22:03:46.451+0000] {logging_mixin.py:190} INFO - Searching at point 8/2562: (27.5, -11.6)
+[2025-05-05T22:03:48.292+0000] {logging_mixin.py:190} INFO - Searching at point 9/2562: (27.5, -11.4)
+[2025-05-05T22:03:50.055+0000] {logging_mixin.py:190} INFO - Searching at point 10/2562: (27.5, -11.2)
+[2025-05-05T22:03:51.879+0000] {logging_mixin.py:190} INFO - Searching at point 11/2562: (27.5, -11.0)
+[2025-05-05T22:03:53.716+0000] {logging_mixin.py:190} INFO - Searching at point 12/2562: (27.5, -10.8)
+[2025-05-05T22:03:55.561+0000] {logging_mixin.py:190} INFO - Searching at point 13/2562: (27.5, -10.6)
+[2025-05-05T22:03:57.405+0000] {logging_mixin.py:190} INFO - Searching at point 14/2562: (27.5, -10.4)
+[2025-05-05T22:03:59.180+0000] {logging_mixin.py:190} INFO - Searching at point 15/2562: (27.5, -10.2)
+[2025-05-05T22:04:00.994+0000] {logging_mixin.py:190} INFO - Searching at point 16/2562: (27.5, -10.0)
+[2025-05-05T22:04:02.832+0000] {logging_mixin.py:190} INFO - Searching at point 17/2562: (27.5, -9.8)
+[2025-05-05T22:04:04.677+0000] {logging_mixin.py:190} INFO - Searching at point 18/2562: (27.5, -9.6)
+[2025-05-05T22:04:06.519+0000] {logging_mixin.py:190} INFO - Searching at point 19/2562: (27.5, -9.4)
+[2025-05-05T22:04:08.363+0000] {logging_mixin.py:190} INFO - Searching at point 20/2562: (27.5, -9.2)
+[2025-05-05T22:04:10.115+0000] {logging_mixin.py:190} INFO - Searching at point 21/2562: (27.5, -9.0)
+[2025-05-05T22:04:11.916+0000] {logging_mixin.py:190} INFO - Searching at point 22/2562: (27.5, -8.8)
+[2025-05-05T22:04:13.665+0000] {logging_mixin.py:190} INFO - Searching at point 23/2562: (27.5, -8.6)
+[2025-05-05T22:04:16.053+0000] {logging_mixin.py:190} INFO - Searching at point 24/2562: (27.5, -8.4)
+[2025-05-05T22:04:17.891+0000] {logging_mixin.py:190} INFO - Searching at point 25/2562: (27.5, -8.2)
+[2025-05-05T22:04:19.727+0000] {logging_mixin.py:190} INFO - Searching at point 26/2562: (27.5, -8.0)
+[2025-05-05T22:04:21.570+0000] {logging_mixin.py:190} INFO - Searching at point 27/2562: (27.5, -7.8)
+[2025-05-05T22:04:23.418+0000] {logging_mixin.py:190} INFO - Searching at point 28/2562: (27.5, -7.6)
+[2025-05-05T22:04:25.256+0000] {logging_mixin.py:190} INFO - Searching at point 29/2562: (27.5, -7.4)
+[2025-05-05T22:04:26.994+0000] {logging_mixin.py:190} INFO - Searching at point 30/2562: (27.5, -7.2)
+[2025-05-05T22:04:28.735+0000] {logging_mixin.py:190} INFO - Searching at point 31/2562: (27.5, -7.0)
+[2025-05-05T22:04:30.582+0000] {logging_mixin.py:190} INFO - Searching at point 32/2562: (27.5, -6.8)
+[2025-05-05T22:04:32.399+0000] {logging_mixin.py:190} INFO - Searching at point 33/2562: (27.5, -6.6)
+[2025-05-05T22:04:34.166+0000] {logging_mixin.py:190} INFO - Searching at point 34/2562: (27.5, -6.4)
+[2025-05-05T22:04:35.899+0000] {logging_mixin.py:190} INFO - Searching at point 35/2562: (27.5, -6.2)
+[2025-05-05T22:04:37.637+0000] {logging_mixin.py:190} INFO - Searching at point 36/2562: (27.5, -6.0)
+[2025-05-05T22:04:39.395+0000] {logging_mixin.py:190} INFO - Searching at point 37/2562: (27.5, -5.8)
+[2025-05-05T22:04:41.239+0000] {logging_mixin.py:190} INFO - Searching at point 38/2562: (27.5, -5.6)
+[2025-05-05T22:04:43.081+0000] {logging_mixin.py:190} INFO - Searching at point 39/2562: (27.5, -5.4)
+[2025-05-05T22:04:44.919+0000] {logging_mixin.py:190} INFO - Searching at point 40/2562: (27.5, -5.2)
+[2025-05-05T22:04:46.760+0000] {logging_mixin.py:190} INFO - Searching at point 41/2562: (27.5, -5.0)
+[2025-05-05T22:04:48.605+0000] {logging_mixin.py:190} INFO - Searching at point 42/2562: (27.5, -4.8)
+[2025-05-05T22:04:50.365+0000] {logging_mixin.py:190} INFO - Searching at point 43/2562: (27.5, -4.6)
+[2025-05-05T22:04:52.126+0000] {logging_mixin.py:190} INFO - Searching at point 44/2562: (27.5, -4.4)
+[2025-05-05T22:04:53.926+0000] {logging_mixin.py:190} INFO - Searching at point 45/2562: (27.5, -4.2)
+[2025-05-05T22:04:55.772+0000] {logging_mixin.py:190} INFO - Searching at point 46/2562: (27.5, -4.0)
+[2025-05-05T22:04:57.614+0000] {logging_mixin.py:190} INFO - Searching at point 47/2562: (27.5, -3.8)
+[2025-05-05T22:04:59.370+0000] {logging_mixin.py:190} INFO - Searching at point 48/2562: (27.5, -3.6)
+[2025-05-05T22:05:01.315+0000] {logging_mixin.py:190} INFO - Searching at point 49/2562: (27.5, -3.4)
+[2025-05-05T22:05:03.054+0000] {logging_mixin.py:190} INFO - Searching at point 50/2562: (27.5, -3.2)
+[2025-05-05T22:05:04.783+0000] {logging_mixin.py:190} INFO - Searching at point 51/2562: (27.5, -3.0)
+[2025-05-05T22:05:06.526+0000] {logging_mixin.py:190} INFO - Searching at point 52/2562: (27.5, -2.8)
+[2025-05-05T22:05:08.366+0000] {logging_mixin.py:190} INFO - Searching at point 53/2562: (27.5, -2.6)
+[2025-05-05T22:05:10.392+0000] {logging_mixin.py:190} INFO - Searching at point 54/2562: (27.5, -2.4)
+[2025-05-05T22:05:12.126+0000] {logging_mixin.py:190} INFO - Searching at point 55/2562: (27.5, -2.2)
+[2025-05-05T22:05:13.898+0000] {logging_mixin.py:190} INFO - Searching at point 56/2562: (27.5, -2.0)
+[2025-05-05T22:05:15.657+0000] {logging_mixin.py:190} INFO - Searching at point 57/2562: (27.5, -1.8)
+[2025-05-05T22:05:17.483+0000] {logging_mixin.py:190} INFO - Searching at point 58/2562: (27.5, -1.6)
+[2025-05-05T22:05:19.219+0000] {logging_mixin.py:190} INFO - Searching at point 59/2562: (27.5, -1.4)
+[2025-05-05T22:05:20.979+0000] {logging_mixin.py:190} INFO - Searching at point 60/2562: (27.5, -1.2)
+[2025-05-05T22:05:22.803+0000] {logging_mixin.py:190} INFO - Searching at point 61/2562: (27.5, -1.0)
+[2025-05-05T22:05:24.544+0000] {logging_mixin.py:190} INFO - Searching at point 62/2562: (27.7, -13.0)
+[2025-05-05T22:05:26.387+0000] {logging_mixin.py:190} INFO - Searching at point 63/2562: (27.7, -12.8)
+[2025-05-05T22:05:28.127+0000] {logging_mixin.py:190} INFO - Searching at point 64/2562: (27.7, -12.6)
+[2025-05-05T22:05:29.977+0000] {logging_mixin.py:190} INFO - Searching at point 65/2562: (27.7, -12.4)
+[2025-05-05T22:05:31.715+0000] {logging_mixin.py:190} INFO - Searching at point 66/2562: (27.7, -12.2)
+[2025-05-05T22:05:33.454+0000] {logging_mixin.py:190} INFO - Searching at point 67/2562: (27.7, -12.0)
+[2025-05-05T22:05:35.726+0000] {logging_mixin.py:190} INFO - Searching at point 68/2562: (27.7, -11.8)
+[2025-05-05T22:05:37.551+0000] {logging_mixin.py:190} INFO - Searching at point 69/2562: (27.7, -11.6)
+[2025-05-05T22:05:39.414+0000] {logging_mixin.py:190} INFO - Searching at point 70/2562: (27.7, -11.4)
+[2025-05-05T22:05:41.375+0000] {logging_mixin.py:190} INFO - Searching at point 71/2562: (27.7, -11.2)
+[2025-05-05T22:05:43.320+0000] {logging_mixin.py:190} INFO - Searching at point 72/2562: (27.7, -11.0)
+[2025-05-05T22:05:45.129+0000] {logging_mixin.py:190} INFO - Searching at point 73/2562: (27.7, -10.8)
+[2025-05-05T22:05:46.975+0000] {logging_mixin.py:190} INFO - Searching at point 74/2562: (27.7, -10.6)
+[2025-05-05T22:05:48.818+0000] {logging_mixin.py:190} INFO - Searching at point 75/2562: (27.7, -10.4)
+[2025-05-05T22:05:50.557+0000] {logging_mixin.py:190} INFO - Searching at point 76/2562: (27.7, -10.2)
+[2025-05-05T22:05:52.253+0000] {logging_mixin.py:190} INFO - Searching at point 77/2562: (27.7, -10.0)
+[2025-05-05T22:05:54.461+0000] {logging_mixin.py:190} INFO - Searching at point 78/2562: (27.7, -9.8)
+[2025-05-05T22:05:56.185+0000] {logging_mixin.py:190} INFO - Searching at point 79/2562: (27.7, -9.6)
+[2025-05-05T22:05:58.031+0000] {logging_mixin.py:190} INFO - Searching at point 80/2562: (27.7, -9.4)
+[2025-05-05T22:05:59.976+0000] {logging_mixin.py:190} INFO - Searching at point 81/2562: (27.7, -9.2)
+[2025-05-05T22:06:01.719+0000] {logging_mixin.py:190} INFO - Searching at point 82/2562: (27.7, -9.0)
+[2025-05-05T22:06:03.559+0000] {logging_mixin.py:190} INFO - Searching at point 83/2562: (27.7, -8.8)
+[2025-05-05T22:06:05.286+0000] {logging_mixin.py:190} INFO - Searching at point 84/2562: (27.7, -8.6)
+[2025-05-05T22:06:07.041+0000] {logging_mixin.py:190} INFO - Searching at point 85/2562: (27.7, -8.4)
+[2025-05-05T22:06:08.884+0000] {logging_mixin.py:190} INFO - Searching at point 86/2562: (27.7, -8.2)
+[2025-05-05T22:06:10.730+0000] {logging_mixin.py:190} INFO - Searching at point 87/2562: (27.7, -8.0)
+[2025-05-05T22:06:12.452+0000] {logging_mixin.py:190} INFO - Searching at point 88/2562: (27.7, -7.8)
+[2025-05-05T22:06:14.209+0000] {logging_mixin.py:190} INFO - Searching at point 89/2562: (27.7, -7.6)
+[2025-05-05T22:06:15.958+0000] {logging_mixin.py:190} INFO - Searching at point 90/2562: (27.7, -7.4)
+[2025-05-05T22:06:17.796+0000] {logging_mixin.py:190} INFO - Searching at point 91/2562: (27.7, -7.2)
+[2025-05-05T22:06:19.638+0000] {logging_mixin.py:190} INFO - Searching at point 92/2562: (27.7, -7.0)
+[2025-05-05T22:06:21.487+0000] {logging_mixin.py:190} INFO - Searching at point 93/2562: (27.7, -6.8)
+[2025-05-05T22:06:23.295+0000] {logging_mixin.py:190} INFO - Searching at point 94/2562: (27.7, -6.6)
+[2025-05-05T22:06:25.165+0000] {logging_mixin.py:190} INFO - Searching at point 95/2562: (27.7, -6.4)
+[2025-05-05T22:06:27.008+0000] {logging_mixin.py:190} INFO - Searching at point 96/2562: (27.7, -6.2)
+[2025-05-05T22:06:28.854+0000] {logging_mixin.py:190} INFO - Searching at point 97/2562: (27.7, -6.0)
+[2025-05-05T22:06:30.590+0000] {logging_mixin.py:190} INFO - Searching at point 98/2562: (27.7, -5.8)
+[2025-05-05T22:06:32.359+0000] {logging_mixin.py:190} INFO - Searching at point 99/2562: (27.7, -5.6)
+[2025-05-05T22:06:34.176+0000] {logging_mixin.py:190} INFO - Searching at point 100/2562: (27.7, -5.4)
+[2025-05-05T22:06:35.922+0000] {logging_mixin.py:190} INFO - Searching at point 101/2562: (27.7, -5.2)
+[2025-05-05T22:06:37.761+0000] {logging_mixin.py:190} INFO - Searching at point 102/2562: (27.7, -5.0)
+[2025-05-05T22:06:39.603+0000] {logging_mixin.py:190} INFO - Searching at point 103/2562: (27.7, -4.8)
+[2025-05-05T22:06:41.345+0000] {logging_mixin.py:190} INFO - Searching at point 104/2562: (27.7, -4.6)
+[2025-05-05T22:06:43.189+0000] {logging_mixin.py:190} INFO - Searching at point 105/2562: (27.7, -4.4)
+[2025-05-05T22:06:44.985+0000] {logging_mixin.py:190} INFO - Searching at point 106/2562: (27.7, -4.2)
+[2025-05-05T22:06:46.717+0000] {logging_mixin.py:190} INFO - Searching at point 107/2562: (27.7, -4.0)
+[2025-05-05T22:06:48.447+0000] {logging_mixin.py:190} INFO - Searching at point 108/2562: (27.7, -3.8)
+[2025-05-05T22:06:50.261+0000] {logging_mixin.py:190} INFO - Searching at point 109/2562: (27.7, -3.6)
+[2025-05-05T22:06:52.097+0000] {logging_mixin.py:190} INFO - Searching at point 110/2562: (27.7, -3.4)
+[2025-05-05T22:06:53.938+0000] {logging_mixin.py:190} INFO - Searching at point 111/2562: (27.7, -3.2)
+[2025-05-05T22:06:55.783+0000] {logging_mixin.py:190} INFO - Searching at point 112/2562: (27.7, -3.0)
+[2025-05-05T22:06:57.514+0000] {logging_mixin.py:190} INFO - Searching at point 113/2562: (27.7, -2.8)
+[2025-05-05T22:06:59.367+0000] {logging_mixin.py:190} INFO - Searching at point 114/2562: (27.7, -2.6)
+[2025-05-05T22:07:01.262+0000] {logging_mixin.py:190} INFO - Searching at point 115/2562: (27.7, -2.4)
+[2025-05-05T22:07:03.002+0000] {logging_mixin.py:190} INFO - Searching at point 116/2562: (27.7, -2.2)
+[2025-05-05T22:07:04.792+0000] {logging_mixin.py:190} INFO - Searching at point 117/2562: (27.7, -2.0)
+[2025-05-05T22:07:06.635+0000] {logging_mixin.py:190} INFO - Searching at point 118/2562: (27.7, -1.8)
+[2025-05-05T22:07:08.375+0000] {logging_mixin.py:190} INFO - Searching at point 119/2562: (27.7, -1.6)
+[2025-05-05T22:07:10.105+0000] {logging_mixin.py:190} INFO - Searching at point 120/2562: (27.7, -1.4)
+[2025-05-05T22:07:11.816+0000] {logging_mixin.py:190} INFO - Searching at point 121/2562: (27.7, -1.2)
+[2025-05-05T22:07:13.597+0000] {logging_mixin.py:190} INFO - Searching at point 122/2562: (27.7, -1.0)
+[2025-05-05T22:07:15.339+0000] {logging_mixin.py:190} INFO - Searching at point 123/2562: (27.9, -13.0)
+[2025-05-05T22:07:17.197+0000] {logging_mixin.py:190} INFO - Searching at point 124/2562: (27.9, -12.8)
+[2025-05-05T22:07:19.027+0000] {logging_mixin.py:190} INFO - Searching at point 125/2562: (27.9, -12.6)
+[2025-05-05T22:07:20.960+0000] {logging_mixin.py:190} INFO - Searching at point 126/2562: (27.9, -12.4)
+[2025-05-05T22:07:22.741+0000] {logging_mixin.py:190} INFO - Searching at point 127/2562: (27.9, -12.2)
+[2025-05-05T22:07:24.556+0000] {logging_mixin.py:190} INFO - Searching at point 128/2562: (27.9, -12.0)
+[2025-05-05T22:07:26.397+0000] {logging_mixin.py:190} INFO - Searching at point 129/2562: (27.9, -11.8)
+[2025-05-05T22:07:28.377+0000] {logging_mixin.py:190} INFO - Searching at point 130/2562: (27.9, -11.6)
+[2025-05-05T22:07:30.833+0000] {logging_mixin.py:190} INFO - Searching at point 131/2562: (27.9, -11.4)
+[2025-05-05T22:07:32.644+0000] {logging_mixin.py:190} INFO - Searching at point 132/2562: (27.9, -11.2)
+[2025-05-05T22:07:34.493+0000] {logging_mixin.py:190} INFO - Searching at point 133/2562: (27.9, -11.0)
+[2025-05-05T22:07:36.542+0000] {logging_mixin.py:190} INFO - Searching at point 134/2562: (27.9, -10.8)
+[2025-05-05T22:07:38.523+0000] {logging_mixin.py:190} INFO - Searching at point 135/2562: (27.9, -10.6)
+[2025-05-05T22:07:40.323+0000] {logging_mixin.py:190} INFO - Searching at point 136/2562: (27.9, -10.4)
+[2025-05-05T22:07:42.145+0000] {logging_mixin.py:190} INFO - Searching at point 137/2562: (27.9, -10.2)
+[2025-05-05T22:07:43.910+0000] {logging_mixin.py:190} INFO - Searching at point 138/2562: (27.9, -10.0)
+[2025-05-05T22:07:45.753+0000] {logging_mixin.py:190} INFO - Searching at point 139/2562: (27.9, -9.8)
+[2025-05-05T22:07:47.732+0000] {logging_mixin.py:190} INFO - Searching at point 140/2562: (27.9, -9.6)
+[2025-05-05T22:07:49.486+0000] {logging_mixin.py:190} INFO - Searching at point 141/2562: (27.9, -9.4)
+[2025-05-05T22:07:51.293+0000] {logging_mixin.py:190} INFO - Searching at point 142/2562: (27.9, -9.2)
+[2025-05-05T22:07:53.104+0000] {logging_mixin.py:190} INFO - Searching at point 143/2562: (27.9, -9.0)
+[2025-05-05T22:07:54.967+0000] {logging_mixin.py:190} INFO - Searching at point 144/2562: (27.9, -8.8)
+[2025-05-05T22:07:56.711+0000] {logging_mixin.py:190} INFO - Searching at point 145/2562: (27.9, -8.6)
+[2025-05-05T22:07:58.490+0000] {logging_mixin.py:190} INFO - Searching at point 146/2562: (27.9, -8.4)
+[2025-05-05T22:08:00.292+0000] {logging_mixin.py:190} INFO - Searching at point 147/2562: (27.9, -8.2)
+[2025-05-05T22:08:02.138+0000] {logging_mixin.py:190} INFO - Searching at point 148/2562: (27.9, -8.0)
+[2025-05-05T22:08:03.979+0000] {logging_mixin.py:190} INFO - Searching at point 149/2562: (27.9, -7.8)
+[2025-05-05T22:08:05.718+0000] {logging_mixin.py:190} INFO - Searching at point 150/2562: (27.9, -7.6)
+[2025-05-05T22:08:07.563+0000] {logging_mixin.py:190} INFO - Searching at point 151/2562: (27.9, -7.4)
+[2025-05-05T22:08:09.512+0000] {logging_mixin.py:190} INFO - Searching at point 152/2562: (27.9, -7.2)
+[2025-05-05T22:08:11.346+0000] {logging_mixin.py:190} INFO - Searching at point 153/2562: (27.9, -7.0)
+[2025-05-05T22:08:13.097+0000] {logging_mixin.py:190} INFO - Searching at point 154/2562: (27.9, -6.8)
+[2025-05-05T22:08:14.937+0000] {logging_mixin.py:190} INFO - Searching at point 155/2562: (27.9, -6.6)
+[2025-05-05T22:08:16.676+0000] {logging_mixin.py:190} INFO - Searching at point 156/2562: (27.9, -6.4)
+[2025-05-05T22:08:18.418+0000] {logging_mixin.py:190} INFO - Searching at point 157/2562: (27.9, -6.2)
+[2025-05-05T22:08:20.427+0000] {logging_mixin.py:190} INFO - Searching at point 158/2562: (27.9, -6.0)
+[2025-05-05T22:08:22.205+0000] {logging_mixin.py:190} INFO - Searching at point 159/2562: (27.9, -5.8)
+[2025-05-05T22:08:23.927+0000] {logging_mixin.py:190} INFO - Searching at point 160/2562: (27.9, -5.6)
+[2025-05-05T22:08:25.847+0000] {logging_mixin.py:190} INFO - Searching at point 161/2562: (27.9, -5.4)
+[2025-05-05T22:08:27.632+0000] {logging_mixin.py:190} INFO - Searching at point 162/2562: (27.9, -5.2)
+[2025-05-05T22:08:29.475+0000] {logging_mixin.py:190} INFO - Searching at point 163/2562: (27.9, -5.0)
+[2025-05-05T22:08:31.325+0000] {logging_mixin.py:190} INFO - Searching at point 164/2562: (27.9, -4.8)
+[2025-05-05T22:08:33.056+0000] {logging_mixin.py:190} INFO - Searching at point 165/2562: (27.9, -4.6)
+[2025-05-05T22:08:34.908+0000] {logging_mixin.py:190} INFO - Searching at point 166/2562: (27.9, -4.4)
+[2025-05-05T22:08:36.653+0000] {logging_mixin.py:190} INFO - Searching at point 167/2562: (27.9, -4.2)
+[2025-05-05T22:08:38.487+0000] {logging_mixin.py:190} INFO - Searching at point 168/2562: (27.9, -4.0)
+[2025-05-05T22:08:40.333+0000] {logging_mixin.py:190} INFO - Searching at point 169/2562: (27.9, -3.8)
+[2025-05-05T22:08:42.277+0000] {logging_mixin.py:190} INFO - Searching at point 170/2562: (27.9, -3.6)
+[2025-05-05T22:08:44.045+0000] {logging_mixin.py:190} INFO - Searching at point 171/2562: (27.9, -3.4)
+[2025-05-05T22:08:45.865+0000] {logging_mixin.py:190} INFO - Searching at point 172/2562: (27.9, -3.2)
+[2025-05-05T22:08:47.705+0000] {logging_mixin.py:190} INFO - Searching at point 173/2562: (27.9, -3.0)
+[2025-05-05T22:08:49.446+0000] {logging_mixin.py:190} INFO - Searching at point 174/2562: (27.9, -2.8)
+[2025-05-05T22:08:51.178+0000] {logging_mixin.py:190} INFO - Searching at point 175/2562: (27.9, -2.6)
+[2025-05-05T22:08:52.926+0000] {logging_mixin.py:190} INFO - Searching at point 176/2562: (27.9, -2.4)
+[2025-05-05T22:08:54.767+0000] {logging_mixin.py:190} INFO - Searching at point 177/2562: (27.9, -2.2)
+[2025-05-05T22:08:56.612+0000] {logging_mixin.py:190} INFO - Searching at point 178/2562: (27.9, -2.0)
+[2025-05-05T22:08:58.459+0000] {logging_mixin.py:190} INFO - Searching at point 179/2562: (27.9, -1.8)
+[2025-05-05T22:09:00.244+0000] {logging_mixin.py:190} INFO - Searching at point 180/2562: (27.9, -1.6)
+[2025-05-05T22:09:02.348+0000] {logging_mixin.py:190} INFO - Searching at point 181/2562: (27.9, -1.4)
+[2025-05-05T22:09:04.190+0000] {logging_mixin.py:190} INFO - Searching at point 182/2562: (27.9, -1.2)
+[2025-05-05T22:09:06.032+0000] {logging_mixin.py:190} INFO - Searching at point 183/2562: (27.9, -1.0)
+[2025-05-05T22:09:07.874+0000] {logging_mixin.py:190} INFO - Searching at point 184/2562: (28.1, -13.0)
+[2025-05-05T22:09:09.718+0000] {logging_mixin.py:190} INFO - Searching at point 185/2562: (28.1, -12.8)
+[2025-05-05T22:09:11.563+0000] {logging_mixin.py:190} INFO - Searching at point 186/2562: (28.1, -12.6)
+[2025-05-05T22:09:15.649+0000] {logging_mixin.py:190} INFO - Searching at point 187/2562: (28.1, -12.4)
+[2025-05-05T22:09:17.503+0000] {logging_mixin.py:190} INFO - Searching at point 188/2562: (28.1, -12.2)
+[2025-05-05T22:09:19.344+0000] {logging_mixin.py:190} INFO - Searching at point 189/2562: (28.1, -12.0)
+[2025-05-05T22:09:21.188+0000] {logging_mixin.py:190} INFO - Searching at point 190/2562: (28.1, -11.8)
+[2025-05-05T22:09:22.942+0000] {logging_mixin.py:190} INFO - Searching at point 191/2562: (28.1, -11.6)
+[2025-05-05T22:09:24.875+0000] {logging_mixin.py:190} INFO - Searching at point 192/2562: (28.1, -11.4)
+[2025-05-05T22:09:26.734+0000] {logging_mixin.py:190} INFO - Searching at point 193/2562: (28.1, -11.2)
+[2025-05-05T22:09:28.561+0000] {logging_mixin.py:190} INFO - Searching at point 194/2562: (28.1, -11.0)
+[2025-05-05T22:09:30.312+0000] {logging_mixin.py:190} INFO - Searching at point 195/2562: (28.1, -10.8)
+[2025-05-05T22:09:32.074+0000] {logging_mixin.py:190} INFO - Searching at point 196/2562: (28.1, -10.6)
+[2025-05-05T22:09:33.883+0000] {logging_mixin.py:190} INFO - Searching at point 197/2562: (28.1, -10.4)
+[2025-05-05T22:09:35.870+0000] {logging_mixin.py:190} INFO - Searching at point 198/2562: (28.1, -10.2)
+[2025-05-05T22:09:37.778+0000] {logging_mixin.py:190} INFO - Searching at point 199/2562: (28.1, -10.0)
+[2025-05-05T22:09:39.514+0000] {logging_mixin.py:190} INFO - Searching at point 200/2562: (28.1, -9.8)
+[2025-05-05T22:09:41.359+0000] {logging_mixin.py:190} INFO - Searching at point 201/2562: (28.1, -9.6)
+[2025-05-05T22:09:43.208+0000] {logging_mixin.py:190} INFO - Searching at point 202/2562: (28.1, -9.4)
+[2025-05-05T22:09:45.058+0000] {logging_mixin.py:190} INFO - Searching at point 203/2562: (28.1, -9.2)
+[2025-05-05T22:09:46.894+0000] {logging_mixin.py:190} INFO - Searching at point 204/2562: (28.1, -9.0)
+[2025-05-05T22:09:48.883+0000] {logging_mixin.py:190} INFO - Searching at point 205/2562: (28.1, -8.8)
+[2025-05-05T22:09:50.782+0000] {logging_mixin.py:190} INFO - Searching at point 206/2562: (28.1, -8.6)
+[2025-05-05T22:09:52.624+0000] {logging_mixin.py:190} INFO - Searching at point 207/2562: (28.1, -8.4)
+[2025-05-05T22:09:54.566+0000] {logging_mixin.py:190} INFO - Searching at point 208/2562: (28.1, -8.2)
+[2025-05-05T22:09:56.308+0000] {logging_mixin.py:190} INFO - Searching at point 209/2562: (28.1, -8.0)
+[2025-05-05T22:09:58.154+0000] {logging_mixin.py:190} INFO - Searching at point 210/2562: (28.1, -7.8)
+[2025-05-05T22:09:59.924+0000] {logging_mixin.py:190} INFO - Searching at point 211/2562: (28.1, -7.6)
+[2025-05-05T22:10:01.734+0000] {logging_mixin.py:190} INFO - Searching at point 212/2562: (28.1, -7.4)
+[2025-05-05T22:10:03.493+0000] {logging_mixin.py:190} INFO - Searching at point 213/2562: (28.1, -7.2)
+[2025-05-05T22:10:05.254+0000] {logging_mixin.py:190} INFO - Searching at point 214/2562: (28.1, -7.0)
+[2025-05-05T22:10:07.062+0000] {logging_mixin.py:190} INFO - Searching at point 215/2562: (28.1, -6.8)
+[2025-05-05T22:10:08.904+0000] {logging_mixin.py:190} INFO - Searching at point 216/2562: (28.1, -6.6)
+[2025-05-05T22:10:10.749+0000] {logging_mixin.py:190} INFO - Searching at point 217/2562: (28.1, -6.4)
+[2025-05-05T22:10:12.592+0000] {logging_mixin.py:190} INFO - Searching at point 218/2562: (28.1, -6.2)
+[2025-05-05T22:10:14.435+0000] {logging_mixin.py:190} INFO - Searching at point 219/2562: (28.1, -6.0)
+[2025-05-05T22:10:16.175+0000] {logging_mixin.py:190} INFO - Searching at point 220/2562: (28.1, -5.8)
+[2025-05-05T22:10:18.223+0000] {logging_mixin.py:190} INFO - Searching at point 221/2562: (28.1, -5.6)
+[2025-05-05T22:10:20.068+0000] {logging_mixin.py:190} INFO - Searching at point 222/2562: (28.1, -5.4)
+[2025-05-05T22:10:21.907+0000] {logging_mixin.py:190} INFO - Searching at point 223/2562: (28.1, -5.2)
+[2025-05-05T22:10:23.649+0000] {logging_mixin.py:190} INFO - Searching at point 224/2562: (28.1, -5.0)
+[2025-05-05T22:10:25.492+0000] {logging_mixin.py:190} INFO - Searching at point 225/2562: (28.1, -4.8)
+[2025-05-05T22:10:27.336+0000] {logging_mixin.py:190} INFO - Searching at point 226/2562: (28.1, -4.6)
+[2025-05-05T22:10:29.181+0000] {logging_mixin.py:190} INFO - Searching at point 227/2562: (28.1, -4.4)
+[2025-05-05T22:10:30.924+0000] {logging_mixin.py:190} INFO - Searching at point 228/2562: (28.1, -4.2)
+[2025-05-05T22:10:32.764+0000] {logging_mixin.py:190} INFO - Searching at point 229/2562: (28.1, -4.0)
+[2025-05-05T22:10:34.607+0000] {logging_mixin.py:190} INFO - Searching at point 230/2562: (28.1, -3.8)
+[2025-05-05T22:10:36.450+0000] {logging_mixin.py:190} INFO - Searching at point 231/2562: (28.1, -3.6)
+[2025-05-05T22:10:38.174+0000] {logging_mixin.py:190} INFO - Searching at point 232/2562: (28.1, -3.4)
+[2025-05-05T22:10:39.933+0000] {logging_mixin.py:190} INFO - Searching at point 233/2562: (28.1, -3.2)
+[2025-05-05T22:10:41.732+0000] {logging_mixin.py:190} INFO - Searching at point 234/2562: (28.1, -3.0)
+[2025-05-05T22:10:43.474+0000] {logging_mixin.py:190} INFO - Searching at point 235/2562: (28.1, -2.8)
+[2025-05-05T22:10:45.263+0000] {logging_mixin.py:190} INFO - Searching at point 236/2562: (28.1, -2.6)
+[2025-05-05T22:10:47.106+0000] {logging_mixin.py:190} INFO - Searching at point 237/2562: (28.1, -2.4)
+[2025-05-05T22:10:48.948+0000] {logging_mixin.py:190} INFO - Searching at point 238/2562: (28.1, -2.2)
+[2025-05-05T22:10:50.786+0000] {logging_mixin.py:190} INFO - Searching at point 239/2562: (28.1, -2.0)
+[2025-05-05T22:10:52.562+0000] {logging_mixin.py:190} INFO - Searching at point 240/2562: (28.1, -1.8)
+[2025-05-05T22:10:54.372+0000] {logging_mixin.py:190} INFO - Searching at point 241/2562: (28.1, -1.6)
+[2025-05-05T22:10:56.213+0000] {logging_mixin.py:190} INFO - Searching at point 242/2562: (28.1, -1.4)
+[2025-05-05T22:10:58.056+0000] {logging_mixin.py:190} INFO - Searching at point 243/2562: (28.1, -1.2)
+[2025-05-05T22:10:59.793+0000] {logging_mixin.py:190} INFO - Searching at point 244/2562: (28.1, -1.0)
+[2025-05-05T22:11:01.641+0000] {logging_mixin.py:190} INFO - Searching at point 245/2562: (28.3, -13.0)
+[2025-05-05T22:11:16.926+0000] {logging_mixin.py:190} INFO - Searching at point 246/2562: (28.3, -12.8)
+[2025-05-05T22:11:22.311+0000] {logging_mixin.py:190} INFO - Searching at point 247/2562: (28.3, -12.6)
+[2025-05-05T22:11:28.943+0000] {logging_mixin.py:190} INFO - Searching at point 248/2562: (28.3, -12.4)
+[2025-05-05T22:11:39.203+0000] {logging_mixin.py:190} INFO - Searching at point 249/2562: (28.3, -12.2)
+[2025-05-05T22:11:43.424+0000] {logging_mixin.py:190} INFO - Searching at point 250/2562: (28.3, -12.0)
+[2025-05-05T22:11:45.155+0000] {logging_mixin.py:190} INFO - Searching at point 251/2562: (28.3, -11.8)
+[2025-05-05T22:11:52.163+0000] {logging_mixin.py:190} INFO - Searching at point 252/2562: (28.3, -11.6)
+[2025-05-05T22:11:54.793+0000] {logging_mixin.py:190} INFO - Searching at point 253/2562: (28.3, -11.4)
+[2025-05-05T22:11:57.604+0000] {logging_mixin.py:190} INFO - Searching at point 254/2562: (28.3, -11.2)
+[2025-05-05T22:11:59.413+0000] {logging_mixin.py:190} INFO - Searching at point 255/2562: (28.3, -11.0)
+[2025-05-05T22:12:01.242+0000] {logging_mixin.py:190} INFO - Searching at point 256/2562: (28.3, -10.8)
+[2025-05-05T22:12:03.222+0000] {logging_mixin.py:190} INFO - Searching at point 257/2562: (28.3, -10.6)
+[2025-05-05T22:12:05.024+0000] {logging_mixin.py:190} INFO - Searching at point 258/2562: (28.3, -10.4)
+[2025-05-05T22:12:07.107+0000] {logging_mixin.py:190} INFO - Searching at point 259/2562: (28.3, -10.2)
+[2025-05-05T22:12:08.919+0000] {logging_mixin.py:190} INFO - Searching at point 260/2562: (28.3, -10.0)
+[2025-05-05T22:12:10.766+0000] {logging_mixin.py:190} INFO - Searching at point 261/2562: (28.3, -9.8)
+[2025-05-05T22:12:12.607+0000] {logging_mixin.py:190} INFO - Searching at point 262/2562: (28.3, -9.6)
+[2025-05-05T22:12:14.343+0000] {logging_mixin.py:190} INFO - Searching at point 263/2562: (28.3, -9.4)
+[2025-05-05T22:12:16.138+0000] {logging_mixin.py:190} INFO - Searching at point 264/2562: (28.3, -9.2)
+[2025-05-05T22:12:18.030+0000] {logging_mixin.py:190} INFO - Searching at point 265/2562: (28.3, -9.0)
+[2025-05-05T22:12:20.296+0000] {logging_mixin.py:190} INFO - Searching at point 266/2562: (28.3, -8.8)
+[2025-05-05T22:12:22.124+0000] {logging_mixin.py:190} INFO - Searching at point 267/2562: (28.3, -8.6)
+[2025-05-05T22:12:23.969+0000] {logging_mixin.py:190} INFO - Searching at point 268/2562: (28.3, -8.4)
+[2025-05-05T22:12:25.749+0000] {logging_mixin.py:190} INFO - Searching at point 269/2562: (28.3, -8.2)
+[2025-05-05T22:12:27.554+0000] {logging_mixin.py:190} INFO - Searching at point 270/2562: (28.3, -8.0)
+[2025-05-05T22:12:29.293+0000] {logging_mixin.py:190} INFO - Searching at point 271/2562: (28.3, -7.8)
+[2025-05-05T22:12:31.136+0000] {logging_mixin.py:190} INFO - Searching at point 272/2562: (28.3, -7.6)
+[2025-05-05T22:12:32.980+0000] {logging_mixin.py:190} INFO - Searching at point 273/2562: (28.3, -7.4)
+[2025-05-05T22:12:34.823+0000] {logging_mixin.py:190} INFO - Searching at point 274/2562: (28.3, -7.2)
+[2025-05-05T22:12:36.578+0000] {logging_mixin.py:190} INFO - Searching at point 275/2562: (28.3, -7.0)
+[2025-05-05T22:12:38.411+0000] {logging_mixin.py:190} INFO - Searching at point 276/2562: (28.3, -6.8)
+[2025-05-05T22:12:40.251+0000] {logging_mixin.py:190} INFO - Searching at point 277/2562: (28.3, -6.6)
+[2025-05-05T22:12:42.093+0000] {logging_mixin.py:190} INFO - Searching at point 278/2562: (28.3, -6.4)
+[2025-05-05T22:12:43.939+0000] {logging_mixin.py:190} INFO - Searching at point 279/2562: (28.3, -6.2)
+[2025-05-05T22:12:46.035+0000] {logging_mixin.py:190} INFO - Searching at point 280/2562: (28.3, -6.0)
+[2025-05-05T22:12:47.776+0000] {logging_mixin.py:190} INFO - Searching at point 281/2562: (28.3, -5.8)
+[2025-05-05T22:12:49.510+0000] {logging_mixin.py:190} INFO - Searching at point 282/2562: (28.3, -5.6)
+[2025-05-05T22:12:51.247+0000] {logging_mixin.py:190} INFO - Searching at point 283/2562: (28.3, -5.4)
+[2025-05-05T22:12:53.041+0000] {logging_mixin.py:190} INFO - Searching at point 284/2562: (28.3, -5.2)
+[2025-05-05T22:12:54.996+0000] {logging_mixin.py:190} INFO - Searching at point 285/2562: (28.3, -5.0)
+[2025-05-05T22:12:56.729+0000] {logging_mixin.py:190} INFO - Searching at point 286/2562: (28.3, -4.8)
+[2025-05-05T22:12:58.476+0000] {logging_mixin.py:190} INFO - Searching at point 287/2562: (28.3, -4.6)
+[2025-05-05T22:13:00.323+0000] {logging_mixin.py:190} INFO - Searching at point 288/2562: (28.3, -4.4)
+[2025-05-05T22:13:02.166+0000] {logging_mixin.py:190} INFO - Searching at point 289/2562: (28.3, -4.2)
+[2025-05-05T22:13:04.007+0000] {logging_mixin.py:190} INFO - Searching at point 290/2562: (28.3, -4.0)
+[2025-05-05T22:13:05.852+0000] {logging_mixin.py:190} INFO - Searching at point 291/2562: (28.3, -3.8)
+[2025-05-05T22:13:07.694+0000] {logging_mixin.py:190} INFO - Searching at point 292/2562: (28.3, -3.6)
+[2025-05-05T22:13:09.536+0000] {logging_mixin.py:190} INFO - Searching at point 293/2562: (28.3, -3.4)
+[2025-05-05T22:13:11.380+0000] {logging_mixin.py:190} INFO - Searching at point 294/2562: (28.3, -3.2)
+[2025-05-05T22:13:13.124+0000] {logging_mixin.py:190} INFO - Searching at point 295/2562: (28.3, -3.0)
+[2025-05-05T22:13:14.863+0000] {logging_mixin.py:190} INFO - Searching at point 296/2562: (28.3, -2.8)
+[2025-05-05T22:13:16.586+0000] {logging_mixin.py:190} INFO - Searching at point 297/2562: (28.3, -2.6)
+[2025-05-05T22:13:18.343+0000] {logging_mixin.py:190} INFO - Searching at point 298/2562: (28.3, -2.4)
+[2025-05-05T22:13:20.187+0000] {logging_mixin.py:190} INFO - Searching at point 299/2562: (28.3, -2.2)
+[2025-05-05T22:13:22.026+0000] {logging_mixin.py:190} INFO - Searching at point 300/2562: (28.3, -2.0)
+[2025-05-05T22:13:23.873+0000] {logging_mixin.py:190} INFO - Searching at point 301/2562: (28.3, -1.8)
+[2025-05-05T22:13:25.638+0000] {logging_mixin.py:190} INFO - Searching at point 302/2562: (28.3, -1.6)
+[2025-05-05T22:13:27.454+0000] {logging_mixin.py:190} INFO - Searching at point 303/2562: (28.3, -1.4)
+[2025-05-05T22:13:29.311+0000] {logging_mixin.py:190} INFO - Searching at point 304/2562: (28.3, -1.2)
+[2025-05-05T22:13:31.143+0000] {logging_mixin.py:190} INFO - Searching at point 305/2562: (28.3, -1.0)
+[2025-05-05T22:13:32.984+0000] {logging_mixin.py:190} INFO - Searching at point 306/2562: (28.5, -13.0)
+[2025-05-05T22:13:35.334+0000] {logging_mixin.py:190} INFO - Searching at point 307/2562: (28.5, -12.8)
+[2025-05-05T22:13:38.388+0000] {logging_mixin.py:190} INFO - Searching at point 308/2562: (28.5, -12.6)
+[2025-05-05T22:13:45.069+0000] {logging_mixin.py:190} INFO - Searching at point 309/2562: (28.5, -12.4)
+[2025-05-05T22:13:49.472+0000] {logging_mixin.py:190} INFO - Searching at point 310/2562: (28.5, -12.2)
+[2025-05-05T22:13:56.233+0000] {logging_mixin.py:190} INFO - Searching at point 311/2562: (28.5, -12.0)
+[2025-05-05T22:14:00.314+0000] {logging_mixin.py:190} INFO - Searching at point 312/2562: (28.5, -11.8)
+[2025-05-05T22:14:07.731+0000] {logging_mixin.py:190} INFO - Searching at point 313/2562: (28.5, -11.6)
+[2025-05-05T22:14:14.562+0000] {logging_mixin.py:190} INFO - Searching at point 314/2562: (28.5, -11.4)
+[2025-05-05T22:14:16.403+0000] {logging_mixin.py:190} INFO - Searching at point 315/2562: (28.5, -11.2)
+[2025-05-05T22:14:18.246+0000] {logging_mixin.py:190} INFO - Searching at point 316/2562: (28.5, -11.0)
+[2025-05-05T22:14:20.088+0000] {logging_mixin.py:190} INFO - Searching at point 317/2562: (28.5, -10.8)
+[2025-05-05T22:14:21.921+0000] {logging_mixin.py:190} INFO - Searching at point 318/2562: (28.5, -10.6)
+[2025-05-05T22:14:23.775+0000] {logging_mixin.py:190} INFO - Searching at point 319/2562: (28.5, -10.4)
+[2025-05-05T22:14:26.029+0000] {logging_mixin.py:190} INFO - Searching at point 320/2562: (28.5, -10.2)
+[2025-05-05T22:14:28.951+0000] {logging_mixin.py:190} INFO - Searching at point 321/2562: (28.5, -10.0)
+[2025-05-05T22:14:30.739+0000] {logging_mixin.py:190} INFO - Searching at point 322/2562: (28.5, -9.8)
+[2025-05-05T22:14:32.725+0000] {logging_mixin.py:190} INFO - Searching at point 323/2562: (28.5, -9.6)
+[2025-05-05T22:14:34.526+0000] {logging_mixin.py:190} INFO - Searching at point 324/2562: (28.5, -9.4)
+[2025-05-05T22:14:36.370+0000] {logging_mixin.py:190} INFO - Searching at point 325/2562: (28.5, -9.2)
+[2025-05-05T22:14:38.215+0000] {logging_mixin.py:190} INFO - Searching at point 326/2562: (28.5, -9.0)
+[2025-05-05T22:14:40.141+0000] {logging_mixin.py:190} INFO - Searching at point 327/2562: (28.5, -8.8)
+[2025-05-05T22:14:41.990+0000] {logging_mixin.py:190} INFO - Searching at point 328/2562: (28.5, -8.6)
+[2025-05-05T22:14:43.847+0000] {logging_mixin.py:190} INFO - Searching at point 329/2562: (28.5, -8.4)
+[2025-05-05T22:14:45.689+0000] {logging_mixin.py:190} INFO - Searching at point 330/2562: (28.5, -8.2)
+[2025-05-05T22:14:47.548+0000] {logging_mixin.py:190} INFO - Searching at point 331/2562: (28.5, -8.0)
+[2025-05-05T22:14:49.375+0000] {logging_mixin.py:190} INFO - Searching at point 332/2562: (28.5, -7.8)
+[2025-05-05T22:14:51.219+0000] {logging_mixin.py:190} INFO - Searching at point 333/2562: (28.5, -7.6)
+[2025-05-05T22:14:53.061+0000] {logging_mixin.py:190} INFO - Searching at point 334/2562: (28.5, -7.4)
+[2025-05-05T22:14:54.904+0000] {logging_mixin.py:190} INFO - Searching at point 335/2562: (28.5, -7.2)
+[2025-05-05T22:14:56.746+0000] {logging_mixin.py:190} INFO - Searching at point 336/2562: (28.5, -7.0)
+[2025-05-05T22:14:58.492+0000] {logging_mixin.py:190} INFO - Searching at point 337/2562: (28.5, -6.8)
+[2025-05-05T22:15:00.330+0000] {logging_mixin.py:190} INFO - Searching at point 338/2562: (28.5, -6.6)
+[2025-05-05T22:15:02.175+0000] {logging_mixin.py:190} INFO - Searching at point 339/2562: (28.5, -6.4)
+[2025-05-05T22:15:04.017+0000] {logging_mixin.py:190} INFO - Searching at point 340/2562: (28.5, -6.2)
+[2025-05-05T22:15:05.901+0000] {logging_mixin.py:190} INFO - Searching at point 341/2562: (28.5, -6.0)
+[2025-05-05T22:15:07.804+0000] {logging_mixin.py:190} INFO - Searching at point 342/2562: (28.5, -5.8)
+[2025-05-05T22:15:09.653+0000] {logging_mixin.py:190} INFO - Searching at point 343/2562: (28.5, -5.6)
+[2025-05-05T22:15:11.494+0000] {logging_mixin.py:190} INFO - Searching at point 344/2562: (28.5, -5.4)
+[2025-05-05T22:15:13.333+0000] {logging_mixin.py:190} INFO - Searching at point 345/2562: (28.5, -5.2)
+[2025-05-05T22:15:15.069+0000] {logging_mixin.py:190} INFO - Searching at point 346/2562: (28.5, -5.0)
+[2025-05-05T22:15:16.921+0000] {logging_mixin.py:190} INFO - Searching at point 347/2562: (28.5, -4.8)
+[2025-05-05T22:15:18.763+0000] {logging_mixin.py:190} INFO - Searching at point 348/2562: (28.5, -4.6)
+[2025-05-05T22:15:20.708+0000] {logging_mixin.py:190} INFO - Searching at point 349/2562: (28.5, -4.4)
+[2025-05-05T22:15:22.552+0000] {logging_mixin.py:190} INFO - Searching at point 350/2562: (28.5, -4.2)
+[2025-05-05T22:15:24.392+0000] {logging_mixin.py:190} INFO - Searching at point 351/2562: (28.5, -4.0)
+[2025-05-05T22:15:26.241+0000] {logging_mixin.py:190} INFO - Searching at point 352/2562: (28.5, -3.8)
+[2025-05-05T22:15:28.084+0000] {logging_mixin.py:190} INFO - Searching at point 353/2562: (28.5, -3.6)
+[2025-05-05T22:15:29.924+0000] {logging_mixin.py:190} INFO - Searching at point 354/2562: (28.5, -3.4)
+[2025-05-05T22:15:31.766+0000] {logging_mixin.py:190} INFO - Searching at point 355/2562: (28.5, -3.2)
+[2025-05-05T22:15:33.609+0000] {logging_mixin.py:190} INFO - Searching at point 356/2562: (28.5, -3.0)
+[2025-05-05T22:15:35.375+0000] {logging_mixin.py:190} INFO - Searching at point 357/2562: (28.5, -2.8)
+[2025-05-05T22:15:37.192+0000] {logging_mixin.py:190} INFO - Searching at point 358/2562: (28.5, -2.6)
+[2025-05-05T22:15:38.991+0000] {logging_mixin.py:190} INFO - Searching at point 359/2562: (28.5, -2.4)
+[2025-05-05T22:15:40.777+0000] {logging_mixin.py:190} INFO - Searching at point 360/2562: (28.5, -2.2)
+[2025-05-05T22:15:42.622+0000] {logging_mixin.py:190} INFO - Searching at point 361/2562: (28.5, -2.0)
+[2025-05-05T22:15:44.466+0000] {logging_mixin.py:190} INFO - Searching at point 362/2562: (28.5, -1.8)
+[2025-05-05T22:15:46.207+0000] {logging_mixin.py:190} INFO - Searching at point 363/2562: (28.5, -1.6)
+[2025-05-05T22:15:48.050+0000] {logging_mixin.py:190} INFO - Searching at point 364/2562: (28.5, -1.4)
+[2025-05-05T22:15:49.891+0000] {logging_mixin.py:190} INFO - Searching at point 365/2562: (28.5, -1.2)
+[2025-05-05T22:15:51.734+0000] {logging_mixin.py:190} INFO - Searching at point 366/2562: (28.5, -1.0)
+[2025-05-05T22:15:53.579+0000] {logging_mixin.py:190} INFO - Searching at point 367/2562: (28.7, -13.0)
+[2025-05-05T22:15:55.355+0000] {logging_mixin.py:190} INFO - Searching at point 368/2562: (28.7, -12.8)
+[2025-05-05T22:15:57.164+0000] {logging_mixin.py:190} INFO - Searching at point 369/2562: (28.7, -12.6)
+[2025-05-05T22:15:59.005+0000] {logging_mixin.py:190} INFO - Searching at point 370/2562: (28.7, -12.4)
+[2025-05-05T22:16:03.129+0000] {logging_mixin.py:190} INFO - Searching at point 371/2562: (28.7, -12.2)
+[2025-05-05T22:16:09.963+0000] {logging_mixin.py:190} INFO - Searching at point 372/2562: (28.7, -12.0)
+[2025-05-05T22:16:12.079+0000] {logging_mixin.py:190} INFO - Searching at point 373/2562: (28.7, -11.8)
+[2025-05-05T22:16:18.879+0000] {logging_mixin.py:190} INFO - Searching at point 374/2562: (28.7, -11.6)
+[2025-05-05T22:16:25.815+0000] {logging_mixin.py:190} INFO - Searching at point 375/2562: (28.7, -11.4)
+[2025-05-05T22:16:27.784+0000] {logging_mixin.py:190} INFO - Searching at point 376/2562: (28.7, -11.2)
+[2025-05-05T22:16:29.622+0000] {logging_mixin.py:190} INFO - Searching at point 377/2562: (28.7, -11.0)
+[2025-05-05T22:16:31.467+0000] {logging_mixin.py:190} INFO - Searching at point 378/2562: (28.7, -10.8)
+[2025-05-05T22:16:33.310+0000] {logging_mixin.py:190} INFO - Searching at point 379/2562: (28.7, -10.6)
+[2025-05-05T22:16:35.155+0000] {logging_mixin.py:190} INFO - Searching at point 380/2562: (28.7, -10.4)
+[2025-05-05T22:16:36.931+0000] {logging_mixin.py:190} INFO - Searching at point 381/2562: (28.7, -10.2)
+[2025-05-05T22:16:38.842+0000] {logging_mixin.py:190} INFO - Searching at point 382/2562: (28.7, -10.0)
+[2025-05-05T22:16:40.670+0000] {logging_mixin.py:190} INFO - Searching at point 383/2562: (28.7, -9.8)
+[2025-05-05T22:16:42.633+0000] {logging_mixin.py:190} INFO - Searching at point 384/2562: (28.7, -9.6)
+[2025-05-05T22:16:44.484+0000] {logging_mixin.py:190} INFO - Searching at point 385/2562: (28.7, -9.4)
+[2025-05-05T22:16:46.276+0000] {logging_mixin.py:190} INFO - Searching at point 386/2562: (28.7, -9.2)
+[2025-05-05T22:16:48.198+0000] {logging_mixin.py:190} INFO - Searching at point 387/2562: (28.7, -9.0)
+[2025-05-05T22:16:50.151+0000] {logging_mixin.py:190} INFO - Searching at point 388/2562: (28.7, -8.8)
+[2025-05-05T22:16:52.299+0000] {logging_mixin.py:190} INFO - Searching at point 389/2562: (28.7, -8.6)
+[2025-05-05T22:16:54.198+0000] {logging_mixin.py:190} INFO - Searching at point 390/2562: (28.7, -8.4)
+[2025-05-05T22:16:56.041+0000] {logging_mixin.py:190} INFO - Searching at point 391/2562: (28.7, -8.2)
+[2025-05-05T22:16:57.885+0000] {logging_mixin.py:190} INFO - Searching at point 392/2562: (28.7, -8.0)
+[2025-05-05T22:16:59.725+0000] {logging_mixin.py:190} INFO - Searching at point 393/2562: (28.7, -7.8)
+[2025-05-05T22:17:01.451+0000] {logging_mixin.py:190} INFO - Searching at point 394/2562: (28.7, -7.6)
+[2025-05-05T22:17:03.235+0000] {logging_mixin.py:190} INFO - Searching at point 395/2562: (28.7, -7.4)
+[2025-05-05T22:17:05.051+0000] {logging_mixin.py:190} INFO - Searching at point 396/2562: (28.7, -7.2)
+[2025-05-05T22:17:06.897+0000] {logging_mixin.py:190} INFO - Searching at point 397/2562: (28.7, -7.0)
+[2025-05-05T22:17:08.744+0000] {logging_mixin.py:190} INFO - Searching at point 398/2562: (28.7, -6.8)
+[2025-05-05T22:17:10.584+0000] {logging_mixin.py:190} INFO - Searching at point 399/2562: (28.7, -6.6)
+[2025-05-05T22:17:12.427+0000] {logging_mixin.py:190} INFO - Searching at point 400/2562: (28.7, -6.4)
+[2025-05-05T22:17:14.271+0000] {logging_mixin.py:190} INFO - Searching at point 401/2562: (28.7, -6.2)
+[2025-05-05T22:17:16.111+0000] {logging_mixin.py:190} INFO - Searching at point 402/2562: (28.7, -6.0)
+[2025-05-05T22:17:17.955+0000] {logging_mixin.py:190} INFO - Searching at point 403/2562: (28.7, -5.8)
+[2025-05-05T22:17:19.800+0000] {logging_mixin.py:190} INFO - Searching at point 404/2562: (28.7, -5.6)
+[2025-05-05T22:17:21.641+0000] {logging_mixin.py:190} INFO - Searching at point 405/2562: (28.7, -5.4)
+[2025-05-05T22:17:23.481+0000] {logging_mixin.py:190} INFO - Searching at point 406/2562: (28.7, -5.2)
+[2025-05-05T22:17:25.230+0000] {logging_mixin.py:190} INFO - Searching at point 407/2562: (28.7, -5.0)
+[2025-05-05T22:17:27.067+0000] {logging_mixin.py:190} INFO - Searching at point 408/2562: (28.7, -4.8)
+[2025-05-05T22:17:28.909+0000] {logging_mixin.py:190} INFO - Searching at point 409/2562: (28.7, -4.6)
+[2025-05-05T22:17:30.753+0000] {logging_mixin.py:190} INFO - Searching at point 410/2562: (28.7, -4.4)
+[2025-05-05T22:17:32.660+0000] {logging_mixin.py:190} INFO - Searching at point 411/2562: (28.7, -4.2)
+[2025-05-05T22:17:34.443+0000] {logging_mixin.py:190} INFO - Searching at point 412/2562: (28.7, -4.0)
+[2025-05-05T22:17:36.286+0000] {logging_mixin.py:190} INFO - Searching at point 413/2562: (28.7, -3.8)
+[2025-05-05T22:17:38.125+0000] {logging_mixin.py:190} INFO - Searching at point 414/2562: (28.7, -3.6)
+[2025-05-05T22:17:39.971+0000] {logging_mixin.py:190} INFO - Searching at point 415/2562: (28.7, -3.4)
+[2025-05-05T22:17:41.710+0000] {logging_mixin.py:190} INFO - Searching at point 416/2562: (28.7, -3.2)
+[2025-05-05T22:17:43.449+0000] {logging_mixin.py:190} INFO - Searching at point 417/2562: (28.7, -3.0)
+[2025-05-05T22:17:45.195+0000] {logging_mixin.py:190} INFO - Searching at point 418/2562: (28.7, -2.8)
+[2025-05-05T22:17:47.036+0000] {logging_mixin.py:190} INFO - Searching at point 419/2562: (28.7, -2.6)
+[2025-05-05T22:17:48.884+0000] {logging_mixin.py:190} INFO - Searching at point 420/2562: (28.7, -2.4)
+[2025-05-05T22:17:50.723+0000] {logging_mixin.py:190} INFO - Searching at point 421/2562: (28.7, -2.2)
+[2025-05-05T22:17:52.449+0000] {logging_mixin.py:190} INFO - Searching at point 422/2562: (28.7, -2.0)
+[2025-05-05T22:17:54.201+0000] {logging_mixin.py:190} INFO - Searching at point 423/2562: (28.7, -1.8)
+[2025-05-05T22:17:55.933+0000] {logging_mixin.py:190} INFO - Searching at point 424/2562: (28.7, -1.6)
+[2025-05-05T22:17:57.690+0000] {logging_mixin.py:190} INFO - Searching at point 425/2562: (28.7, -1.4)
+[2025-05-05T22:17:59.451+0000] {logging_mixin.py:190} INFO - Searching at point 426/2562: (28.7, -1.2)
+[2025-05-05T22:18:01.199+0000] {logging_mixin.py:190} INFO - Searching at point 427/2562: (28.7, -1.0)
+[2025-05-05T22:18:03.011+0000] {logging_mixin.py:190} INFO - Searching at point 428/2562: (28.9, -13.0)
+[2025-05-05T22:18:04.853+0000] {logging_mixin.py:190} INFO - Searching at point 429/2562: (28.9, -12.8)
+[2025-05-05T22:18:06.698+0000] {logging_mixin.py:190} INFO - Searching at point 430/2562: (28.9, -12.6)
+[2025-05-05T22:18:08.539+0000] {logging_mixin.py:190} INFO - Searching at point 431/2562: (28.9, -12.4)
+[2025-05-05T22:18:10.383+0000] {logging_mixin.py:190} INFO - Searching at point 432/2562: (28.9, -12.2)
+[2025-05-05T22:18:12.231+0000] {logging_mixin.py:190} INFO - Searching at point 433/2562: (28.9, -12.0)
+[2025-05-05T22:18:15.314+0000] {logging_mixin.py:190} INFO - Searching at point 434/2562: (28.9, -11.8)
+[2025-05-05T22:18:22.610+0000] {logging_mixin.py:190} INFO - Searching at point 435/2562: (28.9, -11.6)
+[2025-05-05T22:18:27.163+0000] {logging_mixin.py:190} INFO - Searching at point 436/2562: (28.9, -11.4)
+[2025-05-05T22:18:33.833+0000] {logging_mixin.py:190} INFO - Searching at point 437/2562: (28.9, -11.2)
+[2025-05-05T22:18:40.692+0000] {logging_mixin.py:190} INFO - Searching at point 438/2562: (28.9, -11.0)
+[2025-05-05T22:18:47.466+0000] {logging_mixin.py:190} INFO - Searching at point 439/2562: (28.9, -10.8)
+[2025-05-05T22:18:49.296+0000] {logging_mixin.py:190} INFO - Searching at point 440/2562: (28.9, -10.6)
+[2025-05-05T22:18:51.138+0000] {logging_mixin.py:190} INFO - Searching at point 441/2562: (28.9, -10.4)
+[2025-05-05T22:18:52.979+0000] {logging_mixin.py:190} INFO - Searching at point 442/2562: (28.9, -10.2)
+[2025-05-05T22:18:54.930+0000] {logging_mixin.py:190} INFO - Searching at point 443/2562: (28.9, -10.0)
+[2025-05-05T22:18:56.904+0000] {logging_mixin.py:190} INFO - Searching at point 444/2562: (28.9, -9.8)
+[2025-05-05T22:18:58.815+0000] {logging_mixin.py:190} INFO - Searching at point 445/2562: (28.9, -9.6)
+[2025-05-05T22:19:00.660+0000] {logging_mixin.py:190} INFO - Searching at point 446/2562: (28.9, -9.4)
+[2025-05-05T22:19:02.503+0000] {logging_mixin.py:190} INFO - Searching at point 447/2562: (28.9, -9.2)
+[2025-05-05T22:19:04.345+0000] {logging_mixin.py:190} INFO - Searching at point 448/2562: (28.9, -9.0)
+[2025-05-05T22:19:06.195+0000] {logging_mixin.py:190} INFO - Searching at point 449/2562: (28.9, -8.8)
+[2025-05-05T22:19:08.032+0000] {logging_mixin.py:190} INFO - Searching at point 450/2562: (28.9, -8.6)
+[2025-05-05T22:19:10.017+0000] {logging_mixin.py:190} INFO - Searching at point 451/2562: (28.9, -8.4)
+[2025-05-05T22:19:11.821+0000] {logging_mixin.py:190} INFO - Searching at point 452/2562: (28.9, -8.2)
+[2025-05-05T22:19:13.665+0000] {logging_mixin.py:190} INFO - Searching at point 453/2562: (28.9, -8.0)
+[2025-05-05T22:19:15.509+0000] {logging_mixin.py:190} INFO - Searching at point 454/2562: (28.9, -7.8)
+[2025-05-05T22:19:17.352+0000] {logging_mixin.py:190} INFO - Searching at point 455/2562: (28.9, -7.6)
+[2025-05-05T22:19:19.433+0000] {logging_mixin.py:190} INFO - Searching at point 456/2562: (28.9, -7.4)
+[2025-05-05T22:19:21.243+0000] {logging_mixin.py:190} INFO - Searching at point 457/2562: (28.9, -7.2)
+[2025-05-05T22:19:23.084+0000] {logging_mixin.py:190} INFO - Searching at point 458/2562: (28.9, -7.0)
+[2025-05-05T22:19:24.931+0000] {logging_mixin.py:190} INFO - Searching at point 459/2562: (28.9, -6.8)
+[2025-05-05T22:19:26.770+0000] {logging_mixin.py:190} INFO - Searching at point 460/2562: (28.9, -6.6)
+[2025-05-05T22:19:28.613+0000] {logging_mixin.py:190} INFO - Searching at point 461/2562: (28.9, -6.4)
+[2025-05-05T22:19:30.416+0000] {logging_mixin.py:190} INFO - Searching at point 462/2562: (28.9, -6.2)
+[2025-05-05T22:19:32.298+0000] {logging_mixin.py:190} INFO - Searching at point 463/2562: (28.9, -6.0)
+[2025-05-05T22:19:34.145+0000] {logging_mixin.py:190} INFO - Searching at point 464/2562: (28.9, -5.8)
+[2025-05-05T22:19:35.992+0000] {logging_mixin.py:190} INFO - Searching at point 465/2562: (28.9, -5.6)
+[2025-05-05T22:19:37.830+0000] {logging_mixin.py:190} INFO - Searching at point 466/2562: (28.9, -5.4)
+[2025-05-05T22:19:39.777+0000] {logging_mixin.py:190} INFO - Searching at point 467/2562: (28.9, -5.2)
+[2025-05-05T22:19:41.529+0000] {logging_mixin.py:190} INFO - Searching at point 468/2562: (28.9, -5.0)
+[2025-05-05T22:19:43.362+0000] {logging_mixin.py:190} INFO - Searching at point 469/2562: (28.9, -4.8)
+[2025-05-05T22:19:45.130+0000] {logging_mixin.py:190} INFO - Searching at point 470/2562: (28.9, -4.6)
+[2025-05-05T22:19:46.868+0000] {logging_mixin.py:190} INFO - Searching at point 471/2562: (28.9, -4.4)
+[2025-05-05T22:19:48.687+0000] {logging_mixin.py:190} INFO - Searching at point 472/2562: (28.9, -4.2)
+[2025-05-05T22:19:50.532+0000] {logging_mixin.py:190} INFO - Searching at point 473/2562: (28.9, -4.0)
+[2025-05-05T22:19:52.372+0000] {logging_mixin.py:190} INFO - Searching at point 474/2562: (28.9, -3.8)
+[2025-05-05T22:19:54.211+0000] {logging_mixin.py:190} INFO - Searching at point 475/2562: (28.9, -3.6)
+[2025-05-05T22:19:56.054+0000] {logging_mixin.py:190} INFO - Searching at point 476/2562: (28.9, -3.4)
+[2025-05-05T22:19:57.897+0000] {logging_mixin.py:190} INFO - Searching at point 477/2562: (28.9, -3.2)
+[2025-05-05T22:19:59.742+0000] {logging_mixin.py:190} INFO - Searching at point 478/2562: (28.9, -3.0)
+[2025-05-05T22:20:01.489+0000] {logging_mixin.py:190} INFO - Searching at point 479/2562: (28.9, -2.8)
+[2025-05-05T22:20:03.223+0000] {logging_mixin.py:190} INFO - Searching at point 480/2562: (28.9, -2.6)
+[2025-05-05T22:20:04.965+0000] {logging_mixin.py:190} INFO - Searching at point 481/2562: (28.9, -2.4)
+[2025-05-05T22:20:06.805+0000] {logging_mixin.py:190} INFO - Searching at point 482/2562: (28.9, -2.2)
+[2025-05-05T22:20:08.652+0000] {logging_mixin.py:190} INFO - Searching at point 483/2562: (28.9, -2.0)
+[2025-05-05T22:20:10.399+0000] {logging_mixin.py:190} INFO - Searching at point 484/2562: (28.9, -1.8)
+[2025-05-05T22:20:12.339+0000] {logging_mixin.py:190} INFO - Searching at point 485/2562: (28.9, -1.6)
+[2025-05-05T22:20:14.061+0000] {logging_mixin.py:190} INFO - Searching at point 486/2562: (28.9, -1.4)
+[2025-05-05T22:20:15.772+0000] {logging_mixin.py:190} INFO - Searching at point 487/2562: (28.9, -1.2)
+[2025-05-05T22:20:17.693+0000] {logging_mixin.py:190} INFO - Searching at point 488/2562: (28.9, -1.0)
+[2025-05-05T22:20:19.511+0000] {logging_mixin.py:190} INFO - Searching at point 489/2562: (29.1, -13.0)
+[2025-05-05T22:20:21.354+0000] {logging_mixin.py:190} INFO - Searching at point 490/2562: (29.1, -12.8)
+[2025-05-05T22:20:23.195+0000] {logging_mixin.py:190} INFO - Searching at point 491/2562: (29.1, -12.6)
+[2025-05-05T22:20:25.038+0000] {logging_mixin.py:190} INFO - Searching at point 492/2562: (29.1, -12.4)
+[2025-05-05T22:20:26.880+0000] {logging_mixin.py:190} INFO - Searching at point 493/2562: (29.1, -12.2)
+[2025-05-05T22:20:28.723+0000] {logging_mixin.py:190} INFO - Searching at point 494/2562: (29.1, -12.0)
+[2025-05-05T22:20:30.771+0000] {logging_mixin.py:190} INFO - Searching at point 495/2562: (29.1, -11.8)
+[2025-05-05T22:20:38.248+0000] {logging_mixin.py:190} INFO - Searching at point 496/2562: (29.1, -11.6)
+[2025-05-05T22:20:43.077+0000] {logging_mixin.py:190} INFO - Searching at point 497/2562: (29.1, -11.4)
+[2025-05-05T22:20:49.818+0000] {logging_mixin.py:190} INFO - Searching at point 498/2562: (29.1, -11.2)
+[2025-05-05T22:20:56.575+0000] {logging_mixin.py:190} INFO - Searching at point 499/2562: (29.1, -11.0)
+[2025-05-05T22:21:00.876+0000] {logging_mixin.py:190} INFO - Searching at point 500/2562: (29.1, -10.8)
+[2025-05-05T22:21:07.556+0000] {logging_mixin.py:190} INFO - Searching at point 501/2562: (29.1, -10.6)
+[2025-05-05T22:21:14.290+0000] {logging_mixin.py:190} INFO - Searching at point 502/2562: (29.1, -10.4)
+[2025-05-05T22:21:16.588+0000] {logging_mixin.py:190} INFO - Searching at point 503/2562: (29.1, -10.2)
+[2025-05-05T22:21:18.494+0000] {logging_mixin.py:190} INFO - Searching at point 504/2562: (29.1, -10.0)
+[2025-05-05T22:21:20.701+0000] {logging_mixin.py:190} INFO - Searching at point 505/2562: (29.1, -9.8)
+[2025-05-05T22:21:22.582+0000] {logging_mixin.py:190} INFO - Searching at point 506/2562: (29.1, -9.6)
+[2025-05-05T22:21:24.764+0000] {logging_mixin.py:190} INFO - Searching at point 507/2562: (29.1, -9.4)
+[2025-05-05T22:21:26.581+0000] {logging_mixin.py:190} INFO - Searching at point 508/2562: (29.1, -9.2)
+[2025-05-05T22:21:28.420+0000] {logging_mixin.py:190} INFO - Searching at point 509/2562: (29.1, -9.0)
+[2025-05-05T22:21:30.262+0000] {logging_mixin.py:190} INFO - Searching at point 510/2562: (29.1, -8.8)
+[2025-05-05T22:21:32.035+0000] {logging_mixin.py:190} INFO - Searching at point 511/2562: (29.1, -8.6)
+[2025-05-05T22:21:33.848+0000] {logging_mixin.py:190} INFO - Searching at point 512/2562: (29.1, -8.4)
+[2025-05-05T22:21:35.793+0000] {logging_mixin.py:190} INFO - Searching at point 513/2562: (29.1, -8.2)
+[2025-05-05T22:21:37.601+0000] {logging_mixin.py:190} INFO - Searching at point 514/2562: (29.1, -8.0)
+[2025-05-05T22:21:39.378+0000] {logging_mixin.py:190} INFO - Searching at point 515/2562: (29.1, -7.8)
+[2025-05-05T22:21:41.156+0000] {logging_mixin.py:190} INFO - Searching at point 516/2562: (29.1, -7.6)
+[2025-05-05T22:21:43.307+0000] {logging_mixin.py:190} INFO - Searching at point 517/2562: (29.1, -7.4)
+[2025-05-05T22:21:45.112+0000] {logging_mixin.py:190} INFO - Searching at point 518/2562: (29.1, -7.2)
+[2025-05-05T22:21:47.066+0000] {logging_mixin.py:190} INFO - Searching at point 519/2562: (29.1, -7.0)
+[2025-05-05T22:21:48.900+0000] {logging_mixin.py:190} INFO - Searching at point 520/2562: (29.1, -6.8)
+[2025-05-05T22:21:50.744+0000] {logging_mixin.py:190} INFO - Searching at point 521/2562: (29.1, -6.6)
+[2025-05-05T22:21:52.568+0000] {logging_mixin.py:190} INFO - Searching at point 522/2562: (29.1, -6.4)
+[2025-05-05T22:21:54.432+0000] {logging_mixin.py:190} INFO - Searching at point 523/2562: (29.1, -6.2)
+[2025-05-05T22:21:56.299+0000] {logging_mixin.py:190} INFO - Searching at point 524/2562: (29.1, -6.0)
+[2025-05-05T22:21:58.117+0000] {logging_mixin.py:190} INFO - Searching at point 525/2562: (29.1, -5.8)
+[2025-05-05T22:21:59.960+0000] {logging_mixin.py:190} INFO - Searching at point 526/2562: (29.1, -5.6)
+[2025-05-05T22:22:01.806+0000] {logging_mixin.py:190} INFO - Searching at point 527/2562: (29.1, -5.4)
+[2025-05-05T22:22:03.646+0000] {logging_mixin.py:190} INFO - Searching at point 528/2562: (29.1, -5.2)
+[2025-05-05T22:22:05.390+0000] {logging_mixin.py:190} INFO - Searching at point 529/2562: (29.1, -5.0)
+[2025-05-05T22:22:07.135+0000] {logging_mixin.py:190} INFO - Searching at point 530/2562: (29.1, -4.8)
+[2025-05-05T22:22:08.878+0000] {logging_mixin.py:190} INFO - Searching at point 531/2562: (29.1, -4.6)
+[2025-05-05T22:22:10.711+0000] {logging_mixin.py:190} INFO - Searching at point 532/2562: (29.1, -4.4)
+[2025-05-05T22:22:12.440+0000] {logging_mixin.py:190} INFO - Searching at point 533/2562: (29.1, -4.2)
+[2025-05-05T22:22:14.296+0000] {logging_mixin.py:190} INFO - Searching at point 534/2562: (29.1, -4.0)
+[2025-05-05T22:22:16.038+0000] {logging_mixin.py:190} INFO - Searching at point 535/2562: (29.1, -3.8)
+[2025-05-05T22:22:17.880+0000] {logging_mixin.py:190} INFO - Searching at point 536/2562: (29.1, -3.6)
+[2025-05-05T22:22:19.723+0000] {logging_mixin.py:190} INFO - Searching at point 537/2562: (29.1, -3.4)
+[2025-05-05T22:22:21.572+0000] {logging_mixin.py:190} INFO - Searching at point 538/2562: (29.1, -3.2)
+[2025-05-05T22:22:23.407+0000] {logging_mixin.py:190} INFO - Searching at point 539/2562: (29.1, -3.0)
+[2025-05-05T22:22:25.147+0000] {logging_mixin.py:190} INFO - Searching at point 540/2562: (29.1, -2.8)
+[2025-05-05T22:22:27.096+0000] {logging_mixin.py:190} INFO - Searching at point 541/2562: (29.1, -2.6)
+[2025-05-05T22:22:28.829+0000] {logging_mixin.py:190} INFO - Searching at point 542/2562: (29.1, -2.4)
+[2025-05-05T22:22:30.680+0000] {logging_mixin.py:190} INFO - Searching at point 543/2562: (29.1, -2.2)
+[2025-05-05T22:22:32.522+0000] {logging_mixin.py:190} INFO - Searching at point 544/2562: (29.1, -2.0)
+[2025-05-05T22:22:34.366+0000] {logging_mixin.py:190} INFO - Searching at point 545/2562: (29.1, -1.8)
+[2025-05-05T22:22:36.311+0000] {logging_mixin.py:190} INFO - Searching at point 546/2562: (29.1, -1.6)
+[2025-05-05T22:22:38.303+0000] {logging_mixin.py:190} INFO - Searching at point 547/2562: (29.1, -1.4)
+[2025-05-05T22:22:40.101+0000] {logging_mixin.py:190} INFO - Searching at point 548/2562: (29.1, -1.2)
+[2025-05-05T22:22:41.943+0000] {logging_mixin.py:190} INFO - Searching at point 549/2562: (29.1, -1.0)
+[2025-05-05T22:22:43.793+0000] {logging_mixin.py:190} INFO - Searching at point 550/2562: (29.3, -13.0)
+[2025-05-05T22:22:46.225+0000] {logging_mixin.py:190} INFO - Searching at point 551/2562: (29.3, -12.8)
+[2025-05-05T22:22:48.089+0000] {logging_mixin.py:190} INFO - Searching at point 552/2562: (29.3, -12.6)
+[2025-05-05T22:22:49.930+0000] {logging_mixin.py:190} INFO - Searching at point 553/2562: (29.3, -12.4)
+[2025-05-05T22:22:51.772+0000] {logging_mixin.py:190} INFO - Searching at point 554/2562: (29.3, -12.2)
+[2025-05-05T22:22:53.576+0000] {logging_mixin.py:190} INFO - Searching at point 555/2562: (29.3, -12.0)
+[2025-05-05T22:22:55.458+0000] {logging_mixin.py:190} INFO - Searching at point 556/2562: (29.3, -11.8)
+[2025-05-05T22:22:57.302+0000] {logging_mixin.py:190} INFO - Searching at point 557/2562: (29.3, -11.6)
+[2025-05-05T22:22:59.156+0000] {logging_mixin.py:190} INFO - Searching at point 558/2562: (29.3, -11.4)
+[2025-05-05T22:23:06.150+0000] {logging_mixin.py:190} INFO - Searching at point 559/2562: (29.3, -11.2)
+[2025-05-05T22:23:13.796+0000] {logging_mixin.py:190} INFO - Searching at point 560/2562: (29.3, -11.0)
+[2025-05-05T22:23:20.857+0000] {logging_mixin.py:190} INFO - Searching at point 561/2562: (29.3, -10.8)
+[2025-05-05T22:23:27.872+0000] {logging_mixin.py:190} INFO - Searching at point 562/2562: (29.3, -10.6)
+[2025-05-05T22:23:35.087+0000] {logging_mixin.py:190} INFO - Searching at point 563/2562: (29.3, -10.4)
+[2025-05-05T22:23:37.145+0000] {logging_mixin.py:190} INFO - Searching at point 564/2562: (29.3, -10.2)
+[2025-05-05T22:23:39.490+0000] {logging_mixin.py:190} INFO - Searching at point 565/2562: (29.3, -10.0)
+[2025-05-05T22:23:41.567+0000] {logging_mixin.py:190} INFO - Searching at point 566/2562: (29.3, -9.8)
+[2025-05-05T22:23:44.289+0000] {logging_mixin.py:190} INFO - Searching at point 567/2562: (29.3, -9.6)
+[2025-05-05T22:23:47.380+0000] {logging_mixin.py:190} INFO - Searching at point 568/2562: (29.3, -9.4)
+[2025-05-05T22:23:49.321+0000] {logging_mixin.py:190} INFO - Searching at point 569/2562: (29.3, -9.2)
+[2025-05-05T22:23:51.165+0000] {logging_mixin.py:190} INFO - Searching at point 570/2562: (29.3, -9.0)
+[2025-05-05T22:23:53.313+0000] {logging_mixin.py:190} INFO - Searching at point 571/2562: (29.3, -8.8)
+[2025-05-05T22:23:55.242+0000] {logging_mixin.py:190} INFO - Searching at point 572/2562: (29.3, -8.6)
+[2025-05-05T22:23:57.031+0000] {logging_mixin.py:190} INFO - Searching at point 573/2562: (29.3, -8.4)
+[2025-05-05T22:23:58.841+0000] {logging_mixin.py:190} INFO - Searching at point 574/2562: (29.3, -8.2)
+[2025-05-05T22:24:00.770+0000] {logging_mixin.py:190} INFO - Searching at point 575/2562: (29.3, -8.0)
+[2025-05-05T22:24:02.674+0000] {logging_mixin.py:190} INFO - Searching at point 576/2562: (29.3, -7.8)
+[2025-05-05T22:24:04.470+0000] {logging_mixin.py:190} INFO - Searching at point 577/2562: (29.3, -7.6)
+[2025-05-05T22:24:06.314+0000] {logging_mixin.py:190} INFO - Searching at point 578/2562: (29.3, -7.4)
+[2025-05-05T22:24:08.269+0000] {logging_mixin.py:190} INFO - Searching at point 579/2562: (29.3, -7.2)
+[2025-05-05T22:24:10.206+0000] {logging_mixin.py:190} INFO - Searching at point 580/2562: (29.3, -7.0)
+[2025-05-05T22:24:12.052+0000] {logging_mixin.py:190} INFO - Searching at point 581/2562: (29.3, -6.8)
+[2025-05-05T22:24:13.797+0000] {logging_mixin.py:190} INFO - Searching at point 582/2562: (29.3, -6.6)
+[2025-05-05T22:24:15.571+0000] {logging_mixin.py:190} INFO - Searching at point 583/2562: (29.3, -6.4)
+[2025-05-05T22:24:17.382+0000] {logging_mixin.py:190} INFO - Searching at point 584/2562: (29.3, -6.2)
+[2025-05-05T22:24:19.227+0000] {logging_mixin.py:190} INFO - Searching at point 585/2562: (29.3, -6.0)
+[2025-05-05T22:24:21.070+0000] {logging_mixin.py:190} INFO - Searching at point 586/2562: (29.3, -5.8)
+[2025-05-05T22:24:22.830+0000] {logging_mixin.py:190} INFO - Searching at point 587/2562: (29.3, -5.6)
+[2025-05-05T22:24:24.646+0000] {logging_mixin.py:190} INFO - Searching at point 588/2562: (29.3, -5.4)
+[2025-05-05T22:24:26.491+0000] {logging_mixin.py:190} INFO - Searching at point 589/2562: (29.3, -5.2)
+[2025-05-05T22:24:28.231+0000] {logging_mixin.py:190} INFO - Searching at point 590/2562: (29.3, -5.0)
+[2025-05-05T22:24:29.974+0000] {logging_mixin.py:190} INFO - Searching at point 591/2562: (29.3, -4.8)
+[2025-05-05T22:24:31.819+0000] {logging_mixin.py:190} INFO - Searching at point 592/2562: (29.3, -4.6)
+[2025-05-05T22:24:33.661+0000] {logging_mixin.py:190} INFO - Searching at point 593/2562: (29.3, -4.4)
+[2025-05-05T22:24:35.384+0000] {logging_mixin.py:190} INFO - Searching at point 594/2562: (29.3, -4.2)
+[2025-05-05T22:24:37.149+0000] {logging_mixin.py:190} INFO - Searching at point 595/2562: (29.3, -4.0)
+[2025-05-05T22:24:38.970+0000] {logging_mixin.py:190} INFO - Searching at point 596/2562: (29.3, -3.8)
+[2025-05-05T22:24:40.730+0000] {logging_mixin.py:190} INFO - Searching at point 597/2562: (29.3, -3.6)
+[2025-05-05T22:24:42.446+0000] {logging_mixin.py:190} INFO - Searching at point 598/2562: (29.3, -3.4)
+[2025-05-05T22:24:44.172+0000] {logging_mixin.py:190} INFO - Searching at point 599/2562: (29.3, -3.2)
+[2025-05-05T22:24:44.453+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -3.2): ('Connection broken: IncompleteRead(565 bytes read, 932 more expected)', IncompleteRead(565 bytes read, 932 more expected))
+[2025-05-05T22:24:46.279+0000] {logging_mixin.py:190} INFO - Searching at point 600/2562: (29.3, -3.0)
+[2025-05-05T22:24:46.292+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -3.0): HTTPSConnectionPool(host='maps.googleapis.com', port=443): Max retries exceeded with url: /maps/api/place/textsearch/json?location=29.3%2C-3&maxprice=None&minprice=None&radius=10000&type=bank&key=AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f5ff95ee450>: Failed to resolve 'maps.googleapis.com' ([Errno -2] Name or service not known)"))
+[2025-05-05T22:24:47.796+0000] {logging_mixin.py:190} INFO - Searching at point 601/2562: (29.3, -2.8)
+[2025-05-05T22:24:47.807+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -2.8): HTTPSConnectionPool(host='maps.googleapis.com', port=443): Max retries exceeded with url: /maps/api/place/textsearch/json?location=29.3%2C-2.8&maxprice=None&minprice=None&radius=10000&type=bank&key=AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f60345e5010>: Failed to resolve 'maps.googleapis.com' ([Errno -2] Name or service not known)"))
+[2025-05-05T22:24:49.308+0000] {logging_mixin.py:190} INFO - Searching at point 602/2562: (29.3, -2.6)
+[2025-05-05T22:24:49.320+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -2.6): HTTPSConnectionPool(host='maps.googleapis.com', port=443): Max retries exceeded with url: /maps/api/place/textsearch/json?location=29.3%2C-2.6&maxprice=None&minprice=None&radius=10000&type=bank&key=AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f60345b0da0>: Failed to resolve 'maps.googleapis.com' ([Errno -2] Name or service not known)"))
+[2025-05-06T03:21:39.539+0000] {logging_mixin.py:190} INFO - Searching at point 603/2562: (29.3, -2.4)
+[2025-05-06T03:21:39.904+0000] {job.py:229} INFO - Heartbeat recovered after 17813.87 seconds
+[2025-05-06T03:21:41.352+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -2.4): HTTPSConnectionPool(host='maps.googleapis.com', port=443): Max retries exceeded with url: /maps/api/place/textsearch/json?location=29.3%2C-2.4&maxprice=None&minprice=None&radius=10000&type=bank&key=AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f60345b3b00>: Failed to establish a new connection: [Errno 101] Network is unreachable'))
+[2025-05-06T03:21:42.977+0000] {logging_mixin.py:190} INFO - Searching at point 604/2562: (29.3, -2.2)
+[2025-05-06T03:21:45.660+0000] {logging_mixin.py:190} INFO - Searching at point 605/2562: (29.3, -2.0)
+[2025-05-06T14:48:13.023+0000] {logging_mixin.py:190} INFO - Searching at point 606/2562: (29.3, -1.8)
+[2025-05-06T14:48:15.753+0000] {job.py:229} INFO - Heartbeat recovered after 41190.65 seconds
+[2025-05-06T14:48:15.848+0000] {logging_mixin.py:190} INFO - Error at point (29.3, -1.8): ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+[2025-05-06T14:48:17.350+0000] {logging_mixin.py:190} INFO - Searching at point 607/2562: (29.3, -1.6)
+[2025-05-06T14:48:25.636+0000] {logging_mixin.py:190} INFO - Searching at point 608/2562: (29.3, -1.4)
+[2025-05-06T14:48:25.831+0000] {local_task_job_runner.py:346} WARNING - State of this instance has been externally set to up_for_retry. Terminating instance.
+[2025-05-06T14:48:25.833+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
+[2025-05-06T14:48:25.836+0000] {process_utils.py:132} INFO - Sending 15 to group 1928. PIDs of all processes in the group: [1928]
+[2025-05-06T14:48:25.838+0000] {process_utils.py:87} INFO - Sending the signal 15 to group 1928
+[2025-05-06T14:48:25.839+0000] {taskinstance.py:3094} ERROR - Received SIGTERM. Terminating subprocesses.
+[2025-05-06T14:48:25.884+0000] {taskinstance.py:3095} ERROR - Stacktrace: 
+  File "/home/***/.local/bin/***", line 8, in <module>
+    sys.exit(main())
+  File "/home/***/.local/lib/python3.12/site-packages/***/__main__.py", line 62, in main
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 64, in wrapper
+    providers_configuration_loaded(func)(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/providers_configuration_loader.py", line 55, in wrapped_function
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 237, in worker
+    _run_command_with_daemon_option(
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 50, in _run_command_with_daemon_option
+    run_command_with_daemon_option(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/daemon_utils.py", line 86, in run_command_with_daemon_option
+    callback()
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/cli/celery_command.py", line 230, in run_celery_worker
+    celery_app.worker_main(options)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 391, in worker_main
+    self.start(argv=argv)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/base.py", line 371, in start
+    celery.main(args=argv, standalone_mode=False)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1082, in main
+    rv = self.invoke(ctx)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1697, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 1443, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/***/.local/lib/python3.12/site-packages/click/core.py", line 788, in invoke
+    return __callback(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/click/decorators.py", line 33, in new_func
+    return f(get_current_context(), *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/base.py", line 135, in caller
+    return f(ctx, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bin/worker.py", line 356, in worker
+    worker.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/worker/worker.py", line 202, in start
+    self.blueprint.start(self)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 116, in start
+    step.start(parent)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/bootsteps.py", line 365, in start
+    return self.obj.start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/base.py", line 130, in start
+    self.on_start()
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/prefork.py", line 109, in on_start
+    P = self._pool = Pool(processes=self.limit,
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 464, in __init__
+    super().__init__(processes, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1046, in __init__
+    self._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/concurrency/asynpool.py", line 482, in _create_worker_process
+    return super()._create_worker_process(i)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 1158, in _create_worker_process
+    w.start()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 120, in start
+    self._popen = self._Popen(self)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/context.py", line 331, in _Popen
+    return Popen(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 22, in __init__
+    self._launch(process_obj)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/popen_fork.py", line 77, in _launch
+    code = process_obj._bootstrap()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 323, in _bootstrap
+    self.run()
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/process.py", line 110, in run
+    self._target(*self._args, **self._kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 292, in __call__
+    sys.exit(self.workloop(pid=pid))
+  File "/home/***/.local/lib/python3.12/site-packages/billiard/pool.py", line 362, in workloop
+    result = (True, prepare_result(fun(*args, **kwargs)))
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 651, in fast_trace_task
+    R, I, T, Rstr = tasks[task].__trace__(
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 453, in trace_task
+    R = retval = fun(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/celery/app/trace.py", line 736, in __protected_call__
+    return self.run(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 139, in execute_command
+    _execute_in_fork(command_to_exec, celery_task_id)
+  File "/home/***/.local/lib/python3.12/site-packages/***/providers/celery/executors/celery_executor_utils.py", line 171, in _execute_in_fork
+    args.func(args)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 254, in _run_task_by_selected_method
+    return _run_task_by_local_task_job(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 322, in _run_task_by_local_task_job
+    ret = run_job(job=job_runner.job, execute_callable=job_runner._execute)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 421, in run_job
+    return execute_job(job, execute_callable=execute_callable)
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/job.py", line 450, in execute_job
+    ret = execute_callable()
+  File "/home/***/.local/lib/python3.12/site-packages/***/jobs/local_task_job_runner.py", line 171, in _execute
+    self.task_runner.start()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 55, in start
+    self.process = self._start_by_fork()
+  File "/home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+  File "/home/***/.local/lib/python3.12/site-packages/***/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+  File "/home/***/.local/lib/python3.12/site-packages/***/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/***/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+  File "/opt/***/dags/storeData.py", line 425, in fetch_google_reviews
+    places_result = gmaps.places(
+  File "/home/***/.local/lib/python3.12/site-packages/googlemaps/client.py", line 445, in wrapper
+    result = func(*args, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/googlemaps/places.py", line 259, in places
+    return _places(
+  File "/home/***/.local/lib/python3.12/site-packages/googlemaps/places.py", line 425, in _places
+    return client._request(url, params)
+  File "/home/***/.local/lib/python3.12/site-packages/googlemaps/client.py", line 315, in _request
+    response = requests_method(base_url + authed_url,
+  File "/home/***/.local/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/***/.local/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "/home/***/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+  File "/home/***/.local/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+  File "/usr/local/lib/python3.12/http/client.py", line 1430, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+  File "/usr/local/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+  File "/usr/local/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+  File "/usr/local/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+  File "/usr/local/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+  File "/home/***/.local/lib/python3.12/site-packages/***/models/taskinstance.py", line 3095, in signal_handler
+    self.log.error("Stacktrace: \n%s", "".join(traceback.format_stack()))
+
+[2025-05-06T14:48:25.900+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/storeData.py", line 425, in fetch_google_reviews
+    places_result = gmaps.places(
+                    ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googlemaps/client.py", line 445, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googlemaps/places.py", line 259, in places
+    return _places(
+           ^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googlemaps/places.py", line 425, in _places
+    return client._request(url, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/googlemaps/client.py", line 315, in _request
+    response = requests_method(base_url + authed_url,
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/requests/adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/urllib3/connection.py", line 516, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/http/client.py", line 1430, in getresponse
+    response.begin()
+  File "/usr/local/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3097, in signal_handler
+    raise AirflowTaskTerminated("Task received SIGTERM signal")
+airflow.exceptions.AirflowTaskTerminated: Task received SIGTERM signal
+[2025-05-06T14:48:25.908+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-05-06T14:48:25.909+0000] {logging_mixin.py:190} INFO - Task start:2025-05-05 22:03:26.931442+00:00 end:2025-05-06 14:48:25.907546+00:00 duration:60298.976104
+[2025-05-06T14:48:25.910+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): fetch_google_reviews> dag:<DAG: google_maps_reviews> dagrun:<DagRun google_maps_reviews @ 2025-05-04 00:00:00+00:00: scheduled__2025-05-04T00:00:00+00:00, state:running, queued_at: 2025-05-05 22:03:19.047636+00:00. externally triggered: False>
+[2025-05-06T14:48:25.911+0000] {logging_mixin.py:190} INFO - Failure caused by Task received SIGTERM signal
+[2025-05-06T14:48:25.911+0000] {taskinstance.py:1226} INFO - Marking task as UP_FOR_RETRY. dag_id=google_maps_reviews, task_id=fetch_google_reviews, run_id=scheduled__2025-05-04T00:00:00+00:00, execution_date=20250504T000000, start_date=20250505T220326, end_date=20250506T144825
+[2025-05-06T14:48:25.945+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-06T14:48:25.972+0000] {process_utils.py:80} INFO - Process psutil.Process(pid=1928, status='terminated', exitcode=2, started='22:03:26') (1928) terminated with exit code 2
