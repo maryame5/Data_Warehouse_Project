@@ -52,12 +52,43 @@ def export_data():
     conn = pg_hook.get_conn()
     cur = conn.cursor()
     query="""
-SELECT distinct  *
+SELECT 
+         rr.place_id,
+            rr.bank_name,
+            rr.branch_name,
+            rr.location,
+            rr.language,
+            rr.sentiment,
+            rr.topic,
+            rr.review_text,
+            rr.rating,
+            rr.review_date,
+            db.bank_id,
+            br.branch_id,
+            dl.location_id,
+            ds.sentiment_id
+FROM review.raw_reviews rr
+LEFT JOIN review.dim_bank db ON rr.bank_name = db.bank_name
+LEFT JOIN review.dim_branch br ON rr.branch_name = br.branch_name
+LEFT JOIN review.dim_location dl ON rr.location = dl.location
+LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label
+GROUP BY
+         rr.place_id,
+            rr.bank_name,
+            rr.branch_name,
+            rr.location,
+            rr.language,
+            rr.sentiment,
+            rr.topic,
+            rr.review_text,
+            rr.rating,
+            rr.review_date,
+            db.bank_id,
+            br.branch_id,
+            dl.location_id,
+            ds.sentiment_id
 
-  
-
-FROM review.raw_reviews 
-;
+ORDER BY rr.PLACE_ID DESC;
 """
     cur.execute(query)
     conn.commit()
@@ -279,17 +310,18 @@ def normalize_and_clean_data():
     df = pd.read_sql("SELECT * FROM review.raw_reviews", conn)
 
     # Convertir en minuscule
+    
     df['review_text'] = df['review_text'].str.lower()
 
     # Supprimer la ponctuation
     df['review_text'] = df['review_text'].apply(lambda x: x.translate(str.maketrans('', '', string.punctuation)))
 
     # Supprimer les stop words
-    stop_words = set(stopwords.words('french'))  # Changer pour 'english' si nécessaire
+    stop_words = set(stopwords.words('english'))  # Changer pour 'english' si nécessaire
     df['review_text'] = df['review_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in stop_words]))
 
     # Gérer les valeurs manquantes
-    df['review_text'].fillna("Avis non disponible", inplace=True)
+    df['review_text'] = df['review_text'].fillna("").apply(lambda x: "Avis non disponible" if x.strip() == "" else x)
     df['rating'].fillna(df['rating'].mean(), inplace=True)
 
     # Mettre à jour les données dans la base PostgreSQL
@@ -401,10 +433,6 @@ def Load_reviews1():
 # Replace with your Google Maps API key (consider using environment variables for security)
 API_KEY = "AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA"
 gmaps = googlemaps.Client(key=API_KEY)
-def generate_grid(lat_min, lat_max, lng_min, lng_max, step=0.2):
-    lat_points = [round(lat_min + i * step, 6) for i in range(int((lat_max - lat_min) / step) + 1)]
-    lng_points = [round(lng_min + i * step, 6) for i in range(int((lng_max - lng_min) / step) + 1)]
-    return [(lat, lng) for lat in lat_points for lng in lng_points]
 
 
 def fetch_google_reviews():
@@ -412,21 +440,25 @@ def fetch_google_reviews():
     all_reviews = []
 
     # Bounding box approximative du Maroc
-    lat_min, lat_max = 27.5, 35.9
-    lng_min, lng_max = -13.0, -1.0
-    grid_points = generate_grid(lat_min, lat_max, lng_min, lng_max, step=0.2)
-
-    for i, (lat, lng) in enumerate(grid_points):
-        print(f"Searching at point {i+1}/{len(grid_points)}: ({lat}, {lng})")
-        next_page_token = None
-
-        for _ in range(3):  # Max 3 pages de résultats
+    
+    grid_points = [
+        (35.7595, -5.8339), (35.5785, -5.3684), (35.1718, -5.2697), (35.2442, -3.9315),
+        (34.6836, -1.9094), (35.1688, -2.9335), (34.9180, -2.3184), (34.0331, -5.0003),
+        (33.8950, -5.5547), (34.2134, -4.0117), (34.2610, -6.5802), (34.0209, -6.8416),
+        (34.0371, -6.7985), (33.5731, -7.5898), (33.6868, -7.3820), (33.2540, -8.5090),
+        (33.0012, -7.6166), (32.8820, -6.9063), (32.3395, -6.3608), (31.9632, -6.5717),
+        (32.9344, -5.6689), (32.6812, -4.7357), (31.9319, -4.4240), (31.6295, -7.9811),
+        (31.5085, -9.7595), (32.2994, -9.2372), (30.4278, -9.5981), (29.6979, -9.7322),
+        (28.9870, -10.0574), (27.1253, -13.1625)
+    ]
+    for lat, lng in grid_points:
             try:
+            
                 places_result = gmaps.places(
                     location=(lat, lng),
-                    radius=10000,
+                    radius=70000,
                     type="bank",
-                    page_token=next_page_token
+                   
                 )
 
                 for place in places_result.get("results", []):
@@ -444,22 +476,19 @@ def fetch_google_reviews():
                         all_reviews.append({
                             'place_id': place_id,
                             'bank_name': details.get('name', ''),
-                            'branch_name': details.get('name', ''),
+                            'branch_name': details.get('name', '') + " Branch",
                             'location': details.get('formatted_address', ''),
                             'review_text': review.get('text', ''),
                             'rating': review.get('rating', 0),
-                            'review_date': datetime.utcfromtimestamp(review.get('time', datetime.now().timestamp()))
+                            'review_date': datetime.utcfromtimestamp(review['time'])
                         })
 
-                next_page_token = places_result.get("next_page_token")
-                if not next_page_token:
-                    break
-                time.sleep(2)
+                
             except Exception as e:
                 print(f"Error at point ({lat}, {lng}): {e}")
                 break
 
-        time.sleep(1.5)  # pour respecter les limites de l’API
+       
 
     df = pd.DataFrame(all_reviews)
     df.to_csv("/opt/airflow/dags/input/reviews.csv", index=False)
