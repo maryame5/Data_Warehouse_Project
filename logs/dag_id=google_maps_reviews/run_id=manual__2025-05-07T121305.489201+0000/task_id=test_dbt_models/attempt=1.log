@@ -1,0 +1,67 @@
+[2025-05-07T12:16:45.179+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-07T12:16:45.221+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.test_dbt_models manual__2025-05-07T12:13:05.489201+00:00 [queued]>
+[2025-05-07T12:16:45.249+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.test_dbt_models manual__2025-05-07T12:13:05.489201+00:00 [queued]>
+[2025-05-07T12:16:45.251+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-07T12:16:45.278+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): test_dbt_models> on 2025-05-07 12:13:05.489201+00:00
+[2025-05-07T12:16:45.300+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=571) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-07T12:16:45.303+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'test_dbt_models', 'manual__2025-05-07T12:13:05.489201+00:00', '--job-id', '785', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpvn8_bply']
+[2025-05-07T12:16:45.304+0000] {standard_task_runner.py:72} INFO - Started process 586 to run task
+[2025-05-07T12:16:45.305+0000] {standard_task_runner.py:105} INFO - Job 785: Subtask test_dbt_models
+[2025-05-07T12:16:45.398+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.test_dbt_models manual__2025-05-07T12:13:05.489201+00:00 [running]> on host 8280c28b7f0f
+[2025-05-07T12:16:45.605+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='test_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T12:13:05.489201+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-07T12:13:05.489201+00:00'
+[2025-05-07T12:16:45.609+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-07T12:16:45.610+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-07T12:16:45.612+0000] {logging_mixin.py:190} INFO - Current task name:test_dbt_models state:running start_date:2025-05-07 12:16:45.226639+00:00
+[2025-05-07T12:16:45.613+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-07T12:16:45.614+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-07T12:16:45.616+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-05-07T12:16:45.619+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt_project/bank_reviews_dbt && dbt test --profiles-dir .']
+[2025-05-07T12:16:45.648+0000] {subprocess.py:99} INFO - Output:
+[2025-05-07T12:16:50.612+0000] {subprocess.py:106} INFO - [0m12:16:50  Running with dbt=1.9.4
+[2025-05-07T12:16:51.253+0000] {subprocess.py:106} INFO - [0m12:16:51  Registered adapter: postgres=1.9.0
+[2025-05-07T12:16:52.643+0000] {subprocess.py:106} INFO - [0m12:16:52  Found 5 models, 12 data tests, 433 macros
+[2025-05-07T12:16:52.652+0000] {subprocess.py:106} INFO - [0m12:16:52
+[2025-05-07T12:16:52.654+0000] {subprocess.py:106} INFO - [0m12:16:52  Concurrency: 1 threads (target='dev')
+[2025-05-07T12:16:52.655+0000] {subprocess.py:106} INFO - [0m12:16:52
+[2025-05-07T12:16:52.848+0000] {subprocess.py:106} INFO - [0m12:16:52  1 of 12 START test not_null_dim_bank_bank_id ................................... [RUN]
+[2025-05-07T12:16:53.011+0000] {subprocess.py:106} INFO - [0m12:16:53  1 of 12 PASS not_null_dim_bank_bank_id ......................................... [[32mPASS[0m in 0.16s]
+[2025-05-07T12:16:53.016+0000] {subprocess.py:106} INFO - [0m12:16:53  2 of 12 START test not_null_dim_bank_bank_name ................................. [RUN]
+[2025-05-07T12:16:53.097+0000] {subprocess.py:106} INFO - [0m12:16:53  2 of 12 PASS not_null_dim_bank_bank_name ....................................... [[32mPASS[0m in 0.08s]
+[2025-05-07T12:16:53.102+0000] {subprocess.py:106} INFO - [0m12:16:53  3 of 12 START test not_null_dim_branch_branch_id ............................... [RUN]
+[2025-05-07T12:16:53.176+0000] {subprocess.py:106} INFO - [0m12:16:53  3 of 12 PASS not_null_dim_branch_branch_id ..................................... [[32mPASS[0m in 0.07s]
+[2025-05-07T12:16:53.186+0000] {subprocess.py:106} INFO - [0m12:16:53  4 of 12 START test not_null_dim_branch_branch_name ............................. [RUN]
+[2025-05-07T12:16:53.291+0000] {subprocess.py:106} INFO - [0m12:16:53  4 of 12 PASS not_null_dim_branch_branch_name ................................... [[32mPASS[0m in 0.10s]
+[2025-05-07T12:16:53.298+0000] {subprocess.py:106} INFO - [0m12:16:53  5 of 12 START test not_null_dim_location_location .............................. [RUN]
+[2025-05-07T12:16:53.371+0000] {subprocess.py:106} INFO - [0m12:16:53  5 of 12 PASS not_null_dim_location_location .................................... [[32mPASS[0m in 0.07s]
+[2025-05-07T12:16:53.377+0000] {subprocess.py:106} INFO - [0m12:16:53  6 of 12 START test not_null_dim_location_location_id ........................... [RUN]
+[2025-05-07T12:16:53.471+0000] {subprocess.py:106} INFO - [0m12:16:53  6 of 12 PASS not_null_dim_location_location_id ................................. [[32mPASS[0m in 0.09s]
+[2025-05-07T12:16:53.479+0000] {subprocess.py:106} INFO - [0m12:16:53  7 of 12 START test not_null_dim_sentiment_sentiment_id ......................... [RUN]
+[2025-05-07T12:16:53.598+0000] {subprocess.py:106} INFO - [0m12:16:53  7 of 12 PASS not_null_dim_sentiment_sentiment_id ............................... [[32mPASS[0m in 0.12s]
+[2025-05-07T12:16:53.603+0000] {subprocess.py:106} INFO - [0m12:16:53  8 of 12 START test not_null_dim_sentiment_sentiment_label ...................... [RUN]
+[2025-05-07T12:16:53.691+0000] {subprocess.py:106} INFO - [0m12:16:53  8 of 12 PASS not_null_dim_sentiment_sentiment_label ............................ [[32mPASS[0m in 0.09s]
+[2025-05-07T12:16:53.697+0000] {subprocess.py:106} INFO - [0m12:16:53  9 of 12 START test unique_dim_bank_bank_id ..................................... [RUN]
+[2025-05-07T12:16:53.799+0000] {subprocess.py:106} INFO - [0m12:16:53  9 of 12 PASS unique_dim_bank_bank_id ........................................... [[32mPASS[0m in 0.10s]
+[2025-05-07T12:16:53.805+0000] {subprocess.py:106} INFO - [0m12:16:53  10 of 12 START test unique_dim_branch_branch_id ................................ [RUN]
+[2025-05-07T12:16:53.910+0000] {subprocess.py:106} INFO - [0m12:16:53  10 of 12 PASS unique_dim_branch_branch_id ...................................... [[32mPASS[0m in 0.10s]
+[2025-05-07T12:16:53.919+0000] {subprocess.py:106} INFO - [0m12:16:53  11 of 12 START test unique_dim_location_location_id ............................ [RUN]
+[2025-05-07T12:16:54.017+0000] {subprocess.py:106} INFO - [0m12:16:54  11 of 12 PASS unique_dim_location_location_id .................................. [[32mPASS[0m in 0.09s]
+[2025-05-07T12:16:54.022+0000] {subprocess.py:106} INFO - [0m12:16:54  12 of 12 START test unique_dim_sentiment_sentiment_id .......................... [RUN]
+[2025-05-07T12:16:54.115+0000] {subprocess.py:106} INFO - [0m12:16:54  12 of 12 PASS unique_dim_sentiment_sentiment_id ................................ [[32mPASS[0m in 0.09s]
+[2025-05-07T12:16:54.145+0000] {subprocess.py:106} INFO - [0m12:16:54
+[2025-05-07T12:16:54.148+0000] {subprocess.py:106} INFO - [0m12:16:54  Finished running 12 data tests in 0 hours 0 minutes and 1.49 seconds (1.49s).
+[2025-05-07T12:16:54.293+0000] {subprocess.py:106} INFO - [0m12:16:54
+[2025-05-07T12:16:54.297+0000] {subprocess.py:106} INFO - [0m12:16:54  [32mCompleted successfully[0m
+[2025-05-07T12:16:54.298+0000] {subprocess.py:106} INFO - [0m12:16:54
+[2025-05-07T12:16:54.300+0000] {subprocess.py:106} INFO - [0m12:16:54  Done. PASS=12 WARN=0 ERROR=0 SKIP=0 TOTAL=12
+[2025-05-07T12:16:55.739+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-05-07T12:16:55.807+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-07T12:16:55.809+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=test_dbt_models, run_id=manual__2025-05-07T12:13:05.489201+00:00, execution_date=20250507T121305, start_date=20250507T121645, end_date=20250507T121655
+[2025-05-07T12:16:55.859+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-07T12:16:55.860+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-07T12:16:55.862+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-07 12:13:05.528866+00:00
+[2025-05-07T12:16:55.863+0000] {logging_mixin.py:190} INFO - Task hostname:8280c28b7f0f operator:BashOperator
+[2025-05-07T12:16:55.895+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-07T12:16:55.964+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-07T12:16:55.984+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

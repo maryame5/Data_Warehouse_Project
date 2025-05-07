@@ -1,0 +1,53 @@
+[2025-05-07T12:12:04.273+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-07T12:12:04.322+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.run_dbt_models manual__2025-05-07T12:08:42.928678+00:00 [queued]>
+[2025-05-07T12:12:04.348+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.run_dbt_models manual__2025-05-07T12:08:42.928678+00:00 [queued]>
+[2025-05-07T12:12:04.350+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-07T12:12:04.382+0000] {taskinstance.py:2890} INFO - Executing <Task(BashOperator): run_dbt_models> on 2025-05-07 12:08:42.928678+00:00
+[2025-05-07T12:12:04.400+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=259) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-07T12:12:04.405+0000] {standard_task_runner.py:72} INFO - Started process 274 to run task
+[2025-05-07T12:12:04.406+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'run_dbt_models', 'manual__2025-05-07T12:08:42.928678+00:00', '--job-id', '772', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpmr0ceact']
+[2025-05-07T12:12:04.410+0000] {standard_task_runner.py:105} INFO - Job 772: Subtask run_dbt_models
+[2025-05-07T12:12:04.499+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.run_dbt_models manual__2025-05-07T12:08:42.928678+00:00 [running]> on host 8280c28b7f0f
+[2025-05-07T12:12:04.657+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='run_dbt_models' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T12:08:42.928678+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-07T12:08:42.928678+00:00'
+[2025-05-07T12:12:04.660+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-07T12:12:04.661+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-07T12:12:04.661+0000] {logging_mixin.py:190} INFO - Current task name:run_dbt_models state:running start_date:2025-05-07 12:12:04.324315+00:00
+[2025-05-07T12:12:04.662+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-07T12:12:04.663+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-07T12:12:04.665+0000] {subprocess.py:78} INFO - Tmp dir root location: /tmp
+[2025-05-07T12:12:04.666+0000] {subprocess.py:88} INFO - Running command: ['/usr/bin/bash', '-c', 'cd /opt/***/dbt_project/bank_reviews_dbt && dbt run --profiles-dir .']
+[2025-05-07T12:12:04.698+0000] {subprocess.py:99} INFO - Output:
+[2025-05-07T12:12:10.248+0000] {subprocess.py:106} INFO - [0m12:12:10  Running with dbt=1.9.4
+[2025-05-07T12:12:10.860+0000] {subprocess.py:106} INFO - [0m12:12:10  Registered adapter: postgres=1.9.0
+[2025-05-07T12:12:12.170+0000] {subprocess.py:106} INFO - [0m12:12:12  Found 5 models, 12 data tests, 433 macros
+[2025-05-07T12:12:12.179+0000] {subprocess.py:106} INFO - [0m12:12:12
+[2025-05-07T12:12:12.182+0000] {subprocess.py:106} INFO - [0m12:12:12  Concurrency: 1 threads (target='dev')
+[2025-05-07T12:12:12.184+0000] {subprocess.py:106} INFO - [0m12:12:12
+[2025-05-07T12:12:12.443+0000] {subprocess.py:106} INFO - [0m12:12:12  1 of 5 START sql table model review.dim_bank ................................... [RUN]
+[2025-05-07T12:12:12.830+0000] {subprocess.py:106} INFO - [0m12:12:12  1 of 5 OK created sql table model review.dim_bank .............................. [[32mSELECT 222[0m in 0.38s]
+[2025-05-07T12:12:12.836+0000] {subprocess.py:106} INFO - [0m12:12:12  2 of 5 START sql table model review.dim_branch ................................. [RUN]
+[2025-05-07T12:12:13.004+0000] {subprocess.py:106} INFO - [0m12:12:13  2 of 5 OK created sql table model review.dim_branch ............................ [[32mSELECT 222[0m in 0.16s]
+[2025-05-07T12:12:13.016+0000] {subprocess.py:106} INFO - [0m12:12:13  3 of 5 START sql table model review.dim_location ............................... [RUN]
+[2025-05-07T12:12:13.170+0000] {subprocess.py:106} INFO - [0m12:12:13  3 of 5 OK created sql table model review.dim_location .......................... [[32mSELECT 627[0m in 0.15s]
+[2025-05-07T12:12:13.176+0000] {subprocess.py:106} INFO - [0m12:12:13  4 of 5 START sql table model review.dim_sentiment .............................. [RUN]
+[2025-05-07T12:12:13.354+0000] {subprocess.py:106} INFO - [0m12:12:13  4 of 5 OK created sql table model review.dim_sentiment ......................... [[32mSELECT 3[0m in 0.17s]
+[2025-05-07T12:12:13.361+0000] {subprocess.py:106} INFO - [0m12:12:13  5 of 5 START sql table model review.fact_reviews ............................... [RUN]
+[2025-05-07T12:12:13.560+0000] {subprocess.py:106} INFO - [0m12:12:13  5 of 5 OK created sql table model review.fact_reviews .......................... [[32mSELECT 3657[0m in 0.19s]
+[2025-05-07T12:12:13.600+0000] {subprocess.py:106} INFO - [0m12:12:13
+[2025-05-07T12:12:13.603+0000] {subprocess.py:106} INFO - [0m12:12:13  Finished running 5 table models in 0 hours 0 minutes and 1.41 seconds (1.41s).
+[2025-05-07T12:12:13.754+0000] {subprocess.py:106} INFO - [0m12:12:13
+[2025-05-07T12:12:13.755+0000] {subprocess.py:106} INFO - [0m12:12:13  [32mCompleted successfully[0m
+[2025-05-07T12:12:13.757+0000] {subprocess.py:106} INFO - [0m12:12:13
+[2025-05-07T12:12:13.758+0000] {subprocess.py:106} INFO - [0m12:12:13  Done. PASS=5 WARN=0 ERROR=0 SKIP=0 TOTAL=5
+[2025-05-07T12:12:15.398+0000] {subprocess.py:110} INFO - Command exited with return code 0
+[2025-05-07T12:12:15.456+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-07T12:12:15.457+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=run_dbt_models, run_id=manual__2025-05-07T12:08:42.928678+00:00, execution_date=20250507T120842, start_date=20250507T121204, end_date=20250507T121215
+[2025-05-07T12:12:15.508+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-07T12:12:15.511+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-07T12:12:15.512+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-07 12:08:42.960578+00:00
+[2025-05-07T12:12:15.513+0000] {logging_mixin.py:190} INFO - Task hostname:8280c28b7f0f operator:BashOperator
+[2025-05-07T12:12:15.549+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-07T12:12:15.605+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-07T12:12:15.610+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
