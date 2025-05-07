@@ -1,0 +1,125 @@
+[2025-05-06T22:58:30.671+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-06T22:58:30.726+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T22:58:30.752+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T22:58:30.754+0000] {taskinstance.py:2867} INFO - Starting attempt 9 of 9
+[2025-05-06T22:58:30.788+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): Load_reviews1> on 2025-05-06 20:00:25.137792+00:00
+[2025-05-06T22:58:30.813+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9203) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-06T22:58:30.817+0000] {standard_task_runner.py:72} INFO - Started process 9218 to run task
+[2025-05-06T22:58:30.817+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'Load_reviews1', 'manual__2025-05-06T20:00:25.137792+00:00', '--job-id', '653', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpfiewr2xy']
+[2025-05-06T22:58:30.820+0000] {standard_task_runner.py:105} INFO - Job 653: Subtask Load_reviews1
+[2025-05-06T22:58:30.927+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.Load_reviews1 manual__2025-05-06T20:00:25.137792+00:00 [running]> on host 8280c28b7f0f
+[2025-05-06T22:58:31.159+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='Load_reviews1' AIRFLOW_CTX_EXECUTION_DATE='2025-05-06T20:00:25.137792+00:00' AIRFLOW_CTX_TRY_NUMBER='9' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-06T20:00:25.137792+00:00'
+[2025-05-06T22:58:31.162+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-06T22:58:31.164+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-06T22:58:31.165+0000] {logging_mixin.py:190} INFO - Current task name:Load_reviews1 state:running start_date:2025-05-06 22:58:30.728527+00:00
+[2025-05-06T22:58:31.167+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-06T22:58:31.168+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-06T22:58:31.235+0000] {logging_mixin.py:190} INFO - Current directory: /opt/***/dags
+[2025-05-06T22:58:31.236+0000] {logging_mixin.py:190} INFO - Data path: /opt/***/dags/input/reviews.csv
+[2025-05-06T22:58:31.283+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-06T22:58:31.341+0000] {taskinstance.py:3313} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/storeData.py", line 421, in Load_reviews1
+    execute_values(cur, insert_sql, values)
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "unique_review"
+DETAIL:  Key (place_id, bank_name, branch_name, location, review_text, rating)=(ChIJdUNHGHWiDA0R2_yuN7yMAmw, Banque Populaire, Banque Populaire Branch, WJ35+W7J, Belyounech, Morocco, I like it, 5) already exists.
+
+[2025-05-06T22:58:31.375+0000] {logging_mixin.py:190} INFO - Task instance in failure state
+[2025-05-06T22:58:31.377+0000] {logging_mixin.py:190} INFO - Task start:2025-05-06 22:58:30.728527+00:00 end:2025-05-06 22:58:31.374409+00:00 duration:0.645882
+[2025-05-06T22:58:31.378+0000] {logging_mixin.py:190} INFO - Task:<Task(PythonOperator): Load_reviews1> dag:<DAG: google_maps_reviews> dagrun:<DagRun google_maps_reviews @ 2025-05-06 20:00:25.137792+00:00: manual__2025-05-06T20:00:25.137792+00:00, state:running, queued_at: 2025-05-06 22:51:06.065356+00:00. externally triggered: True>
+[2025-05-06T22:58:31.380+0000] {logging_mixin.py:190} INFO - Failure caused by duplicate key value violates unique constraint "unique_review"
+DETAIL:  Key (place_id, bank_name, branch_name, location, review_text, rating)=(ChIJdUNHGHWiDA0R2_yuN7yMAmw, Banque Populaire, Banque Populaire Branch, WJ35+W7J, Belyounech, Morocco, I like it, 5) already exists.
+[2025-05-06T22:58:31.381+0000] {taskinstance.py:1226} INFO - Marking task as FAILED. dag_id=google_maps_reviews, task_id=Load_reviews1, run_id=manual__2025-05-06T20:00:25.137792+00:00, execution_date=20250506T200025, start_date=20250506T225830, end_date=20250506T225831
+[2025-05-06T22:58:31.435+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-06T22:58:31.437+0000] {standard_task_runner.py:124} ERROR - Failed to execute job 653 for task Load_reviews1 (duplicate key value violates unique constraint "unique_review"
+DETAIL:  Key (place_id, bank_name, branch_name, location, review_text, rating)=(ChIJdUNHGHWiDA0R2_yuN7yMAmw, Banque Populaire, Banque Populaire Branch, WJ35+W7J, Belyounech, Morocco, I like it, 5) already exists.
+; 9218)
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py", line 117, in _start_by_fork
+    ret = args.func(args, dag=self.dag)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/cli_config.py", line 49, in command
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/cli.py", line 116, in wrapper
+    return f(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 483, in task_run
+    task_return_code = _run_task_by_selected_method(args, _dag, ti)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 256, in _run_task_by_selected_method
+    return _run_raw_task(args, ti)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/cli/commands/task_command.py", line 341, in _run_raw_task
+    return ti._run_raw_task(
+           ^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/session.py", line 97, in wrapper
+    return func(*args, session=session, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3006, in _run_raw_task
+    return _run_raw_task(
+           ^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 274, in _run_raw_task
+    TaskInstance._execute_task_with_callbacks(
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3161, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 3185, in _execute_task
+    return _execute_task(self, context, task_orig)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 768, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/taskinstance.py", line 734, in _execute_callable
+    return ExecutionCallableRunner(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/models/baseoperator.py", line 424, in wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 238, in execute
+    return_value = self.execute_callable()
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/operators/python.py", line 256, in execute_callable
+    return runner.run(*self.op_args, **self.op_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/airflow/.local/lib/python3.12/site-packages/airflow/utils/operator_helpers.py", line 252, in run
+    return self.func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/airflow/dags/storeData.py", line 421, in Load_reviews1
+    execute_values(cur, insert_sql, values)
+  File "/home/airflow/.local/lib/python3.12/site-packages/psycopg2/extras.py", line 1299, in execute_values
+    cur.execute(b''.join(parts))
+psycopg2.errors.UniqueViolation: duplicate key value violates unique constraint "unique_review"
+DETAIL:  Key (place_id, bank_name, branch_name, location, review_text, rating)=(ChIJdUNHGHWiDA0R2_yuN7yMAmw, Banque Populaire, Banque Populaire Branch, WJ35+W7J, Belyounech, Morocco, I like it, 5) already exists.
+
+[2025-05-06T22:58:31.482+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 1
+[2025-05-06T22:58:31.537+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-06T22:58:31.566+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

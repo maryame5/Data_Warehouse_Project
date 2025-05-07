@@ -1,0 +1,30 @@
+[2025-05-06T23:03:00.365+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-06T23:03:00.409+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.remove_duplicates manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T23:03:00.429+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.remove_duplicates manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T23:03:00.448+0000] {taskinstance.py:2867} INFO - Starting attempt 7 of 8
+[2025-05-06T23:03:00.484+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): remove_duplicates> on 2025-05-06 20:00:25.137792+00:00
+[2025-05-06T23:03:00.510+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9305) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-06T23:03:00.514+0000] {standard_task_runner.py:72} INFO - Started process 9320 to run task
+[2025-05-06T23:03:00.514+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'remove_duplicates', 'manual__2025-05-06T20:00:25.137792+00:00', '--job-id', '656', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpa3he4f4q']
+[2025-05-06T23:03:00.521+0000] {standard_task_runner.py:105} INFO - Job 656: Subtask remove_duplicates
+[2025-05-06T23:03:00.606+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.remove_duplicates manual__2025-05-06T20:00:25.137792+00:00 [running]> on host 8280c28b7f0f
+[2025-05-06T23:03:00.791+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='remove_duplicates' AIRFLOW_CTX_EXECUTION_DATE='2025-05-06T20:00:25.137792+00:00' AIRFLOW_CTX_TRY_NUMBER='7' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-06T20:00:25.137792+00:00'
+[2025-05-06T23:03:00.795+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-06T23:03:00.797+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-06T23:03:00.798+0000] {logging_mixin.py:190} INFO - Current task name:remove_duplicates state:running start_date:2025-05-06 23:03:00.411491+00:00
+[2025-05-06T23:03:00.801+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-06T23:03:00.802+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-06T23:03:00.823+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-06T23:03:00.839+0000] {logging_mixin.py:190} INFO - Duplicate reviews removed.
+[2025-05-06T23:03:00.840+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-06T23:03:00.859+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-06T23:03:00.860+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=remove_duplicates, run_id=manual__2025-05-06T20:00:25.137792+00:00, execution_date=20250506T200025, start_date=20250506T230300, end_date=20250506T230300
+[2025-05-06T23:03:00.909+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-06T23:03:00.910+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-06T23:03:00.912+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-06 23:00:53.773813+00:00
+[2025-05-06T23:03:00.913+0000] {logging_mixin.py:190} INFO - Task hostname:8280c28b7f0f operator:PythonOperator
+[2025-05-06T23:03:00.940+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-06T23:03:01.023+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-06T23:03:01.028+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

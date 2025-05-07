@@ -1,0 +1,30 @@
+[2025-05-06T23:03:17.757+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-06T23:03:17.797+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.detect_language manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T23:03:17.816+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.detect_language manual__2025-05-06T20:00:25.137792+00:00 [queued]>
+[2025-05-06T23:03:17.819+0000] {taskinstance.py:2867} INFO - Starting attempt 3 of 4
+[2025-05-06T23:03:17.845+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): detect_language> on 2025-05-06 20:00:25.137792+00:00
+[2025-05-06T23:03:17.866+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=9346) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-06T23:03:17.870+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'detect_language', 'manual__2025-05-06T20:00:25.137792+00:00', '--job-id', '658', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpv5ceizih']
+[2025-05-06T23:03:17.871+0000] {standard_task_runner.py:72} INFO - Started process 9361 to run task
+[2025-05-06T23:03:17.872+0000] {standard_task_runner.py:105} INFO - Job 658: Subtask detect_language
+[2025-05-06T23:03:17.972+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.detect_language manual__2025-05-06T20:00:25.137792+00:00 [running]> on host 8280c28b7f0f
+[2025-05-06T23:03:18.184+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='detect_language' AIRFLOW_CTX_EXECUTION_DATE='2025-05-06T20:00:25.137792+00:00' AIRFLOW_CTX_TRY_NUMBER='3' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-06T20:00:25.137792+00:00'
+[2025-05-06T23:03:18.187+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-06T23:03:18.189+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-06T23:03:18.190+0000] {logging_mixin.py:190} INFO - Current task name:detect_language state:running start_date:2025-05-06 23:03:17.799372+00:00
+[2025-05-06T23:03:18.191+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-06T23:03:18.192+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-06T23:03:18.210+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-06T23:03:36.397+0000] {logging_mixin.py:190} INFO - Language detection completed.
+[2025-05-06T23:03:36.399+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-06T23:03:36.422+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-06T23:03:36.425+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=detect_language, run_id=manual__2025-05-06T20:00:25.137792+00:00, execution_date=20250506T200025, start_date=20250506T230317, end_date=20250506T230336
+[2025-05-06T23:03:36.485+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-06T23:03:36.487+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-06T23:03:36.488+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-06 23:00:53.773813+00:00
+[2025-05-06T23:03:36.489+0000] {logging_mixin.py:190} INFO - Task hostname:8280c28b7f0f operator:PythonOperator
+[2025-05-06T23:03:36.565+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-06T23:03:36.634+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-06T23:03:36.638+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

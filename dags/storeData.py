@@ -51,6 +51,7 @@ def export_data():
     pg_hook = PostgresHook(postgres_conn_id="postgres_defaut")
     conn = pg_hook.get_conn()
     cur = conn.cursor()
+    
     query="""
 SELECT 
          rr.place_id,
@@ -90,6 +91,7 @@ GROUP BY
 
 ORDER BY rr.PLACE_ID DESC;
 """
+
     cur.execute(query)
     conn.commit()
     # Charger les données dans un DataFrame
@@ -154,6 +156,11 @@ CREATE TABLE IF NOT EXISTS review.fact_reviews (
     review_date TIMESTAMP
 );
     """
+    query="""
+     ALTER TABLE review.dim_bank ADD CONSTRAINT unique_bank_name UNIQUE (bank_name);
+    ALTER TABLE review.dim_branch ADD CONSTRAINT unique_branch_name UNIQUE (branch_name);
+   ALTER TABLE review.dim_location ADD CONSTRAINT unique_location UNIQUE (location);
+   ALTER TABLE review.dim_sentiment ADD CONSTRAINT unique_sentiment_label UNIQUE (sentiment_label);"""
     
 
     # Peupler les tables de dimension
@@ -202,8 +209,24 @@ LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label;
     """
     try:
         cur.execute(create_tables_sql)
+        cur.execute(query)
         cur.execute(populate_dim_sql)
         cur.execute(populate_fact_sql)
+        query = """
+         select * from review.raw_reviews;
+        """
+  
+        cur.execute(query)
+        conn.commit()
+        # Charger les données dans un DataFrame
+        df = pd.read_sql_query(query, conn)
+
+        # Exporter vers CSV
+        csv_path = "/opt/airflow/dags/output/reviewsl.csv"
+
+        # Append new data to existing CSV or create a new file if it doesn't exist
+        df.to_csv(csv_path, index=False)
+
         conn.commit()
     except Exception as e:
         conn.rollback()
@@ -248,6 +271,22 @@ def extract_topics():
             SET topic = %s
             WHERE id = %s;
         """, (topic_text, review_id))
+    
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviewstop.csv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
 
     conn.commit()
     cur.close()
@@ -269,6 +308,22 @@ def analyze_sentiment():
         sentiment = "Positive" if polarity > 0 else "Negative" if polarity < 0 else "Neutral"
 
         cur.execute("UPDATE review.raw_reviews SET sentiment = %s WHERE id = %s;", (sentiment, review_id))
+    
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviewssent.csv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
 
     conn.commit()
     cur.close()
@@ -292,6 +347,22 @@ def detect_language_reviews():
             language = "unknown"
 
         cur.execute("UPDATE review.raw_reviews SET language = %s WHERE id = %s;", (language, review_id))
+    
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviewslang.csv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
 
     conn.commit()
     cur.close()
@@ -305,32 +376,45 @@ def normalize_and_clean_data():
     pg_hook = PostgresHook(postgres_conn_id="postgres_defaut")
     conn = pg_hook.get_conn()
     cur = conn.cursor()
-
     # Récupérer les données
     df = pd.read_sql("SELECT * FROM review.raw_reviews", conn)
-
     # Convertir en minuscule
-    
     df['review_text'] = df['review_text'].str.lower()
-
     # Supprimer la ponctuation
     df['review_text'] = df['review_text'].apply(lambda x: x.translate(str.maketrans('', '', string.punctuation)))
-
     # Supprimer les stop words
     stop_words = set(stopwords.words('english'))  # Changer pour 'english' si nécessaire
     df['review_text'] = df['review_text'].apply(lambda x: ' '.join([word for word in x.split() if word not in stop_words]))
-
     # Gérer les valeurs manquantes
-    df['review_text'] = df['review_text'].fillna("").apply(lambda x: "Avis non disponible" if x.strip() == "" else x)
+    df['review_text'].fillna("Avis non disponible", inplace=True)
     df['rating'].fillna(df['rating'].mean(), inplace=True)
 
     # Mettre à jour les données dans la base PostgreSQL
     for _, row in df.iterrows():
+        
         cur.execute("""
             UPDATE review.raw_reviews
             SET review_text = %s, rating = %s
-            WHERE place_id = %s
-        """, (row['review_text'], row['rating'], row['place_id']))
+            WHERE id = %s
+        """, (row['review_text'], row['rating'], int(row['id'])))
+
+
+
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviews.cleancsv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
 
     conn.commit()
     cur.close()
@@ -355,6 +439,21 @@ def remove_duplicates():
         );
     """
     cur.execute(delete_sql)
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviewsdu.csv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
     conn.commit()
     cur.close()
     conn.close()
@@ -404,7 +503,8 @@ def Load_reviews1():
             review_date TIMESTAMP
         );
     """)
-
+        # Add unique constraint (run once)
+  
     # Convert DataFrame to a list of tuples for batch insertion
     records = df.to_records(index=False)
     values = [tuple(row) for row in records]
@@ -413,11 +513,27 @@ def Load_reviews1():
     insert_sql = """
         INSERT INTO review.raw_reviews 
             (place_id, bank_name, branch_name, location, review_text, rating, review_date)
-        VALUES %s;
+        VALUES %s
+       ;
 
 
     """
     execute_values(cur, insert_sql, values)
+    query = """
+    select * from review.raw_reviews;
+    """
+  
+    cur.execute(query)
+    conn.commit()
+    # Charger les données dans un DataFrame
+    df = pd.read_sql_query(query, conn)
+
+# Exporter vers CSV
+    csv_path = "/opt/airflow/dags/output/reviewsl.csv"
+
+    # Append new data to existing CSV or create a new file if it doesn't exist
+    df.to_csv(csv_path, index=False)
+
 
     # Commit the transaction
     conn.commit()
