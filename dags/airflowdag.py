@@ -9,11 +9,16 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from storeData import *
 from airflow.operators.bash_operator import BashOperator
+from airflow.operators.email import EmailOperator
 
 
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
+    'email': ['elkhalfimaryame@gmail.com'],
+    'email_on_failure': True,
+    'email_on_retry': True,
+    'email_on_success': True,
     'start_date': datetime(2024, 1, 1),
     'retries': 1,
     'retry_delay': timedelta(minutes=5),
@@ -80,9 +85,14 @@ with DAG(
 )
     export_data_to_csv = PythonOperator(
         task_id='export_to_csv',
-        python_callable=export_data
-
-       
+        python_callable=export_data )
+    
+    send_email = EmailOperator(
+    task_id='send_test_email',
+    to='elkhalfimaryame@gmail.com',
+    subject='Test Email from Airflow',
+    html_content='<p>This is a test email.</p><p>Google reviews data pipeline has been successfully </p>' ,
+       dag=dag,
     )
 
     #dbt_docs_serve_task = BashOperator(

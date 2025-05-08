@@ -1,0 +1,230 @@
+[2025-05-08T21:46:01.696+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-08T21:46:01.739+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.extract_topics manual__2025-05-08T21:43:14.329156+00:00 [queued]>
+[2025-05-08T21:46:01.759+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.extract_topics manual__2025-05-08T21:43:14.329156+00:00 [queued]>
+[2025-05-08T21:46:01.778+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-08T21:46:01.813+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): extract_topics> on 2025-05-08 21:43:14.329156+00:00
+[2025-05-08T21:46:01.834+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=252) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-08T21:46:01.838+0000] {standard_task_runner.py:72} INFO - Started process 267 to run task
+[2025-05-08T21:46:01.840+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'extract_topics', 'manual__2025-05-08T21:43:14.329156+00:00', '--job-id', '893', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmp1yyuwqc9']
+[2025-05-08T21:46:01.843+0000] {standard_task_runner.py:105} INFO - Job 893: Subtask extract_topics
+[2025-05-08T21:46:01.928+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.extract_topics manual__2025-05-08T21:43:14.329156+00:00 [running]> on host f90cb465d7e0
+[2025-05-08T21:46:02.092+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='elkhalfimaryame@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='extract_topics' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T21:43:14.329156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T21:43:14.329156+00:00'
+[2025-05-08T21:46:02.095+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-08T21:46:02.096+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-08T21:46:02.097+0000] {logging_mixin.py:190} INFO - Current task name:extract_topics state:running start_date:2025-05-08 21:46:01.740555+00:00
+[2025-05-08T21:46:02.099+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-08T21:46:02.100+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-08T21:46:02.117+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-08T21:46:02.619+0000] {dictionary.py:201} INFO - adding document #0 to Dictionary<0 unique tokens: []>
+[2025-05-08T21:46:02.747+0000] {dictionary.py:206} INFO - built Dictionary<5396 unique tokens: ['current', 'office', 'post', 'nan', 'atm']...> from 4752 documents (total 41490 corpus positions)
+[2025-05-08T21:46:02.750+0000] {utils.py:447} INFO - Dictionary lifecycle event {'msg': "built Dictionary<5396 unique tokens: ['current', 'office', 'post', 'nan', 'atm']...> from 4752 documents (total 41490 corpus positions)", 'datetime': '2025-05-08T21:46:02.749832', 'gensim': '4.3.3', 'python': '3.12.9 (main, Feb  6 2025, 22:37:05) [GCC 12.2.0]', 'platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'event': 'created'}
+[2025-05-08T21:46:02.832+0000] {ldamodel.py:577} INFO - using symmetric alpha at 0.3333333333333333
+[2025-05-08T21:46:02.836+0000] {ldamodel.py:577} INFO - using symmetric eta at 0.3333333333333333
+[2025-05-08T21:46:02.839+0000] {ldamodel.py:482} INFO - using serial LDA version on this node
+[2025-05-08T21:46:02.843+0000] {ldamodel.py:948} INFO - running online (multi-pass) LDA training, 3 topics, 10 passes over the supplied corpus of 4752 documents, updating model once every 2000 documents, evaluating perplexity every 4752 documents, iterating 50x with a convergence threshold of 0.001000
+[2025-05-08T21:46:02.844+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 0, at document #2000/4752
+[2025-05-08T21:46:04.237+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:04.241+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.023*"agency" + 0.014*"nan" + 0.013*"good" + 0.013*"account" + 0.011*"bank" + 0.009*"service" + 0.007*"customers" + 0.006*"customer" + 0.006*"wait" + 0.005*"people"
+[2025-05-08T21:46:04.243+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.034*"service" + 0.023*"agency" + 0.019*"bank" + 0.017*"bad" + 0.010*"money" + 0.008*"nan" + 0.007*"one" + 0.007*"atm" + 0.006*"dont" + 0.006*"customer"
+[2025-05-08T21:46:04.244+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.054*"nan" + 0.031*"bank" + 0.027*"service" + 0.012*"agency" + 0.011*"good" + 0.009*"one" + 0.008*"staff" + 0.006*"’" + 0.006*"people" + 0.006*"time"
+[2025-05-08T21:46:04.245+0000] {ldamodel.py:1075} INFO - topic diff=2.266324, rho=1.000000
+[2025-05-08T21:46:04.246+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 0, at document #4000/4752
+[2025-05-08T21:46:05.060+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:05.062+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.019*"good" + 0.018*"agency" + 0.011*"account" + 0.009*"bank" + 0.008*"customers" + 0.006*"service" + 0.006*"customer" + 0.006*"wait" + 0.005*"staff" + 0.005*"time"
+[2025-05-08T21:46:05.066+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.033*"service" + 0.018*"bad" + 0.018*"bank" + 0.018*"agency" + 0.010*"money" + 0.008*"atm" + 0.007*"one" + 0.007*"customer" + 0.007*"dont" + 0.007*"time"
+[2025-05-08T21:46:05.067+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.071*"nan" + 0.035*"bank" + 0.028*"service" + 0.012*"good" + 0.010*"’" + 0.009*"agency" + 0.009*"staff" + 0.007*"one" + 0.007*"customers" + 0.006*"worst"
+[2025-05-08T21:46:05.068+0000] {ldamodel.py:1075} INFO - topic diff=1.030054, rho=0.707107
+[2025-05-08T21:46:05.410+0000] {ldamodel.py:848} INFO - -7.804 per-word bound, 223.5 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:05.412+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 0, at document #4752/4752
+[2025-05-08T21:46:05.732+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:05.736+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.019*"good" + 0.018*"agency" + 0.013*"account" + 0.009*"bank" + 0.007*"customers" + 0.006*"staff" + 0.006*"professional" + 0.005*"customer" + 0.005*"manager" + 0.005*"number"
+[2025-05-08T21:46:05.738+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.035*"service" + 0.021*"bank" + 0.018*"agency" + 0.017*"bad" + 0.013*"money" + 0.009*"one" + 0.008*"customer" + 0.007*"dont" + 0.007*"atm" + 0.006*"account"
+[2025-05-08T21:46:05.739+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.085*"nan" + 0.041*"bank" + 0.029*"service" + 0.014*"good" + 0.010*"staff" + 0.009*"one" + 0.008*"agency" + 0.007*"worst" + 0.007*"’" + 0.007*"people"
+[2025-05-08T21:46:05.740+0000] {ldamodel.py:1075} INFO - topic diff=0.692959, rho=0.577350
+[2025-05-08T21:46:05.742+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 1, at document #2000/4752
+[2025-05-08T21:46:06.365+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:06.369+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.018*"good" + 0.013*"account" + 0.008*"bank" + 0.006*"customers" + 0.006*"professional" + 0.006*"manager" + 0.005*"staff" + 0.005*"number" + 0.005*"customer"
+[2025-05-08T21:46:06.371+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.034*"service" + 0.020*"bank" + 0.019*"agency" + 0.017*"bad" + 0.012*"money" + 0.009*"one" + 0.008*"dont" + 0.007*"customer" + 0.007*"atm" + 0.007*"account"
+[2025-05-08T21:46:06.373+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.088*"nan" + 0.039*"bank" + 0.030*"service" + 0.015*"good" + 0.010*"staff" + 0.009*"agency" + 0.009*"’" + 0.008*"one" + 0.007*"worst" + 0.006*"people"
+[2025-05-08T21:46:06.375+0000] {ldamodel.py:1075} INFO - topic diff=0.449772, rho=0.478037
+[2025-05-08T21:46:06.376+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 1, at document #4000/4752
+[2025-05-08T21:46:06.976+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:06.980+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.021*"good" + 0.019*"agency" + 0.011*"account" + 0.008*"bank" + 0.007*"customers" + 0.006*"professional" + 0.006*"manager" + 0.006*"staff" + 0.005*"customer" + 0.005*"time"
+[2025-05-08T21:46:06.982+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.032*"service" + 0.019*"bank" + 0.017*"agency" + 0.017*"bad" + 0.011*"money" + 0.009*"one" + 0.008*"dont" + 0.008*"atm" + 0.007*"customer" + 0.007*"time"
+[2025-05-08T21:46:06.983+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.090*"nan" + 0.039*"bank" + 0.031*"service" + 0.015*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"agency" + 0.008*"worst" + 0.007*"one" + 0.006*"customers"
+[2025-05-08T21:46:06.984+0000] {ldamodel.py:1075} INFO - topic diff=0.418230, rho=0.478037
+[2025-05-08T21:46:07.245+0000] {ldamodel.py:848} INFO - -7.448 per-word bound, 174.6 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:07.249+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 1, at document #4752/4752
+[2025-05-08T21:46:07.440+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:07.444+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"good" + 0.019*"agency" + 0.012*"account" + 0.008*"bank" + 0.007*"professional" + 0.006*"customers" + 0.006*"staff" + 0.006*"branch" + 0.005*"manager" + 0.005*"treatment"
+[2025-05-08T21:46:07.445+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.033*"service" + 0.021*"bank" + 0.017*"agency" + 0.016*"bad" + 0.013*"money" + 0.010*"one" + 0.008*"customer" + 0.008*"dont" + 0.007*"account" + 0.007*"atm"
+[2025-05-08T21:46:07.447+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.099*"nan" + 0.043*"bank" + 0.032*"service" + 0.017*"good" + 0.011*"staff" + 0.009*"worst" + 0.009*"’" + 0.008*"agency" + 0.008*"one" + 0.006*"people"
+[2025-05-08T21:46:07.450+0000] {ldamodel.py:1075} INFO - topic diff=0.387097, rho=0.478037
+[2025-05-08T21:46:07.451+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 2, at document #2000/4752
+[2025-05-08T21:46:07.976+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:07.979+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.019*"good" + 0.012*"account" + 0.007*"bank" + 0.007*"professional" + 0.006*"manager" + 0.006*"customers" + 0.006*"staff" + 0.006*"branch" + 0.005*"services"
+[2025-05-08T21:46:07.981+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.032*"service" + 0.020*"bank" + 0.019*"agency" + 0.016*"bad" + 0.012*"money" + 0.009*"one" + 0.008*"dont" + 0.008*"customer" + 0.008*"account" + 0.007*"time"
+[2025-05-08T21:46:07.983+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.099*"nan" + 0.041*"bank" + 0.033*"service" + 0.018*"good" + 0.010*"staff" + 0.010*"’" + 0.009*"agency" + 0.008*"worst" + 0.007*"one" + 0.006*"people"
+[2025-05-08T21:46:07.986+0000] {ldamodel.py:1075} INFO - topic diff=0.337746, rho=0.431291
+[2025-05-08T21:46:07.987+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 2, at document #4000/4752
+[2025-05-08T21:46:08.544+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:08.547+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.021*"good" + 0.020*"agency" + 0.010*"account" + 0.007*"bank" + 0.007*"professional" + 0.006*"customers" + 0.006*"manager" + 0.006*"staff" + 0.006*"services" + 0.005*"branch"
+[2025-05-08T21:46:08.550+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.020*"bank" + 0.017*"agency" + 0.016*"bad" + 0.011*"money" + 0.009*"one" + 0.008*"dont" + 0.008*"customer" + 0.008*"time" + 0.007*"atm"
+[2025-05-08T21:46:08.551+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.099*"nan" + 0.040*"bank" + 0.033*"service" + 0.018*"good" + 0.012*"’" + 0.010*"staff" + 0.009*"worst" + 0.008*"agency" + 0.006*"one" + 0.005*"ever"
+[2025-05-08T21:46:08.552+0000] {ldamodel.py:1075} INFO - topic diff=0.322194, rho=0.431291
+[2025-05-08T21:46:08.897+0000] {ldamodel.py:848} INFO - -7.366 per-word bound, 165.0 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:08.899+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 2, at document #4752/4752
+[2025-05-08T21:46:09.078+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:09.082+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"good" + 0.019*"agency" + 0.011*"account" + 0.008*"bank" + 0.008*"professional" + 0.006*"branch" + 0.006*"staff" + 0.006*"services" + 0.006*"manager" + 0.005*"treatment"
+[2025-05-08T21:46:09.084+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.032*"service" + 0.021*"bank" + 0.017*"agency" + 0.015*"bad" + 0.013*"money" + 0.010*"one" + 0.008*"customer" + 0.008*"dont" + 0.008*"account" + 0.007*"time"
+[2025-05-08T21:46:09.086+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.106*"nan" + 0.044*"bank" + 0.035*"service" + 0.019*"good" + 0.011*"staff" + 0.010*"’" + 0.009*"worst" + 0.008*"agency" + 0.007*"one" + 0.006*"people"
+[2025-05-08T21:46:09.088+0000] {ldamodel.py:1075} INFO - topic diff=0.301879, rho=0.431291
+[2025-05-08T21:46:09.089+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 3, at document #2000/4752
+[2025-05-08T21:46:09.563+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:09.568+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.020*"good" + 0.011*"account" + 0.007*"professional" + 0.007*"bank" + 0.006*"branch" + 0.006*"services" + 0.006*"manager" + 0.006*"staff" + 0.005*"treatment"
+[2025-05-08T21:46:09.570+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.020*"bank" + 0.018*"agency" + 0.015*"bad" + 0.012*"money" + 0.010*"one" + 0.008*"account" + 0.008*"dont" + 0.008*"customer" + 0.008*"time"
+[2025-05-08T21:46:09.571+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.106*"nan" + 0.042*"bank" + 0.036*"service" + 0.019*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"agency" + 0.009*"worst" + 0.006*"one" + 0.005*"people"
+[2025-05-08T21:46:09.573+0000] {ldamodel.py:1075} INFO - topic diff=0.276621, rho=0.396028
+[2025-05-08T21:46:09.576+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 3, at document #4000/4752
+[2025-05-08T21:46:10.079+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:10.083+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.021*"good" + 0.020*"agency" + 0.010*"account" + 0.008*"professional" + 0.007*"bank" + 0.006*"services" + 0.006*"staff" + 0.006*"manager" + 0.006*"branch" + 0.005*"customers"
+[2025-05-08T21:46:10.085+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.020*"bank" + 0.017*"agency" + 0.015*"bad" + 0.011*"money" + 0.010*"one" + 0.008*"customer" + 0.008*"time" + 0.008*"dont" + 0.008*"customers"
+[2025-05-08T21:46:10.086+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.105*"nan" + 0.041*"bank" + 0.035*"service" + 0.020*"good" + 0.013*"’" + 0.010*"staff" + 0.009*"worst" + 0.008*"agency" + 0.006*"ever" + 0.005*"one"
+[2025-05-08T21:46:10.087+0000] {ldamodel.py:1075} INFO - topic diff=0.269443, rho=0.396028
+[2025-05-08T21:46:10.326+0000] {ldamodel.py:848} INFO - -7.329 per-word bound, 160.8 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:10.328+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 3, at document #4752/4752
+[2025-05-08T21:46:10.523+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:10.526+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"good" + 0.019*"agency" + 0.010*"account" + 0.008*"professional" + 0.008*"bank" + 0.007*"branch" + 0.006*"staff" + 0.006*"services" + 0.006*"nice" + 0.006*"manager"
+[2025-05-08T21:46:10.527+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.022*"bank" + 0.017*"agency" + 0.015*"bad" + 0.013*"money" + 0.010*"one" + 0.008*"customer" + 0.008*"account" + 0.008*"dont" + 0.008*"phone"
+[2025-05-08T21:46:10.528+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.110*"nan" + 0.044*"bank" + 0.036*"service" + 0.021*"good" + 0.011*"staff" + 0.010*"’" + 0.009*"worst" + 0.008*"agency" + 0.007*"one" + 0.005*"people"
+[2025-05-08T21:46:10.529+0000] {ldamodel.py:1075} INFO - topic diff=0.253726, rho=0.396028
+[2025-05-08T21:46:10.530+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 4, at document #2000/4752
+[2025-05-08T21:46:10.997+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:11.001+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.018*"good" + 0.011*"account" + 0.008*"professional" + 0.007*"bank" + 0.006*"services" + 0.006*"branch" + 0.006*"staff" + 0.006*"manager" + 0.006*"nice"
+[2025-05-08T21:46:11.003+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.020*"bank" + 0.018*"agency" + 0.015*"bad" + 0.012*"money" + 0.010*"one" + 0.008*"account" + 0.008*"customer" + 0.008*"dont" + 0.008*"time"
+[2025-05-08T21:46:11.004+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.110*"nan" + 0.042*"bank" + 0.036*"service" + 0.023*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.008*"agency" + 0.006*"one" + 0.005*"ever"
+[2025-05-08T21:46:11.006+0000] {ldamodel.py:1075} INFO - topic diff=0.239865, rho=0.368205
+[2025-05-08T21:46:11.007+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 4, at document #4000/4752
+[2025-05-08T21:46:11.476+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:11.479+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.018*"good" + 0.009*"account" + 0.008*"professional" + 0.007*"bank" + 0.007*"services" + 0.006*"staff" + 0.006*"nice" + 0.006*"branch" + 0.006*"manager"
+[2025-05-08T21:46:11.481+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.020*"bank" + 0.017*"agency" + 0.015*"bad" + 0.011*"money" + 0.010*"one" + 0.008*"customers" + 0.008*"customer" + 0.008*"time" + 0.008*"dont"
+[2025-05-08T21:46:11.483+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.109*"nan" + 0.041*"bank" + 0.035*"service" + 0.025*"good" + 0.013*"’" + 0.010*"staff" + 0.009*"worst" + 0.008*"agency" + 0.005*"ever" + 0.005*"banque"
+[2025-05-08T21:46:11.485+0000] {ldamodel.py:1075} INFO - topic diff=0.235497, rho=0.368205
+[2025-05-08T21:46:11.704+0000] {ldamodel.py:848} INFO - -7.306 per-word bound, 158.2 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:11.706+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 4, at document #4752/4752
+[2025-05-08T21:46:11.879+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:11.884+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.019*"agency" + 0.016*"good" + 0.010*"account" + 0.009*"professional" + 0.008*"bank" + 0.007*"nice" + 0.007*"branch" + 0.007*"services" + 0.007*"staff" + 0.006*"manager"
+[2025-05-08T21:46:11.886+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.022*"bank" + 0.017*"agency" + 0.015*"bad" + 0.012*"money" + 0.010*"one" + 0.009*"customer" + 0.008*"account" + 0.008*"customers" + 0.008*"dont"
+[2025-05-08T21:46:11.887+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.113*"nan" + 0.043*"bank" + 0.037*"service" + 0.027*"good" + 0.011*"staff" + 0.010*"’" + 0.009*"worst" + 0.007*"agency" + 0.006*"one" + 0.005*"people"
+[2025-05-08T21:46:11.888+0000] {ldamodel.py:1075} INFO - topic diff=0.224161, rho=0.368205
+[2025-05-08T21:46:11.890+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 5, at document #2000/4752
+[2025-05-08T21:46:12.349+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:12.352+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.014*"good" + 0.010*"account" + 0.008*"professional" + 0.007*"bank" + 0.007*"services" + 0.007*"branch" + 0.006*"nice" + 0.006*"staff" + 0.006*"manager"
+[2025-05-08T21:46:12.354+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.018*"agency" + 0.015*"bad" + 0.012*"money" + 0.010*"one" + 0.008*"account" + 0.008*"customer" + 0.008*"time" + 0.008*"customers"
+[2025-05-08T21:46:12.355+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.113*"nan" + 0.042*"bank" + 0.037*"service" + 0.028*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.008*"agency" + 0.006*"one" + 0.005*"ever"
+[2025-05-08T21:46:12.356+0000] {ldamodel.py:1075} INFO - topic diff=0.215089, rho=0.345527
+[2025-05-08T21:46:12.356+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 5, at document #4000/4752
+[2025-05-08T21:46:12.836+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:12.840+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.015*"good" + 0.009*"account" + 0.009*"professional" + 0.007*"bank" + 0.007*"services" + 0.007*"nice" + 0.007*"staff" + 0.006*"branch" + 0.006*"manager"
+[2025-05-08T21:46:12.842+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.020*"bank" + 0.017*"agency" + 0.015*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"customers" + 0.008*"time" + 0.008*"customer" + 0.008*"phone"
+[2025-05-08T21:46:12.843+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.111*"nan" + 0.041*"bank" + 0.036*"service" + 0.029*"good" + 0.013*"’" + 0.010*"staff" + 0.009*"worst" + 0.007*"agency" + 0.005*"banque" + 0.005*"ever"
+[2025-05-08T21:46:12.845+0000] {ldamodel.py:1075} INFO - topic diff=0.213083, rho=0.345527
+[2025-05-08T21:46:13.088+0000] {ldamodel.py:848} INFO - -7.290 per-word bound, 156.5 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:13.090+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 5, at document #4752/4752
+[2025-05-08T21:46:13.274+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:13.276+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.019*"agency" + 0.014*"good" + 0.009*"account" + 0.009*"professional" + 0.008*"bank" + 0.008*"nice" + 0.007*"services" + 0.007*"branch" + 0.007*"staff" + 0.006*"manager"
+[2025-05-08T21:46:13.278+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.022*"bank" + 0.017*"agency" + 0.014*"bad" + 0.012*"money" + 0.010*"one" + 0.009*"customer" + 0.008*"account" + 0.008*"customers" + 0.008*"time"
+[2025-05-08T21:46:13.280+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.115*"nan" + 0.043*"bank" + 0.037*"service" + 0.030*"good" + 0.011*"staff" + 0.010*"’" + 0.009*"worst" + 0.007*"agency" + 0.006*"one" + 0.005*"people"
+[2025-05-08T21:46:13.283+0000] {ldamodel.py:1075} INFO - topic diff=0.203110, rho=0.345527
+[2025-05-08T21:46:13.285+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 6, at document #2000/4752
+[2025-05-08T21:46:13.777+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:13.780+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.013*"good" + 0.010*"account" + 0.009*"professional" + 0.007*"bank" + 0.007*"services" + 0.007*"nice" + 0.007*"branch" + 0.006*"staff" + 0.006*"manager"
+[2025-05-08T21:46:13.783+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.019*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"account" + 0.008*"customer" + 0.008*"time" + 0.008*"customers"
+[2025-05-08T21:46:13.785+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.115*"nan" + 0.042*"bank" + 0.037*"service" + 0.031*"good" + 0.011*"’" + 0.010*"staff" + 0.008*"worst" + 0.007*"agency" + 0.005*"one" + 0.005*"ever"
+[2025-05-08T21:46:13.787+0000] {ldamodel.py:1075} INFO - topic diff=0.196925, rho=0.326581
+[2025-05-08T21:46:13.788+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 6, at document #4000/4752
+[2025-05-08T21:46:14.238+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:14.240+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.013*"good" + 0.009*"professional" + 0.009*"account" + 0.007*"services" + 0.007*"bank" + 0.007*"nice" + 0.007*"staff" + 0.006*"branch" + 0.006*"manager"
+[2025-05-08T21:46:14.242+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.020*"bank" + 0.017*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"customers" + 0.009*"time" + 0.009*"customer" + 0.008*"phone"
+[2025-05-08T21:46:14.243+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.114*"nan" + 0.040*"bank" + 0.036*"service" + 0.032*"good" + 0.013*"’" + 0.010*"staff" + 0.009*"worst" + 0.007*"agency" + 0.005*"banque" + 0.005*"ever"
+[2025-05-08T21:46:14.245+0000] {ldamodel.py:1075} INFO - topic diff=0.196055, rho=0.326581
+[2025-05-08T21:46:14.487+0000] {ldamodel.py:848} INFO - -7.278 per-word bound, 155.2 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:14.488+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 6, at document #4752/4752
+[2025-05-08T21:46:14.608+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:14.610+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.012*"good" + 0.009*"professional" + 0.009*"account" + 0.008*"nice" + 0.008*"bank" + 0.007*"services" + 0.007*"branch" + 0.007*"staff" + 0.005*"manager"
+[2025-05-08T21:46:14.611+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.031*"service" + 0.022*"bank" + 0.017*"agency" + 0.014*"bad" + 0.012*"money" + 0.011*"one" + 0.009*"customer" + 0.009*"account" + 0.008*"customers" + 0.008*"time"
+[2025-05-08T21:46:14.612+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.117*"nan" + 0.043*"bank" + 0.037*"service" + 0.033*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.006*"agency" + 0.006*"one" + 0.005*"peoples"
+[2025-05-08T21:46:14.613+0000] {ldamodel.py:1075} INFO - topic diff=0.186948, rho=0.326581
+[2025-05-08T21:46:14.614+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 7, at document #2000/4752
+[2025-05-08T21:46:14.925+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:14.928+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.021*"agency" + 0.011*"good" + 0.009*"account" + 0.009*"professional" + 0.008*"bank" + 0.007*"nice" + 0.007*"services" + 0.007*"branch" + 0.007*"staff" + 0.006*"manager"
+[2025-05-08T21:46:14.930+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.019*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"account" + 0.009*"customer" + 0.008*"time" + 0.008*"customers"
+[2025-05-08T21:46:14.932+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.117*"nan" + 0.042*"bank" + 0.038*"service" + 0.033*"good" + 0.011*"’" + 0.010*"staff" + 0.008*"worst" + 0.007*"agency" + 0.005*"one" + 0.005*"great"
+[2025-05-08T21:46:14.934+0000] {ldamodel.py:1075} INFO - topic diff=0.182565, rho=0.310445
+[2025-05-08T21:46:14.940+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 7, at document #4000/4752
+[2025-05-08T21:46:15.294+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:15.299+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.012*"good" + 0.009*"professional" + 0.008*"account" + 0.008*"nice" + 0.008*"services" + 0.007*"bank" + 0.007*"staff" + 0.006*"branch" + 0.006*"manager"
+[2025-05-08T21:46:15.302+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.018*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"customers" + 0.009*"time" + 0.009*"customer" + 0.008*"account"
+[2025-05-08T21:46:15.304+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.116*"nan" + 0.041*"bank" + 0.037*"service" + 0.035*"good" + 0.013*"’" + 0.009*"staff" + 0.009*"worst" + 0.006*"agency" + 0.005*"banque" + 0.005*"great"
+[2025-05-08T21:46:15.305+0000] {ldamodel.py:1075} INFO - topic diff=0.182541, rho=0.310445
+[2025-05-08T21:46:15.560+0000] {ldamodel.py:848} INFO - -7.269 per-word bound, 154.2 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:15.561+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 7, at document #4752/4752
+[2025-05-08T21:46:15.780+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:15.783+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.011*"good" + 0.009*"professional" + 0.009*"account" + 0.008*"nice" + 0.008*"bank" + 0.007*"services" + 0.007*"branch" + 0.007*"staff" + 0.005*"manager"
+[2025-05-08T21:46:15.784+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.022*"bank" + 0.018*"agency" + 0.014*"bad" + 0.012*"money" + 0.011*"one" + 0.009*"customer" + 0.009*"account" + 0.009*"customers" + 0.008*"time"
+[2025-05-08T21:46:15.786+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.119*"nan" + 0.043*"bank" + 0.038*"service" + 0.035*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.006*"one" + 0.005*"agency" + 0.005*"peoples"
+[2025-05-08T21:46:15.787+0000] {ldamodel.py:1075} INFO - topic diff=0.174152, rho=0.310445
+[2025-05-08T21:46:15.788+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 8, at document #2000/4752
+[2025-05-08T21:46:16.316+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:16.319+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.021*"agency" + 0.010*"good" + 0.009*"professional" + 0.009*"account" + 0.008*"nice" + 0.008*"bank" + 0.008*"services" + 0.007*"branch" + 0.007*"staff" + 0.006*"manager"
+[2025-05-08T21:46:16.320+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.019*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"account" + 0.009*"customer" + 0.008*"customers" + 0.008*"time"
+[2025-05-08T21:46:16.321+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.119*"nan" + 0.042*"bank" + 0.038*"service" + 0.035*"good" + 0.011*"’" + 0.010*"staff" + 0.008*"worst" + 0.006*"agency" + 0.005*"one" + 0.005*"great"
+[2025-05-08T21:46:16.322+0000] {ldamodel.py:1075} INFO - topic diff=0.170795, rho=0.296487
+[2025-05-08T21:46:16.323+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 8, at document #4000/4752
+[2025-05-08T21:46:16.799+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:16.802+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.011*"good" + 0.009*"professional" + 0.008*"account" + 0.008*"nice" + 0.008*"services" + 0.008*"bank" + 0.007*"staff" + 0.006*"branch" + 0.006*"manager"
+[2025-05-08T21:46:16.803+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.029*"service" + 0.021*"bank" + 0.018*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"customers" + 0.009*"time" + 0.009*"customer" + 0.008*"account"
+[2025-05-08T21:46:16.804+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.117*"nan" + 0.041*"bank" + 0.037*"service" + 0.036*"good" + 0.013*"’" + 0.009*"staff" + 0.009*"worst" + 0.005*"agency" + 0.005*"banque" + 0.005*"great"
+[2025-05-08T21:46:16.805+0000] {ldamodel.py:1075} INFO - topic diff=0.171695, rho=0.296487
+[2025-05-08T21:46:17.071+0000] {ldamodel.py:848} INFO - -7.262 per-word bound, 153.5 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:17.072+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 8, at document #4752/4752
+[2025-05-08T21:46:17.247+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:17.250+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.010*"good" + 0.009*"professional" + 0.009*"nice" + 0.008*"account" + 0.008*"bank" + 0.008*"services" + 0.007*"branch" + 0.007*"staff" + 0.005*"treatment"
+[2025-05-08T21:46:17.252+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.018*"agency" + 0.014*"bad" + 0.012*"money" + 0.011*"one" + 0.009*"customer" + 0.009*"customers" + 0.009*"account" + 0.008*"time"
+[2025-05-08T21:46:17.253+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.120*"nan" + 0.043*"bank" + 0.037*"service" + 0.036*"good" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.005*"peoples" + 0.005*"one" + 0.005*"great"
+[2025-05-08T21:46:17.255+0000] {ldamodel.py:1075} INFO - topic diff=0.163684, rho=0.296487
+[2025-05-08T21:46:17.256+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 9, at document #2000/4752
+[2025-05-08T21:46:17.860+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:17.863+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.022*"agency" + 0.010*"good" + 0.009*"professional" + 0.009*"account" + 0.008*"nice" + 0.008*"services" + 0.008*"bank" + 0.007*"branch" + 0.007*"staff" + 0.006*"manager"
+[2025-05-08T21:46:17.865+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.019*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"account" + 0.009*"customer" + 0.009*"customers" + 0.009*"time"
+[2025-05-08T21:46:17.866+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.121*"nan" + 0.042*"bank" + 0.037*"service" + 0.036*"good" + 0.012*"’" + 0.009*"staff" + 0.008*"worst" + 0.005*"agency" + 0.005*"peoples" + 0.005*"great"
+[2025-05-08T21:46:17.868+0000] {ldamodel.py:1075} INFO - topic diff=0.161080, rho=0.284256
+[2025-05-08T21:46:17.869+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 9, at document #4000/4752
+[2025-05-08T21:46:18.400+0000] {ldamodel.py:233} INFO - merging changes from 2000 documents into a model of 4752 documents
+[2025-05-08T21:46:18.403+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.010*"good" + 0.009*"professional" + 0.008*"nice" + 0.008*"services" + 0.008*"account" + 0.008*"bank" + 0.007*"staff" + 0.006*"branch" + 0.005*"manager"
+[2025-05-08T21:46:18.404+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.020*"bank" + 0.018*"agency" + 0.014*"bad" + 0.011*"money" + 0.010*"one" + 0.009*"customers" + 0.009*"time" + 0.009*"customer" + 0.008*"account"
+[2025-05-08T21:46:18.405+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.119*"nan" + 0.041*"bank" + 0.038*"good" + 0.036*"service" + 0.013*"’" + 0.009*"staff" + 0.009*"worst" + 0.005*"banque" + 0.005*"great" + 0.005*"ever"
+[2025-05-08T21:46:18.407+0000] {ldamodel.py:1075} INFO - topic diff=0.162464, rho=0.284256
+[2025-05-08T21:46:18.629+0000] {ldamodel.py:848} INFO - -7.256 per-word bound, 152.8 perplexity estimate based on a held-out corpus of 752 documents with 6213 words
+[2025-05-08T21:46:18.630+0000] {ldamodel.py:1002} INFO - PROGRESS: pass 9, at document #4752/4752
+[2025-05-08T21:46:18.789+0000] {ldamodel.py:233} INFO - merging changes from 752 documents into a model of 4752 documents
+[2025-05-08T21:46:18.793+0000] {ldamodel.py:1197} INFO - topic #0 (0.333): 0.020*"agency" + 0.010*"good" + 0.010*"professional" + 0.009*"nice" + 0.008*"bank" + 0.008*"account" + 0.008*"services" + 0.007*"staff" + 0.007*"branch" + 0.005*"treatment"
+[2025-05-08T21:46:18.795+0000] {ldamodel.py:1197} INFO - topic #1 (0.333): 0.030*"service" + 0.021*"bank" + 0.018*"agency" + 0.014*"bad" + 0.011*"money" + 0.011*"one" + 0.009*"customer" + 0.009*"customers" + 0.009*"account" + 0.009*"time"
+[2025-05-08T21:46:18.797+0000] {ldamodel.py:1197} INFO - topic #2 (0.333): 0.122*"nan" + 0.043*"bank" + 0.037*"good" + 0.037*"service" + 0.011*"’" + 0.010*"staff" + 0.009*"worst" + 0.006*"peoples" + 0.005*"one" + 0.005*"great"
+[2025-05-08T21:46:18.799+0000] {ldamodel.py:1075} INFO - topic diff=0.154559, rho=0.284256
+[2025-05-08T21:46:18.800+0000] {utils.py:447} INFO - LdaModel lifecycle event {'msg': 'trained LdaModel<num_terms=5396, num_topics=3, decay=0.5, chunksize=2000> in 15.96s', 'datetime': '2025-05-08T21:46:18.800630', 'gensim': '4.3.3', 'python': '3.12.9 (main, Feb  6 2025, 22:37:05) [GCC 12.2.0]', 'platform': 'Linux-5.15.167.4-microsoft-standard-WSL2-x86_64-with-glibc2.36', 'event': 'created'}
+[2025-05-08T21:46:22.651+0000] {warnings.py:112} WARNING - /opt/***/dags/storeData.py:282: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(query, conn)
+
+[2025-05-08T21:46:22.838+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-08T21:46:22.856+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-08T21:46:22.857+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=extract_topics, run_id=manual__2025-05-08T21:43:14.329156+00:00, execution_date=20250508T214314, start_date=20250508T214601, end_date=20250508T214622
+[2025-05-08T21:46:22.895+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-08T21:46:22.896+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-08T21:46:22.897+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-08 21:43:14.370818+00:00
+[2025-05-08T21:46:22.898+0000] {logging_mixin.py:190} INFO - Task hostname:f90cb465d7e0 operator:PythonOperator
+[2025-05-08T21:46:22.942+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-08T21:46:22.992+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T21:46:22.996+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

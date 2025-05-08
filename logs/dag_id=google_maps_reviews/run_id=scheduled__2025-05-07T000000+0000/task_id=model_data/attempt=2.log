@@ -1,0 +1,32 @@
+[2025-05-08T18:55:41.356+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-08T18:55:41.408+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.model_data scheduled__2025-05-07T00:00:00+00:00 [queued]>
+[2025-05-08T18:55:41.429+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.model_data scheduled__2025-05-07T00:00:00+00:00 [queued]>
+[2025-05-08T18:55:41.431+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 3
+[2025-05-08T18:55:41.455+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): model_data> on 2025-05-07 00:00:00+00:00
+[2025-05-08T18:55:41.473+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=404) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-08T18:55:41.478+0000] {standard_task_runner.py:72} INFO - Started process 419 to run task
+[2025-05-08T18:55:41.478+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'model_data', 'scheduled__2025-05-07T00:00:00+00:00', '--job-id', '804', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpzaayu73g']
+[2025-05-08T18:55:41.481+0000] {standard_task_runner.py:105} INFO - Job 804: Subtask model_data
+[2025-05-08T18:55:41.613+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.model_data scheduled__2025-05-07T00:00:00+00:00 [running]> on host 9ce8fafe7ab9
+[2025-05-08T18:55:41.830+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='elkhalfimaryame@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='model_data' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-07T00:00:00+00:00'
+[2025-05-08T18:55:41.835+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-08T18:55:41.837+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-08T18:55:41.839+0000] {logging_mixin.py:190} INFO - Current task name:model_data state:running start_date:2025-05-08 18:55:41.410222+00:00
+[2025-05-08T18:55:41.840+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-08T18:55:41.841+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-08T18:55:41.862+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-08T18:55:42.004+0000] {warnings.py:112} WARNING - /opt/***/dags/storeData.py:222: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(query, conn)
+
+[2025-05-08T18:55:42.222+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-08T18:55:42.243+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-08T18:55:42.245+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=model_data, run_id=scheduled__2025-05-07T00:00:00+00:00, execution_date=20250507T000000, start_date=20250508T185541, end_date=20250508T185542
+[2025-05-08T18:55:42.314+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-08T18:55:42.320+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-08T18:55:42.321+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-08 18:55:35.150467+00:00
+[2025-05-08T18:55:42.322+0000] {logging_mixin.py:190} INFO - Task hostname:9ce8fafe7ab9 operator:PythonOperator
+[2025-05-08T18:55:42.343+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-08T18:55:42.404+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T18:55:42.411+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

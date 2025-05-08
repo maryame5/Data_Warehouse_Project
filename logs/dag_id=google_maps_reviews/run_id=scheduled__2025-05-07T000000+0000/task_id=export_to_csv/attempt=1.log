@@ -1,0 +1,33 @@
+[2025-05-08T18:52:53.116+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-08T18:52:53.155+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.export_to_csv scheduled__2025-05-07T00:00:00+00:00 [queued]>
+[2025-05-08T18:52:53.176+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.export_to_csv scheduled__2025-05-07T00:00:00+00:00 [queued]>
+[2025-05-08T18:52:53.178+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-08T18:52:53.209+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): export_to_csv> on 2025-05-07 00:00:00+00:00
+[2025-05-08T18:52:53.230+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=336) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-08T18:52:53.234+0000] {standard_task_runner.py:72} INFO - Started process 358 to run task
+[2025-05-08T18:52:53.234+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'export_to_csv', 'scheduled__2025-05-07T00:00:00+00:00', '--job-id', '802', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpk42npt_e']
+[2025-05-08T18:52:53.238+0000] {standard_task_runner.py:105} INFO - Job 802: Subtask export_to_csv
+[2025-05-08T18:52:53.330+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.export_to_csv scheduled__2025-05-07T00:00:00+00:00 [running]> on host 9ce8fafe7ab9
+[2025-05-08T18:52:53.530+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='tonemail@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='export_to_csv' AIRFLOW_CTX_EXECUTION_DATE='2025-05-07T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-07T00:00:00+00:00'
+[2025-05-08T18:52:53.533+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-08T18:52:53.534+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-08T18:52:53.535+0000] {logging_mixin.py:190} INFO - Current task name:export_to_csv state:running start_date:2025-05-08 18:52:53.157383+00:00
+[2025-05-08T18:52:53.536+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-08T18:52:53.537+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-08T18:52:53.554+0000] {base.py:84} INFO - Retrieving connection 'postgres_defaut'
+[2025-05-08T18:52:53.627+0000] {warnings.py:112} WARNING - /opt/***/dags/storeData.py:98: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(query, conn)
+
+[2025-05-08T18:52:53.873+0000] {logging_mixin.py:190} INFO - ✅ Données exportées avec succès vers reviews_export.csv
+[2025-05-08T18:52:53.876+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-08T18:52:53.896+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-08T18:52:53.897+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=export_to_csv, run_id=scheduled__2025-05-07T00:00:00+00:00, execution_date=20250507T000000, start_date=20250508T185253, end_date=20250508T185253
+[2025-05-08T18:52:53.949+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-08T18:52:53.951+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-08T18:52:53.953+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-08 18:48:15.030563+00:00
+[2025-05-08T18:52:53.955+0000] {logging_mixin.py:190} INFO - Task hostname:9ce8fafe7ab9 operator:PythonOperator
+[2025-05-08T18:52:53.980+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-08T18:52:54.023+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T18:52:54.036+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

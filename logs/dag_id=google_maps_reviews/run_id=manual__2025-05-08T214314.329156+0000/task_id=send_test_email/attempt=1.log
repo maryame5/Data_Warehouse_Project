@@ -1,0 +1,32 @@
+[2025-05-08T21:53:30.694+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-08T21:53:30.733+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.send_test_email manual__2025-05-08T21:43:14.329156+00:00 [queued]>
+[2025-05-08T21:53:30.753+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.send_test_email manual__2025-05-08T21:43:14.329156+00:00 [queued]>
+[2025-05-08T21:53:30.771+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-08T21:53:30.795+0000] {taskinstance.py:2890} INFO - Executing <Task(EmailOperator): send_test_email> on 2025-05-08 21:43:14.329156+00:00
+[2025-05-08T21:53:30.819+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=531) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-08T21:53:30.822+0000] {standard_task_runner.py:72} INFO - Started process 553 to run task
+[2025-05-08T21:53:30.823+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'send_test_email', 'manual__2025-05-08T21:43:14.329156+00:00', '--job-id', '903', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmparniy9wf']
+[2025-05-08T21:53:30.825+0000] {standard_task_runner.py:105} INFO - Job 903: Subtask send_test_email
+[2025-05-08T21:53:30.906+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.send_test_email manual__2025-05-08T21:43:14.329156+00:00 [running]> on host f90cb465d7e0
+[2025-05-08T21:53:31.092+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='elkhalfimaryame@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='send_test_email' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T21:43:14.329156+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-08T21:43:14.329156+00:00'
+[2025-05-08T21:53:31.095+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-08T21:53:31.096+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-08T21:53:31.097+0000] {logging_mixin.py:190} INFO - Current task name:send_test_email state:running start_date:2025-05-08 21:53:30.734624+00:00
+[2025-05-08T21:53:31.098+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-08T21:53:31.099+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-08T21:53:31.115+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/utils/email.py:155: RemovedInAirflow3Warning: Fetching SMTP credentials from configuration variables will be deprecated in a future release. Please set credentials using a connection instead.
+  send_mime_email(e_from=mail_from, e_to=recipients, mime_msg=msg, conn_id=conn_id, dryrun=dryrun)
+
+[2025-05-08T21:53:31.116+0000] {email.py:272} INFO - Email alerting: attempt 1
+[2025-05-08T21:53:31.939+0000] {email.py:283} INFO - Sent an alert email to ['elkhalfimaryame@gmail.com']
+[2025-05-08T21:53:34.107+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-08T21:53:34.110+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=send_test_email, run_id=manual__2025-05-08T21:43:14.329156+00:00, execution_date=20250508T214314, start_date=20250508T215330, end_date=20250508T215334
+[2025-05-08T21:53:34.198+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-08T21:53:34.199+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-08T21:53:34.202+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-08 21:43:14.370818+00:00
+[2025-05-08T21:53:34.203+0000] {logging_mixin.py:190} INFO - Task hostname:f90cb465d7e0 operator:EmailOperator
+[2025-05-08T21:53:34.261+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-08T21:53:34.297+0000] {taskinstance.py:3901} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-05-08T21:53:34.301+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
