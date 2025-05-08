@@ -6,7 +6,6 @@ from airflow.operators.python_operator import PythonOperator
 from datetime import datetime, timedelta
 import sys
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-
 from storeData import *
 from airflow.operators.bash_operator import BashOperator
 from airflow.operators.email import EmailOperator
