@@ -2196,3 +2196,10 @@
 [2025-05-08T23:53:56.038+0000] {logging_mixin.py:190} INFO - [2025-05-08T23:53:56.037+0000] {dag.py:3239} INFO - Sync 1 DAGs
 [2025-05-08T23:53:56.080+0000] {logging_mixin.py:190} INFO - [2025-05-08T23:53:56.079+0000] {dag.py:4180} INFO - Setting next_dagrun for example_dynamic_task_mapping_with_no_taskflow_operators to None, run_after=None
 [2025-05-08T23:53:56.143+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py took 0.211 seconds
+[2025-05-08T23:54:26.290+0000] {processor.py:186} INFO - Started process (PID=20148) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py
+[2025-05-08T23:54:26.293+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py for tasks to queue
+[2025-05-08T23:54:26.298+0000] {logging_mixin.py:190} INFO - [2025-05-08T23:54:26.296+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py
+[2025-05-08T23:54:26.323+0000] {processor.py:925} INFO - DAG(s) 'example_dynamic_task_mapping_with_no_taskflow_operators' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py
+[2025-05-08T23:54:26.378+0000] {logging_mixin.py:190} INFO - [2025-05-08T23:54:26.377+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-08T23:54:26.419+0000] {logging_mixin.py:190} INFO - [2025-05-08T23:54:26.419+0000] {dag.py:4180} INFO - Setting next_dagrun for example_dynamic_task_mapping_with_no_taskflow_operators to None, run_after=None
+[2025-05-08T23:54:26.465+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dynamic_task_mapping_with_no_taskflow_operators.py took 0.196 seconds
