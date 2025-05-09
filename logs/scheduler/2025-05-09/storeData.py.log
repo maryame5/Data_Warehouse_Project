@@ -368,3 +368,15 @@
 [2025-05-09T13:31:29.789+0000] {logging_mixin.py:190} INFO - [2025-05-09T13:31:29.788+0000] {client.py:194} INFO - API queries_quota: 60
 [2025-05-09T13:31:29.791+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/storeData.py
 [2025-05-09T13:31:29.816+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/storeData.py took 3.818 seconds
+[2025-05-09T13:32:00.662+0000] {processor.py:186} INFO - Started process (PID=3111) to work on /opt/airflow/dags/storeData.py
+[2025-05-09T13:32:00.666+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/storeData.py for tasks to queue
+[2025-05-09T13:32:00.673+0000] {logging_mixin.py:190} INFO - [2025-05-09T13:32:00.672+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/storeData.py
+[2025-05-09T13:32:03.786+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-09T13:32:03.789+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-09T13:32:03.791+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-09T13:32:03.808+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-09T13:32:03.811+0000] {logging_mixin.py:190} INFO - [2025-05-09T13:32:03.810+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-09T13:32:03.812+0000] {processor.py:927} WARNING - No viable dags retrieved from /opt/airflow/dags/storeData.py
+[2025-05-09T13:32:03.840+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/storeData.py took 3.196 seconds
