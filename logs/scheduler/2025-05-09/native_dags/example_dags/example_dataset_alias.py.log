@@ -1,0 +1,61 @@
+[2025-05-09T00:00:01.352+0000] {processor.py:186} INFO - Started process (PID=21083) to work on /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dataset_alias.py
+[2025-05-09T00:00:01.362+0000] {processor.py:914} INFO - Processing file /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dataset_alias.py for tasks to queue
+[2025-05-09T00:00:01.368+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:01.367+0000] {dagbag.py:588} INFO - Filling up the DagBag from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dataset_alias.py
+[2025-05-09T00:00:03.816+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:03.816+0000] {process_utils.py:266} INFO - Waiting up to 5 seconds for processes to exit...
+[2025-05-09T00:00:03.819+0000] {logging_mixin.py:190} WARNING - Exception ignored in: <function WeakKeyDictionary.__init__.<locals>.remove at 0x7fc4d0215260>
+[2025-05-09T00:00:03.819+0000] {logging_mixin.py:190} WARNING - Traceback (most recent call last):
+[2025-05-09T00:00:03.820+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/weakref.py", line 369, in remove
+[2025-05-09T00:00:03.821+0000] {logging_mixin.py:190} WARNING -     def remove(k, selfref=ref(self)):
+[2025-05-09T00:00:03.821+0000] {logging_mixin.py:190} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 466, in _exit_gracefully
+[2025-05-09T00:00:03.822+0000] {logging_mixin.py:190} WARNING -     self.log.debug("Current Stacktrace is: %s", "\n".join(map(str, inspect.stack())))
+[2025-05-09T00:00:03.823+0000] {logging_mixin.py:190} WARNING -                                                                    ^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.824+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1781, in stack
+[2025-05-09T00:00:03.825+0000] {logging_mixin.py:190} WARNING -     return getouterframes(sys._getframe(1), context)
+[2025-05-09T00:00:03.825+0000] {logging_mixin.py:190} WARNING -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.826+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1756, in getouterframes
+[2025-05-09T00:00:03.827+0000] {logging_mixin.py:190} WARNING -     traceback_info = getframeinfo(frame, context)
+[2025-05-09T00:00:03.828+0000] {logging_mixin.py:190} WARNING -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.828+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1718, in getframeinfo
+[2025-05-09T00:00:03.829+0000] {logging_mixin.py:190} WARNING -     lines, lnum = findsource(frame)
+[2025-05-09T00:00:03.830+0000] {logging_mixin.py:190} WARNING -                   ^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.830+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1090, in findsource
+[2025-05-09T00:00:03.831+0000] {logging_mixin.py:190} WARNING -     module = getmodule(object, file)
+[2025-05-09T00:00:03.832+0000] {logging_mixin.py:190} WARNING -              ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.832+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1007, in getmodule
+[2025-05-09T00:00:03.833+0000] {logging_mixin.py:190} WARNING -     if ismodule(module) and hasattr(module, '__file__'):
+[2025-05-09T00:00:03.834+0000] {logging_mixin.py:190} WARNING -                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.834+0000] {logging_mixin.py:190} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 466, in _exit_gracefully
+[2025-05-09T00:00:03.835+0000] {logging_mixin.py:190} WARNING -     self.log.debug("Current Stacktrace is: %s", "\n".join(map(str, inspect.stack())))
+[2025-05-09T00:00:03.836+0000] {logging_mixin.py:190} WARNING -                                                                    ^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.837+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1781, in stack
+[2025-05-09T00:00:03.838+0000] {logging_mixin.py:190} WARNING -     return getouterframes(sys._getframe(1), context)
+[2025-05-09T00:00:03.839+0000] {logging_mixin.py:190} WARNING -            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.839+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1756, in getouterframes
+[2025-05-09T00:00:03.840+0000] {logging_mixin.py:190} WARNING -     traceback_info = getframeinfo(frame, context)
+[2025-05-09T00:00:03.841+0000] {logging_mixin.py:190} WARNING -                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.841+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1718, in getframeinfo
+[2025-05-09T00:00:03.842+0000] {logging_mixin.py:190} WARNING -     lines, lnum = findsource(frame)
+[2025-05-09T00:00:03.843+0000] {logging_mixin.py:190} WARNING -                   ^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.843+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1090, in findsource
+[2025-05-09T00:00:03.844+0000] {logging_mixin.py:190} WARNING -     module = getmodule(object, file)
+[2025-05-09T00:00:03.846+0000] {logging_mixin.py:190} WARNING -              ^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.846+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 1013, in getmodule
+[2025-05-09T00:00:03.847+0000] {logging_mixin.py:190} WARNING -     f = getabsfile(module)
+[2025-05-09T00:00:03.848+0000] {logging_mixin.py:190} WARNING -         ^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.848+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 982, in getabsfile
+[2025-05-09T00:00:03.849+0000] {logging_mixin.py:190} WARNING -     _filename = getsourcefile(object) or getfile(object)
+[2025-05-09T00:00:03.849+0000] {logging_mixin.py:190} WARNING -                 ^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.850+0000] {logging_mixin.py:190} WARNING -   File "/usr/local/lib/python3.12/inspect.py", line 967, in getsourcefile
+[2025-05-09T00:00:03.851+0000] {logging_mixin.py:190} WARNING -     if os.path.exists(filename):
+[2025-05-09T00:00:03.852+0000] {logging_mixin.py:190} WARNING -        ^^^^^^^^^^^^^^^^^^^^^^^^
+[2025-05-09T00:00:03.852+0000] {logging_mixin.py:190} WARNING -   File "<frozen genericpath>", line 19, in exists
+[2025-05-09T00:00:03.853+0000] {logging_mixin.py:190} WARNING -   File "/home/airflow/.local/lib/python3.12/site-packages/airflow/dag_processing/manager.py", line 470, in _exit_gracefully
+[2025-05-09T00:00:03.854+0000] {logging_mixin.py:190} WARNING -     sys.exit(os.EX_OK)
+[2025-05-09T00:00:03.854+0000] {logging_mixin.py:190} WARNING - SystemExit: 0
+[2025-05-09T00:00:04.050+0000] {processor.py:925} INFO - DAG(s) 'dataset_s3_bucket_consumer', 'dataset_alias_example_alias_producer', 'dataset_s3_bucket_producer', 'dataset_alias_example_alias_consumer' retrieved from /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dataset_alias.py
+[2025-05-09T00:00:04.096+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:04.095+0000] {dag.py:3239} INFO - Sync 4 DAGs
+[2025-05-09T00:00:04.146+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:04.146+0000] {dag.py:4180} INFO - Setting next_dagrun for dataset_alias_example_alias_consumer to None, run_after=None
+[2025-05-09T00:00:04.152+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:04.151+0000] {dag.py:4180} INFO - Setting next_dagrun for dataset_alias_example_alias_producer to None, run_after=None
+[2025-05-09T00:00:04.155+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:04.155+0000] {dag.py:4180} INFO - Setting next_dagrun for dataset_s3_bucket_consumer to None, run_after=None
+[2025-05-09T00:00:04.157+0000] {logging_mixin.py:190} INFO - [2025-05-09T00:00:04.157+0000] {dag.py:4180} INFO - Setting next_dagrun for dataset_s3_bucket_producer to None, run_after=None
+[2025-05-09T00:00:04.212+0000] {processor.py:208} INFO - Processing /home/airflow/.local/lib/python3.12/site-packages/airflow/example_dags/example_dataset_alias.py took 2.900 seconds

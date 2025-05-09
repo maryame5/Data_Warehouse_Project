@@ -1,9 +1,9 @@
 # 🏦 Bank Review Data Pipeline - README
 
 ## 📌 Objectif du projet
-L’objectif de ce projet est de construire une solution de bout-en-bout pour collecter, transformer, modéliser, stocker et analyser les avis clients des agences bancaires au Maroc à partir de Google Maps. Le pipeline est entièrement automatisé à l’aide d’Airflow, et les résultats sont visualisés à l’aide de Looker Studio.
+L’objectif de ce projet est de construire une solution de bout-en-bout pour collecter, transformer, modéliser, stocker et analyser les avis clients des agences bancaires au Maroc à partir de Google Maps. Le pipeline est entièrement automatisé à l’aide d’Airflow, et les résultats sont visualisés dans Looker Studio sous forme de dashboards interactifs. Le projet met en œuvre un ensemble d’outils modernes de traitement de données, NLP et Business Intelligence.
 
-## ⚙️ Technologies utilisées
+##  Technologies utilisées
 - **Airflow** : Orchestration du pipeline.
 - **PostgreSQL** : Stockage des données brutes et modélisées.
 - **DBT** : Transformation des données via modèles SQL.
@@ -12,11 +12,10 @@ L’objectif de ce projet est de construire une solution de bout-en-bout pour co
 - **Python** : Traitement, analyse sémantique et intégration API.
 - **Docker** : Conteneurisation et déploiement local.
 
----
+
 
 ## 📁 Structure du projet
 
-```
 📆 airflow_doc
 🔼— dags/
 │   ├— airflowdag.py            # DAG principal orchestrant toutes les étapes
@@ -30,9 +29,7 @@ L’objectif de ce projet est de construire une solution de bout-en-bout pour co
 🔼— Dockerfile                   # Image Docker custom
 🔼— docker-compose.yml          # Configuration complète avec services Airflow, PostgreSQL, Redis
 🔼— README.md                    # Ce fichier
-```
 
----
 
 ## 🔁 Étapes du pipeline
 
@@ -95,11 +92,38 @@ L’objectif de ce projet est de construire une solution de bout-en-bout pour co
 
 ## 📊 Visualisation - Looker Studio
 
-### Dashboards créés :
-1. **Sentiment trend par banque et agence**
-2. **Top sujets positifs et négatifs**
-3. **Classement des agences par performance (rating)**
-4. **Insights sur l'expérience client** (filtrage par langue, date, etc.)
+1. **🌐 Sentiment trend par banque et agence**
+   - ✅ Type : graphique en ligne
+   - Dimensions : `bank_name`, `branch_name`, `review_date`
+   - Métrique : Moyenne de `rating` ou répartition `sentiment`
+   - Filtre dynamique : Date, Banque, Sentiment
+
+2. **🎡 Top sujets positifs et négatifs**
+   - ✅ Type : Tableau ou graphique à barres empilées
+   - Dimension : `topic`
+   - Métrique : Nombre de reviews avec `sentiment = 'Positive'` ou `'Negative'`
+   - Tri par fréquence
+
+3. **📈 Classement des agences par performance**
+   - ✅ Type : Bar chart
+   - Dimension : `branch_name`
+   - Métrique : Moyenne `rating`
+   - Filtres : `bank_name`, `location`, `language`
+
+4. **📊 Customer Experience Insights**
+   - ✅ Objectif : Vue synthétique de l'expérience client
+   - Visualisations utilisées :
+     - Répartition des sentiments (camembert)
+     - Langue des avis (camembert)
+     - Distribution des notes (histogramme)
+     - Courbe d’évolution de l’expérience client (graphe temporel)
+     - Top agences les mieux notées (bar chart)
+   - ## Exemples de graphiques inclus :
+    - Répartition des sentiments
+    - Langue des avis
+    - Distribution des notes
+    - Courbe d’évolution de l’expérience client
+    - Top agences les mieux notées
 
 ⚙️ Filtres dynamiques configurés : `bank_name`, `sentiment`, `language`, `review_date`
 
@@ -129,6 +153,6 @@ docker-compose up -d
 - ✅ DBT Models – `/dbt_project/bank_reviews_dbt/`
 - ✅ export_reviews.csv – Données prêtes pour Looker Studio
 - ✅ `README.md` – Ce fichier
-- ✅ `create_schema.sql` – Script SQL de création du modèle étoile (disponible séparément)
+- ✅ `create_schema.sql` – Script SQL de création du modèle étoile 
 
 
