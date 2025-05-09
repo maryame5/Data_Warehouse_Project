@@ -212,22 +212,10 @@ LEFT JOIN review.dim_sentiment ds ON rr.sentiment = ds.sentiment_label;
         cur.execute(query)
         cur.execute(populate_dim_sql)
         cur.execute(populate_fact_sql)
-        query = """
-         select * from review.raw_reviews;
-        """
-  
-        cur.execute(query)
+        
         conn.commit()
-        # Charger les données dans un DataFrame
-        df = pd.read_sql_query(query, conn)
 
-        # Exporter vers CSV
-        csv_path = "/opt/airflow/dags/output/reviewsl.csv"
-
-        # Append new data to existing CSV or create a new file if it doesn't exist
-        df.to_csv(csv_path, index=False)
-
-        conn.commit()
+        
     except Exception as e:
         conn.rollback()
         raise e
@@ -272,21 +260,7 @@ def extract_topics():
             WHERE id = %s;
         """, (topic_text, review_id))
     
-    query = """
-    select * from review.raw_reviews;
-    """
-  
-    cur.execute(query)
-    conn.commit()
-    # Charger les données dans un DataFrame
-    df = pd.read_sql_query(query, conn)
-
-# Exporter vers CSV
-    csv_path = "/opt/airflow/dags/output/reviewstop.csv"
-
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
-
+    
 
     conn.commit()
     cur.close()
@@ -309,20 +283,7 @@ def analyze_sentiment():
 
         cur.execute("UPDATE review.raw_reviews SET sentiment = %s WHERE id = %s;", (sentiment, review_id))
     
-    query = """
-    select * from review.raw_reviews;
-    """
-  
-    cur.execute(query)
-    conn.commit()
-    # Charger les données dans un DataFrame
-    df = pd.read_sql_query(query, conn)
-
-# Exporter vers CSV
-    csv_path = "/opt/airflow/dags/output/reviewssent.csv"
-
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
+    
 
 
     conn.commit()
@@ -348,20 +309,7 @@ def detect_language_reviews():
 
         cur.execute("UPDATE review.raw_reviews SET language = %s WHERE id = %s;", (language, review_id))
     
-    query = """
-    select * from review.raw_reviews;
-    """
-  
-    cur.execute(query)
-    conn.commit()
-    # Charger les données dans un DataFrame
-    df = pd.read_sql_query(query, conn)
-
-# Exporter vers CSV
-    csv_path = "/opt/airflow/dags/output/reviewslang.csv"
-
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
+    # Commit the changes
 
 
     conn.commit()
@@ -400,21 +348,7 @@ def normalize_and_clean_data():
 
 
 
-    query = """
-    select * from review.raw_reviews;
-    """
-  
-    cur.execute(query)
-    conn.commit()
-    # Charger les données dans un DataFrame
-    df = pd.read_sql_query(query, conn)
-
-# Exporter vers CSV
-    csv_path = "/opt/airflow/dags/output/reviews.cleancsv"
-
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
-
+    # Commit the changes
 
     conn.commit()
     cur.close()
@@ -439,20 +373,7 @@ def remove_duplicates():
         );
     """
     cur.execute(delete_sql)
-    query = """
-    select * from review.raw_reviews;
-    """
-  
-    cur.execute(query)
-    conn.commit()
-    # Charger les données dans un DataFrame
-    df = pd.read_sql_query(query, conn)
-
-# Exporter vers CSV
-    csv_path = "/opt/airflow/dags/output/reviewsdu.csv"
-
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
+    
 
     conn.commit()
     cur.close()
@@ -609,35 +530,4 @@ def fetch_google_reviews():
     df = pd.DataFrame(all_reviews)
     df.to_csv("/opt/airflow/dags/input/reviews.csv", index=False)
     print(f"{len(df)} reviews collected from {len(seen_places)} bank branches.")
-    """
-    #Fetch reviews from Google Maps and store them in a CSV file.
     
-    query = "bank"
-    #location = (31.7917, -7.0926)  # Coordinates for Morocco
-    #radius = 500000  # Search radius in meters
-    # Perform the search
-    places_result = gmaps.places( region = "MA" , type="bank")
-    # Extract place IDs
-    place_ids = [place['place_id'] for place in places_result.get('results', [])]
-    all_reviews = []
-    for place_id in place_ids:
-        place_details = gmaps.place(place_id=place_id, fields=['name', 'formatted_address', 'review'])
-        reviews = place_details.get('result', {}).get('reviews', [])
-        for review in reviews:
-            all_reviews.append({
-                'place_id': place_id,
-                'bank_name': place_details['result']['name'],
-                'branch_name': place_details['result']['name'],
-                'location': place_details['result']['formatted_address'],
-                'review_text': review.get('text', ''),
-                'rating': review.get('rating', 0),
-                'review_date': datetime.utcfromtimestamp(review.get('time', datetime.now().timestamp()))
-            })
-    # Convert to DataFrame
-    df = pd.DataFrame(all_reviews)
-    # Define the path to save the CSV file
-    csv_path = "/opt/airflow/dags/input/reviews.csv"
-    # Append new data to existing CSV or create a new file if it doesn't exist
-    df.to_csv(csv_path, index=False)
-
-    print(f"Data successfully saved to {csv_path}")"""

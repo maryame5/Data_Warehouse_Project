@@ -1,0 +1,30 @@
+[2025-05-09T13:20:37.669+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-09T13:20:37.701+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-08T00:00:00+00:00 [queued]>
+[2025-05-09T13:20:37.717+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-08T00:00:00+00:00 [queued]>
+[2025-05-09T13:20:37.718+0000] {taskinstance.py:2867} INFO - Starting attempt 2 of 2
+[2025-05-09T13:20:37.746+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_google_reviews> on 2025-05-08 00:00:00+00:00
+[2025-05-09T13:20:37.763+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=189) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-09T13:20:37.767+0000] {standard_task_runner.py:72} INFO - Started process 210 to run task
+[2025-05-09T13:20:37.768+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'fetch_google_reviews', 'scheduled__2025-05-08T00:00:00+00:00', '--job-id', '969', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmp7f3no4rw']
+[2025-05-09T13:20:37.770+0000] {standard_task_runner.py:105} INFO - Job 969: Subtask fetch_google_reviews
+[2025-05-09T13:20:37.854+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-08T00:00:00+00:00 [running]> on host ff2d23694728
+[2025-05-09T13:20:38.018+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='elkhalfimaryame@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='fetch_google_reviews' AIRFLOW_CTX_EXECUTION_DATE='2025-05-08T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='2' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-08T00:00:00+00:00'
+[2025-05-09T13:20:38.020+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-09T13:20:38.021+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-09T13:20:38.022+0000] {logging_mixin.py:190} INFO - Current task name:fetch_google_reviews state:running start_date:2025-05-09 13:20:37.702566+00:00
+[2025-05-09T13:20:38.022+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-09T13:20:38.023+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-09T13:20:38.037+0000] {logging_mixin.py:190} INFO - Error at point (35.7595, -5.8339): HTTPSConnectionPool(host='maps.googleapis.com', port=443): Max retries exceeded with url: /maps/api/place/textsearch/json?location=35.7595%2C-5.8339&maxprice=None&minprice=None&radius=70000&type=bank&key=AIzaSyAj9vlR595TR2PTZFGQbhUdns91voLFMZA (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1e9b8c7ef0>: Failed to resolve 'maps.googleapis.com' ([Errno -2] Name or service not known)"))
+[2025-05-09T13:20:38.057+0000] {logging_mixin.py:190} INFO - 0 reviews collected from 0 bank branches.
+[2025-05-09T13:20:38.058+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-09T13:20:38.073+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-09T13:20:38.075+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=fetch_google_reviews, run_id=scheduled__2025-05-08T00:00:00+00:00, execution_date=20250508T000000, start_date=20250509T132037, end_date=20250509T132038
+[2025-05-09T13:20:38.113+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-09T13:20:38.115+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-09T13:20:38.116+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-09 00:00:00.708575+00:00
+[2025-05-09T13:20:38.117+0000] {logging_mixin.py:190} INFO - Task hostname:ff2d23694728 operator:PythonOperator
+[2025-05-09T13:20:38.146+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-09T13:20:38.208+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-09T13:20:38.212+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
