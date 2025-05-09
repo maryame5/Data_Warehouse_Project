@@ -18,16 +18,27 @@ L’objectif de ce projet est de construire une solution de bout-en-bout pour co
 
 📆 airflow_doc
 🔼— dags/
-│   ├— airflowdag.py            # DAG principal orchestrant toutes les étapes
+
+│   ├— airflowdag.py # DAG principal orchestrant toutes les étapes
+
 │   └— storeData.py             # Fonctions Python : scraping, NLP, insertions SQL
+
 🔼— input/
+
 │   └— reviews.csv              # Fichier temporaire des reviews
+
 🔼— output/
+
 │   └— export_reviews.csv       # Données finales exportées vers Looker Studio
+
 🔼— dbt_project/
+
 │   └— bank_reviews_dbt         # DBT models, sources, tests
+
 🔼— Dockerfile                   # Image Docker custom
+
 🔼— docker-compose.yml          # Configuration complète avec services Airflow, PostgreSQL, Redis
+
 🔼— README.md                    # Ce fichier
 
 
