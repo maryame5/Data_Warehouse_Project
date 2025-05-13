@@ -1,0 +1,29 @@
+[2025-05-13T21:58:23.572+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2025-05-13T21:58:23.600+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-12T00:00:00+00:00 [queued]>
+[2025-05-13T21:58:23.615+0000] {taskinstance.py:2614} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-12T00:00:00+00:00 [queued]>
+[2025-05-13T21:58:23.616+0000] {taskinstance.py:2867} INFO - Starting attempt 1 of 2
+[2025-05-13T21:58:23.640+0000] {taskinstance.py:2890} INFO - Executing <Task(PythonOperator): fetch_google_reviews> on 2025-05-12 00:00:00+00:00
+[2025-05-13T21:58:23.655+0000] {warnings.py:112} WARNING - /home/***/.local/lib/python3.12/site-packages/***/task/task_runner/standard_task_runner.py:70: DeprecationWarning: This process (pid=75) is multi-threaded, use of fork() may lead to deadlocks in the child.
+  pid = os.fork()
+
+[2025-05-13T21:58:23.657+0000] {standard_task_runner.py:72} INFO - Started process 136 to run task
+[2025-05-13T21:58:23.659+0000] {standard_task_runner.py:104} INFO - Running: ['***', 'tasks', 'run', 'google_maps_reviews', 'fetch_google_reviews', 'scheduled__2025-05-12T00:00:00+00:00', '--job-id', '990', '--raw', '--subdir', 'DAGS_FOLDER/***dag.py', '--cfg-path', '/tmp/tmpp43g3gmw']
+[2025-05-13T21:58:23.661+0000] {standard_task_runner.py:105} INFO - Job 990: Subtask fetch_google_reviews
+[2025-05-13T21:58:23.735+0000] {task_command.py:467} INFO - Running <TaskInstance: google_maps_reviews.fetch_google_reviews scheduled__2025-05-12T00:00:00+00:00 [running]> on host ff2d23694728
+[2025-05-13T21:58:23.883+0000] {taskinstance.py:3134} INFO - Exporting env vars: AIRFLOW_CTX_DAG_EMAIL='elkhalfimaryame@gmail.com' AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='google_maps_reviews' AIRFLOW_CTX_TASK_ID='fetch_google_reviews' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-05-12T00:00:00+00:00'
+[2025-05-13T21:58:23.885+0000] {logging_mixin.py:190} INFO - Task instance is in running state
+[2025-05-13T21:58:23.886+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: queued
+[2025-05-13T21:58:23.887+0000] {logging_mixin.py:190} INFO - Current task name:fetch_google_reviews state:running start_date:2025-05-13 21:58:23.601863+00:00
+[2025-05-13T21:58:23.888+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews and current dag run status:running
+[2025-05-13T21:58:23.888+0000] {taskinstance.py:732} INFO - ::endgroup::
+[2025-05-13T21:59:36.687+0000] {logging_mixin.py:190} INFO - 1494 reviews collected from 405 bank branches.
+[2025-05-13T21:59:36.690+0000] {python.py:240} INFO - Done. Returned value was: None
+[2025-05-13T21:59:36.711+0000] {taskinstance.py:341} INFO - ::group::Post task execution logs
+[2025-05-13T21:59:36.713+0000] {taskinstance.py:353} INFO - Marking task as SUCCESS. dag_id=google_maps_reviews, task_id=fetch_google_reviews, run_id=scheduled__2025-05-12T00:00:00+00:00, execution_date=20250512T000000, start_date=20250513T215823, end_date=20250513T215936
+[2025-05-13T21:59:36.766+0000] {logging_mixin.py:190} INFO - Task instance in success state
+[2025-05-13T21:59:36.767+0000] {logging_mixin.py:190} INFO -  Previous state of the Task instance: running
+[2025-05-13T21:59:36.768+0000] {logging_mixin.py:190} INFO - Dag name:google_maps_reviews queued_at:2025-05-13 21:58:12.064838+00:00
+[2025-05-13T21:59:36.770+0000] {logging_mixin.py:190} INFO - Task hostname:ff2d23694728 operator:PythonOperator
+[2025-05-13T21:59:36.789+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2025-05-13T21:59:36.858+0000] {taskinstance.py:3901} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2025-05-13T21:59:36.863+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

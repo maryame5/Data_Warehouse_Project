@@ -1,0 +1,224 @@
+[2025-05-13T21:58:11.981+0000] {processor.py:186} INFO - Started process (PID=75) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:11.983+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T21:58:11.994+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:11.993+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:16.125+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:58:16.130+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T21:58:16.132+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:58:16.156+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T21:58:16.160+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:16.158+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T21:58:16.190+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:16.284+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:16.283+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T21:58:16.351+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:16.350+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T21:58:16.404+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 4.436 seconds
+[2025-05-13T21:58:46.958+0000] {processor.py:186} INFO - Started process (PID=176) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:46.960+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T21:58:46.966+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:46.965+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:49.629+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:58:49.633+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T21:58:49.635+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:58:49.652+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T21:58:49.656+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:49.654+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T21:58:49.677+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:58:49.723+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:49.722+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T21:58:49.776+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:58:49.775+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T21:58:49.830+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 2.889 seconds
+[2025-05-13T21:59:20.258+0000] {processor.py:186} INFO - Started process (PID=267) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:20.262+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T21:59:20.267+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:20.266+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:23.585+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:59:23.588+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T21:59:23.590+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:59:23.608+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T21:59:23.612+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:23.610+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T21:59:23.629+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:23.682+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:23.681+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T21:59:23.733+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:23.733+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T21:59:23.764+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.519 seconds
+[2025-05-13T21:59:53.922+0000] {processor.py:186} INFO - Started process (PID=362) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:53.931+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T21:59:53.939+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:53.938+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:56.878+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:59:56.880+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T21:59:56.882+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T21:59:56.902+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T21:59:56.905+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:56.904+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T21:59:56.933+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T21:59:56.984+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:56.983+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T21:59:57.032+0000] {logging_mixin.py:190} INFO - [2025-05-13T21:59:57.032+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T21:59:57.085+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.188 seconds
+[2025-05-13T22:00:27.853+0000] {processor.py:186} INFO - Started process (PID=453) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:00:27.881+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:00:27.893+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:00:27.892+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:00:31.164+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:00:31.169+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:00:31.170+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:00:31.188+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:00:31.193+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:00:31.191+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:00:31.215+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:00:31.278+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:00:31.277+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:00:31.350+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:00:31.350+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:00:31.413+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.625 seconds
+[2025-05-13T22:01:02.059+0000] {processor.py:186} INFO - Started process (PID=544) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:02.060+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:01:02.065+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:02.064+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:04.796+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:01:04.798+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:01:04.799+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:01:04.813+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:01:04.816+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:04.815+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:01:04.837+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:04.891+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:04.891+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:01:04.941+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:04.940+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:01:04.981+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 2.932 seconds
+[2025-05-13T22:01:35.445+0000] {processor.py:186} INFO - Started process (PID=635) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:35.447+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:01:35.451+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:35.450+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:39.073+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:01:39.077+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:01:39.078+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:01:39.102+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:01:39.112+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:39.111+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:01:39.151+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:01:39.215+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:39.215+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:01:39.273+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:01:39.272+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:01:39.314+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.882 seconds
+[2025-05-13T22:02:10.312+0000] {processor.py:186} INFO - Started process (PID=739) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:10.315+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:02:10.321+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:10.320+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:13.248+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:02:13.250+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:02:13.252+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:02:13.268+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:02:13.273+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:13.272+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:02:13.293+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:13.344+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:13.344+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:02:13.400+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:13.400+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:02:13.451+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.148 seconds
+[2025-05-13T22:02:43.748+0000] {processor.py:186} INFO - Started process (PID=834) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:43.752+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:02:43.758+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:43.756+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:46.954+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:02:46.956+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:02:46.957+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:02:46.974+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:02:46.978+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:46.976+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:02:46.995+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:02:47.040+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:47.039+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:02:47.090+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:02:47.090+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:02:47.130+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.393 seconds
+[2025-05-13T22:03:17.389+0000] {processor.py:186} INFO - Started process (PID=918) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:17.391+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:03:17.400+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:17.397+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:22.315+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:03:22.317+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:03:22.319+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:03:22.340+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:03:22.343+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:22.342+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:03:22.367+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:22.422+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:22.422+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:03:22.473+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:22.473+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:03:22.516+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 5.144 seconds
+[2025-05-13T22:03:52.772+0000] {processor.py:186} INFO - Started process (PID=1009) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:52.774+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:03:52.779+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:52.779+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:56.275+0000] {logging_mixin.py:190} WARNING - [nltk_data] Error loading stopwords: <urlopen error [SSL:
+[nltk_data]     UNEXPECTED_EOF_WHILE_READING] EOF occurred in
+[nltk_data]     violation of protocol (_ssl.c:1010)>
+[2025-05-13T22:03:57.850+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:03:57.871+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:03:57.876+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:57.873+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:03:57.900+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:03:57.953+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:57.953+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:03:58.005+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:03:58.004+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:03:58.060+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 5.299 seconds
+[2025-05-13T22:04:28.361+0000] {processor.py:186} INFO - Started process (PID=1100) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:04:28.363+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:04:28.368+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:04:28.367+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:04:31.265+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:04:31.270+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:04:31.271+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:04:31.291+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:04:31.295+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:04:31.293+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:04:31.317+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:04:31.382+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:04:31.381+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:04:31.436+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:04:31.435+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:04:31.474+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.124 seconds
+[2025-05-13T22:05:02.089+0000] {processor.py:186} INFO - Started process (PID=1191) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:02.092+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:05:02.098+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:02.096+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:05.980+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:05:05.983+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:05:05.984+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:05:06.006+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:05:06.008+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:06.007+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:05:06.043+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:06.104+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:06.103+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:05:06.164+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:06.163+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:05:06.208+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 4.137 seconds
+[2025-05-13T22:05:37.135+0000] {processor.py:186} INFO - Started process (PID=1298) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:37.138+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:05:37.144+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:37.143+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:40.138+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:05:40.140+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:05:40.141+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:05:40.160+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:05:40.163+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:40.162+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:05:40.185+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:05:40.242+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:40.241+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:05:40.308+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:05:40.307+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:05:40.362+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.242 seconds
+[2025-05-13T22:06:11.009+0000] {processor.py:186} INFO - Started process (PID=1390) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:11.012+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:06:11.018+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:11.017+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:14.838+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:06:14.841+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:06:14.842+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:06:14.859+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:06:14.863+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:14.861+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:06:14.881+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:14.927+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:14.926+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:06:14.976+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:14.975+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:06:15.014+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 4.022 seconds
+[2025-05-13T22:06:45.620+0000] {processor.py:186} INFO - Started process (PID=1483) to work on /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:45.623+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/airflowdag.py for tasks to queue
+[2025-05-13T22:06:45.628+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:45.627+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:49.087+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package stopwords to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:06:49.089+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package stopwords is already up-to-date!
+[2025-05-13T22:06:49.090+0000] {logging_mixin.py:190} WARNING - [nltk_data] Downloading package punkt_tab to
+[nltk_data]     /home/airflow/nltk_data...
+[2025-05-13T22:06:49.110+0000] {logging_mixin.py:190} WARNING - [nltk_data]   Package punkt_tab is already up-to-date!
+[2025-05-13T22:06:49.116+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:49.113+0000] {client.py:194} INFO - API queries_quota: 60
+[2025-05-13T22:06:49.138+0000] {processor.py:925} INFO - DAG(s) 'google_maps_reviews' retrieved from /opt/airflow/dags/airflowdag.py
+[2025-05-13T22:06:49.200+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:49.199+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-05-13T22:06:49.253+0000] {logging_mixin.py:190} INFO - [2025-05-13T22:06:49.252+0000] {dag.py:4180} INFO - Setting next_dagrun for google_maps_reviews to 2025-05-13 00:00:00+00:00, run_after=2025-05-14 00:00:00+00:00
+[2025-05-13T22:06:49.310+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/airflowdag.py took 3.703 seconds
